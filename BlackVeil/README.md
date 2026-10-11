@@ -18,8 +18,8 @@ This is the **complete game project** - not a design document and not a prototyp
 | Campaign | 12 distinct missions, each with its own data asset, patrol network, objectives, intel, lighting plan and set piece |
 | Configuration | `DefaultEngine.ini`, `DefaultGame.ini`, `DefaultInput.ini`, `DefaultGameplayTags.ini` |
 | Data | 5 data tables (CSV) and 12 mission data assets (JSON, import-ready) |
-| Tooling | 8 Python scripts: one-command map builder, blockout geometry, gameplay placement, security wiring, objective placement, and three validators |
-| Documentation | Setup guide, architecture, story bible, 12 level design docs, 12 dialogue scripts, test report, progress report |
+| Tooling | 9 Python scripts: one-command map builder, blockout geometry, gameplay placement, security wiring, objective placement, blockout finishing (materials + mesh merging), and three validators |
+| Documentation | Setup guide, architecture, 5.6 notes, blockout format, art pipeline, story bible, 12 level design docs, 12 dialogue scripts, test report, progress report |
 
 > **Engine availability note.** The project targets **UE 5.6.1**. It was authored in
 > an environment with no engine at all, so the upgrade has been *audited* rather
