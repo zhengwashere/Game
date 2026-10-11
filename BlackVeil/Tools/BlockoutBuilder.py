@@ -397,6 +397,14 @@ def build(mission_index, rebuild=True):
     if rebuild:
         clear_blockout()
 
+    # 0. Environment. A brand-new empty level has no sun, sky or atmosphere, so
+    #    without this the blockout renders black and looks broken.
+    if layout.get("Environment", True):
+        build_environment(
+            sun_intensity=float(layout.get("SunIntensity", 3.5)),
+            sun_pitch=float(layout.get("SunPitch", -48.0)),
+            sun_yaw=float(layout.get("SunYaw", 35.0)))
+
     # 1. Spaces. Rooms are the only primitive: a corridor is just a long, narrow
     #    room, which keeps the format small and the generator simple.
     for room in layout.get("Rooms", []):
@@ -440,3 +448,83 @@ def build(mission_index, rebuild=True):
 
 if __name__ == "__main__":
     build(1)
+
+
+def build_environment(sun_intensity=3.5, sun_pitch=-48.0, sun_yaw=35.0, fog=True):
+    """
+    Give a brand-new empty level a basic environment.
+
+    Without this a fresh blockout renders almost pitch black: an empty level has
+    no sun, no sky and no atmosphere. This is the difference between "the builder
+    is broken" and "I can see the level".
+
+    Auto-exposure is explicitly disabled. That matters for this game: with eye
+    adaptation on, walking into a dark room brightens it, which would make the
+    visibility system unreadable and quietly undo the stealth lighting design.
+    """
+    created = []
+
+    sun = _spawn(unreal.DirectionalLight, (0.0, 0.0, 2000.0), (sun_pitch, sun_yaw, 0.0))
+    if sun:
+        try:
+            sun.light_component.set_intensity(sun_intensity)
+            sun.light_component.set_mobility(unreal.ComponentMobility.MOVABLE)
+        except Exception:
+            pass
+        sun.tags = [BLOCKOUT_TAG, "BV_Environment"]
+        sun.set_actor_label("BV_Sun")
+        created.append("sun")
+
+    sky = _spawn(unreal.SkyLight, (0.0, 0.0, 1200.0))
+    if sky:
+        try:
+            sky.light_component.set_intensity(0.6)
+            sky.light_component.set_mobility(unreal.ComponentMobility.MOVABLE)
+        except Exception:
+            pass
+        sky.tags = [BLOCKOUT_TAG, "BV_Environment"]
+        sky.set_actor_label("BV_SkyLight")
+        created.append("skylight")
+
+    try:
+        atmo = _spawn(unreal.SkyAtmosphere, (0.0, 0.0, 0.0))
+        if atmo:
+            atmo.tags = [BLOCKOUT_TAG, "BV_Environment"]
+            atmo.set_actor_label("BV_SkyAtmosphere")
+            created.append("atmosphere")
+    except Exception:
+        pass
+
+    if fog:
+        try:
+            fog_actor = _spawn(unreal.ExponentialHeightFog, (0.0, 0.0, 0.0))
+            if fog_actor:
+                fog_actor.tags = [BLOCKOUT_TAG, "BV_Environment"]
+                fog_actor.set_actor_label("BV_Fog")
+                created.append("fog")
+        except Exception:
+            pass
+
+    # Post-process: lock exposure so light and shadow stay readable.
+    try:
+        pp = _spawn(unreal.PostProcessVolume, (0.0, 0.0, 500.0))
+        if pp:
+            pp.tags = [BLOCKOUT_TAG, "BV_Environment"]
+            pp.set_actor_label("BV_PostProcess")
+            try:
+                settings = pp.settings
+                settings.override_auto_exposure_min_brightness = True
+                settings.auto_exposure_min_brightness = 1.0
+                settings.override_auto_exposure_max_brightness = True
+                settings.auto_exposure_max_brightness = 1.0
+                settings.override_auto_exposure_bias = True
+                settings.auto_exposure_bias = 0.0
+                pp.settings = settings
+                pp.unbound = True
+                created.append("post-process (exposure locked)")
+            except Exception as exc:
+                log("PostProcess: could not set exposure overrides (%s)" % exc)
+    except Exception:
+        pass
+
+    log("Environment: " + (", ".join(created) if created else "nothing created"))
