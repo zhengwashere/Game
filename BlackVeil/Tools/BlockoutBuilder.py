@@ -126,7 +126,12 @@ def make_box(center, size, label="", tags=None, mobility_static=True):
     return actor
 
 
-def build_wall(center, length, height, axis, openings, base_z, label=""):
+def _room_tags(room_tag):
+    """Room membership tag, so geometry can be grouped and merged per room."""
+    return ["BV_Room_" + room_tag] if room_tag else None
+
+
+def build_wall(center, length, height, axis, openings, base_z, label="", room_tag=""):
     """
     Build a wall, cut by door/window openings.
 
@@ -163,10 +168,10 @@ def build_wall(center, length, height, axis, openings, base_z, label=""):
             mid = cursor + seg / 2.0
             if axis == "X":
                 make_box((cx + mid, cy, base_z + height / 2.0),
-                         (seg, WALL_THICKNESS, height), label=label)
+                         (seg, WALL_THICKNESS, height), label=label, tags=_room_tags(room_tag))
             else:
                 make_box((cx, cy + mid, base_z + height / 2.0),
-                         (WALL_THICKNESS, seg, height), label=label)
+                         (WALL_THICKNESS, seg, height), label=label, tags=_room_tags(room_tag))
         cursor = max(cursor, right)
 
     # Trailing segment after the last opening.
@@ -175,10 +180,10 @@ def build_wall(center, length, height, axis, openings, base_z, label=""):
         mid = cursor + seg / 2.0
         if axis == "X":
             make_box((cx + mid, cy, base_z + height / 2.0),
-                     (seg, WALL_THICKNESS, height), label=label)
+                     (seg, WALL_THICKNESS, height), label=label, tags=_room_tags(room_tag))
         else:
             make_box((cx, cy + mid, base_z + height / 2.0),
-                     (WALL_THICKNESS, seg, height), label=label)
+                     (WALL_THICKNESS, seg, height), label=label, tags=_room_tags(room_tag))
 
     # Lintels above every opening (so doorways are framed, not open-to-sky).
     for left, right, oh in ops:
@@ -188,10 +193,10 @@ def build_wall(center, length, height, axis, openings, base_z, label=""):
             mid = left + seg / 2.0
             if axis == "X":
                 make_box((cx + mid, cy, base_z + oh + lintel_h / 2.0),
-                         (seg, WALL_THICKNESS, lintel_h), label=label + "_Lintel")
+                         (seg, WALL_THICKNESS, lintel_h), label=label + "_Lintel", tags=_room_tags(room_tag))
             else:
                 make_box((cx, cy + mid, base_z + oh + lintel_h / 2.0),
-                         (WALL_THICKNESS, seg, lintel_h), label=label + "_Lintel")
+                         (WALL_THICKNESS, seg, lintel_h), label=label + "_Lintel", tags=_room_tags(room_tag))
 
 
 def build_room(room):
@@ -219,25 +224,25 @@ def build_room(room):
 
     if room.get("Floor", True):
         make_box((cx, cy, fz - FLOOR_THICKNESS / 2.0),
-                 (w, d, FLOOR_THICKNESS), label="Floor_" + rid)
+                 (w, d, FLOOR_THICKNESS), label="Floor_" + rid, tags=_room_tags(rid))
 
     if room.get("Ceiling", True):
         make_box((cx, cy, fz + h + FLOOR_THICKNESS / 2.0),
-                 (w, d, FLOOR_THICKNESS), label="Ceil_" + rid)
+                 (w, d, FLOOR_THICKNESS), label="Ceil_" + rid, tags=_room_tags(rid))
 
     walls = room.get("Walls", {}) or {}
 
     # North (+Y) and South (-Y) walls run along X.
     build_wall((cx, cy + d / 2.0, fz), w, h, "X",
-               walls.get("North", []), fz, label="Wall_%s_N" % rid)
+               walls.get("North", []), fz, label="Wall_%s_N" % rid, room_tag=rid)
     build_wall((cx, cy - d / 2.0, fz), w, h, "X",
-               walls.get("South", []), fz, label="Wall_%s_S" % rid)
+               walls.get("South", []), fz, label="Wall_%s_S" % rid, room_tag=rid)
 
     # East (+X) and West (-X) walls run along Y.
     build_wall((cx + w / 2.0, cy, fz), d, h, "Y",
-               walls.get("East", []), fz, label="Wall_%s_E" % rid)
+               walls.get("East", []), fz, label="Wall_%s_E" % rid, room_tag=rid)
     build_wall((cx - w / 2.0, cy, fz), d, h, "Y",
-               walls.get("West", []), fz, label="Wall_%s_W" % rid)
+               walls.get("West", []), fz, label="Wall_%s_W" % rid, room_tag=rid)
 
     log("Room %s (%.0fx%.0f) built." % (rid, w, d))
 

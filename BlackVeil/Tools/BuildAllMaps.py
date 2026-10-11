@@ -98,7 +98,7 @@ def build_frontend():
             log("FAILED to create %s" % path)
 
 
-def build_one(index, rebuild=True):
+def build_one(index, rebuild=True, finish=True, merge_geometry=True):
     """Build one mission map end to end."""
     import BlockoutBuilder
     import LevelSetup
@@ -133,16 +133,22 @@ def build_one(index, rebuild=True):
     # 4. Objective trigger volumes.
     MissionObjectiveSetup.setup(index)
 
+    # 5. Finish the blockout: real materials, then merge each room's loose cubes
+    #    into one StaticMesh asset so the result is editable by an artist.
+    if finish:
+        import BlockoutFinish
+        BlockoutFinish.finish(index, merge=merge_geometry)
+
     save_level()
     log("--- %s complete ---" % name)
     return True
 
 
-def build_all(rebuild=True):
+def build_all(rebuild=True, finish=True, merge_geometry=True):
     build_frontend()
     ok, failed = 0, []
     for i in range(1, 13):
-        if build_one(i, rebuild):
+        if build_one(i, rebuild, finish, merge_geometry):
             ok += 1
         else:
             failed.append("M%02d" % i)
