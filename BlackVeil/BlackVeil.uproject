@@ -1,0 +1,52 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "5.3",
+	"Category": "",
+	"Description": "Black Veil - Third-Person Tactical Stealth Game",
+	"Modules": [
+		{
+			"Name": "BlackVeil",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"CoreUObject",
+				"GameplayTags",
+				"AIModule",
+				"NavigationSystem",
+				"GameplayTasks",
+				"UMG",
+				"Slate",
+				"SlateCore",
+				"EnhancedInput",
+				"Niagara"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "GameplayTags",
+			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		},
+		{
+			"Name": "AnimationWarping",
+			"Enabled": true
+		},
+		{
+			"Name": "MotionWarping",
+			"Enabled": true
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		}
+	]
+}

@@ -1,0 +1,27 @@
+# Unreal Engine generated files
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vscode/
+*.VC.db
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep source-controlled
+!Config/
+!Content/
+!Source/
+!Docs/
+!Tools/
