@@ -1,6 +1,6 @@
 # BLACK VEIL
 
-A third-person tactical stealth game for **Unreal Engine 5.3+**.
+A third-person tactical stealth game for **Unreal Engine 5.6.1**.
 
 You are **Marcus Vael**, callsign **VEIL** - an operative running deniable operations
 against a private intelligence network called UMBRA that has spent a decade buying
@@ -21,17 +21,22 @@ This is the **complete game project** - not a design document and not a prototyp
 | Tooling | 8 Python scripts: one-command map builder, blockout geometry, gameplay placement, security wiring, objective placement, and three validators |
 | Documentation | Setup guide, architecture, story bible, 12 level design docs, 12 dialogue scripts, test report, progress report |
 
-> **Engine availability note.** This project was authored in an environment with **no
+> **Engine availability note.** The project targets **UE 5.6.1**. It was authored in
+> an environment with no engine at all, so the upgrade has been *audited* rather
+> than tested - see `Docs/UE56_Notes.md` for exactly what was changed for 5.6 and
+> what to check on the first build.
+>
+> **Engine availability note (original).** This project was authored in an environment with **no
 > Unreal Engine installation**, so the C++ has not been compiled by a compiler and the
 > maps have not been built in the editor. Everything is written to compile against UE
-> 5.3+ and to be imported directly. Section 7 explains exactly what is verified and
+> 5.6 and to be imported directly. Section 7 explains exactly what is verified and
 > what is not - see `Docs/TestReport.md` for the honest, itemised report.
 
 ---
 
 ## 2. Requirements
 
-- **Unreal Engine 5.3 or newer** (5.4 works; 5.3 is the reference target)
+- **Unreal Engine 5.6.1** (the project is configured for 5.6; see `Docs/UE56_Notes.md`)
 - **Visual Studio 2022** with *Game development with C++* (Windows) or
   **Xcode 14+** (macOS) or **JetBrains Rider / VS Code + clang** (Linux)
 - **.NET 6 SDK** (required by UnrealBuildTool)
@@ -46,7 +51,7 @@ This is the **complete game project** - not a design document and not a prototyp
 
 ```bash
 # Windows
-"C:/Program Files/Epic Games/UE_5.3/Engine/Build/BatchFiles/GenerateProjectFiles.bat" \
+"C:/Program Files/Epic Games/UE_5.6/Engine/Build/BatchFiles/GenerateProjectFiles.bat" \
     -project="<path>/BlackVeil/BlackVeil.uproject" -game -engine
 
 # Linux / macOS
