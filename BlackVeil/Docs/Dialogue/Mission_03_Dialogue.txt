@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 03: GHOST PROTOCOL
+Location: Halcyon Tower, Singapore
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: Halcyon Tower after hours. Fourteen floors of glass and three of them do not appear on the building plans. The documents we need are on the sub-level, encrypted, and the whole floor is watched by a camera grid we cannot see. You have two ways in: the service lift or the facade rig. I would take the rig. Nobody looks up.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "Facade rig is your best entry. Fourteen floors, no windows on twelve through fourteen. That is not an accident."
+  [2] Leon: "Camera grid is networked. Kill the terminal on twelve and the whole floor goes blind for ninety seconds."
+  [3] Zara: "Documents secured? The encryption key rotates at midnight. You have twenty minutes."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Anything on the sub-level?"
+  GUARD: "Server room is cold and quiet. Same as always."
+  GUARD: "I do not like the new rotation. We used to have three on this floor."
+  GUARD: "They cut the third because the cameras do the work now. Cheaper."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M03_INTEL_A]
+  [M03_INTEL_B]
+  [M03_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: Halcyon is a ledger of two hundred and fourteen officials. We are not looking at corruption. We are looking at ownership.

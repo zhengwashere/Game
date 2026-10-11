@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 11: NO WITNESSES
+Location: UMBRA Operations Center, Prague
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: This is the building where it all comes together. Nine countries, one operations floor, and a burn protocol that wipes everything in forty minutes if they think they are compromised. There is no clean way in. There are four dirty ways. Pick one, and remember that the guards here are the best they have - they will coordinate, they will flank, and they will not walk into the same trap twice.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "Burn protocol is forty minutes once triggered. If they think you are in the building, everything we came for evaporates."
+  [2] Leon: "The operations floor is open-plan. No cover, no shadows, twelve people. You are going to need a very good reason to be there."
+  [3] Zara: "Marcus. Yuki is in the building. I am not telling you what to do about that."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Burn drill is at 0400. Do not be the one who trips it."
+  GUARD: "I tripped it last month. Spent four hours in the stairwell."
+  GUARD: "Then you know why we do not talk about it."
+  GUARD: "I know why. I just do not like it."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M11_INTEL_A]
+  [M11_INTEL_B]
+  [M11_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: Operations directory secured. Nine countries, one floor, one signature. Aldric Sorn has not been physically present in eleven months. He is at the estate. This is the last one.

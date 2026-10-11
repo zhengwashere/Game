@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Core/BVTypes.h"
+#include "InputActionValue.h"
 #include "BVPlayerCharacter.generated.h"
 
 class USpringArmComponent;

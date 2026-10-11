@@ -140,11 +140,8 @@ void ABVGuardCharacter::SetBeingCarried(bool bCarried)
 
 	if (bCarried)
 	{
-		// Attach to the carrier's shoulder and disable physics so it rides along.
-		if (AActor* Carrier = GetAttachParentActor())
-		{
-			// already attached
-		}
+		// The carrier attaches us to its carry socket; here we just stop the
+		// character's own movement so it rides along without fighting physics.
 		GetCharacterMovement()->SetMovementMode(MOVE_None);
 	}
 	else

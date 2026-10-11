@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 09: THE EXCHANGE
+Location: Marchetti Compound, Sicily
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: Marchetti is selling something to someone tonight, and we do not know what or to whom. The compound is a villa on a hill with one road in, forty private guards, and a wine cellar that is not a wine cellar. Identify the buyer, gather evidence, and then decide how to break up the party. Your call - but I need to know which one you made.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Leon: "The buyer's convoy is three vehicles. Two lead, one follows. Plant trackers and we own their route for a month."
+  [2] Zara: "Identify the buyer before you do anything. We need a name, not a body."
+  [3] Zara: "Whatever you chose down there, it is done. Get out and we will talk about it on the flight."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "The guests arrived an hour ago. Nobody searched them."
+  GUARD: "Nobody searches the guests. That is the arrangement."
+  GUARD: "And the merchandise?"
+  GUARD: "In the cellar. Where it always is. Stop talking."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M09_INTEL_A]
+  [M09_INTEL_B]
+  [M09_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The buyer is a state actor. Which state is still unclear, and honestly, it does not matter. What matters is that Sorn is selling to governments and taking their secrets as payment.

@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "Subsystems/WorldSubsystem.h"
 #include "Core/BVTypes.h"
+#include "Core/BlackVeilGameInstance.h"
 #include "BVMissionData.h"
 #include "BVMissionManager.generated.h"
 

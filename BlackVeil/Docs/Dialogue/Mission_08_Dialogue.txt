@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 08: SILENT DEPTHS
+Location: Anvil Deep Research Station, Arctic
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: Anvil Deep is four pressure zones stacked under the ice. Zones three and four flooded in March and nobody filed an incident report. The central shaft connects everything, but it is sealed by two blast doors and the water is rising. Whatever they were doing down there, they did not want it found. Find it anyway.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "Zones three and four are flooded. The water is cold enough to kill you in twenty minutes."
+  [2] Leon: "The pumps on level one control the flood doors. Restart them and you open a shortcut, but they are loud."
+  [3] Zara: "Specimen data recovered? Then get to the submersible. The ice is shifting and the airlock is our only way out."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Water level in zone four is up another two centimetres."
+  GUARD: "It is fine. The pumps will hold."
+  GUARD: "The pumps did not hold in March."
+  GUARD: "In March we had four more people. Do not think about March."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M08_INTEL_A]
+  [M08_INTEL_B]
+  [M08_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The incident report is unsigned and the investigation lasted nine days. Nine days to explain seven deaths. Somebody buried this, and they buried it deep.

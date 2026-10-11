@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 02: BLACKOUT
+Location: Vasiliev Power Station, Georgia
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Leon: The station is running extra night shifts and nobody filed the paperwork. We think they are moving cargo through the northern corridor while the grid is down. Storm hits in ninety minutes - when the alert sounds, every non-essential system shuts off for ninety seconds. That is your window. Kill the surveillance before it comes back up, or you will be walking into a lit room.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Leon: "Storm front is eleven minutes out. When the alert sounds, the grid goes down for ninety seconds. Use it or lose it."
+  [2] Zara: "The control room is on the mezzanine. Two techs, one guard. If the guard leaves his post, that is your window."
+  [3] Leon: "Brownout in thirty seconds. Get to cover or get dark."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Grid is holding at 94 percent. That is not normal for this load."
+  GUARD: "Nothing about tonight is normal. We are running a night shift for cargo that does not exist on paper."
+  GUARD: "Keep your voice down. The supervisor hears everything."
+  GUARD: "I heard the last supervisor retired early. Very early."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M02_INTEL_A]
+  [M02_INTEL_B]
+  [M02_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The grid data shows six brownouts, all matching shipments. Somebody is scheduling the blackouts. That means somebody inside the utility is on the payroll.

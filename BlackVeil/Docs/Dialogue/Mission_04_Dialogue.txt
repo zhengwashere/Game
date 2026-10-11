@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 04: COLD HARBOR
+Location: Port of Kalamis, Cyprus
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Leon: Twelve containers came through customs with a stamp from an officer who retired eight months ago. Tonight they load onto a freighter that is not on any schedule. The port is a maze of containers and gantry cranes - vertical, exposed, and full of places to be seen. Move with the shifts, not against them.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Leon: "Twelve containers, all cleared with a retired officer's stamp. Mark them as you find them."
+  [2] Zara: "The dockmaster's office is on the east gantry. Elevated, lit, and full of windows. Go up the maintenance stair."
+  [3] Leon: "Freighter is fuelling. You have maybe fifteen minutes before they start loading."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Twelve containers tonight. Twelve. On a Tuesday."
+  GUARD: "I stopped asking. The pay clears."
+  GUARD: "The pay clears because nobody asks."
+  GUARD: "Crane operator says he is not lifting anything after midnight. Says the load is too heavy for the manifest."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M04_INTEL_A]
+  [M04_INTEL_B]
+  [M04_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The bill of lading names a Cypriot shell company registered three weeks ago. The registration address is a laundromat in Limassol. Somebody is being careful.

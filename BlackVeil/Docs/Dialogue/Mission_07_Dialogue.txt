@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 07: DEAD SIGNAL
+Location: Kestrel Relay Station, Caucasus
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Leon: The station sits on a ridge above the valley. On alarm, two helicopter teams launch from the staging ground within twelve minutes - and the launch order goes out by radio, not by data. Killing the uplink buys you time, but not safety. You need to disable the uplink and the radio mast, and you need to do it before they notice you are there.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Leon: "Uplink first. The dish is on the ridge, the mast is behind the bunker. If you hit the uplink first they will know."
+  [2] Zara: "Twelve minutes from alarm to helicopters. You cannot fight two teams. You have to be gone."
+  [3] Leon: "Mast is down. That buys you the twelve minutes back. Move."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Check the relay logs. The 0200 burst has been running for weeks."
+  GUARD: "We do not touch the burst channel. Standing order."
+  GUARD: "Standing order from who?"
+  GUARD: "From whoever sends the standing orders. Stop asking."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M07_INTEL_A]
+  [M07_INTEL_B]
+  [M07_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: With the uplink and the mast down, the valley staging ground is deaf. For the first time in this campaign, we have a window where they cannot see us.

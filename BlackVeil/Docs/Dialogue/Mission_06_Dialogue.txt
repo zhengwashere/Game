@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 06: DEEP COVER
+Location: Verdant Gala, Monaco
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: This one is different. You are going in as a guest, not a ghost. Diplomatic cover, tailored suit, and a face that has been in the guest list database for three weeks. Blend, do not hide. The restricted wing is behind the ballroom. Smile, and nobody will ask what you are doing there.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "Remember, you are a guest. Guests walk. Guests do not crouch behind the canapes."
+  [2] Leon: "The east wing is staff-only. There is a service corridor behind the cloakroom."
+  [3] Zara: "The broker's contact is at the minister's table. Get close enough to hear a name."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Four hundred guests and one of them is wearing the wrong shoes."
+  GUARD: "You noticed shoes?"
+  GUARD: "I notice everything. It is why I have this job."
+  GUARD: "Then notice the terrace door and stop staring at people."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M06_INTEL_A]
+  [M06_INTEL_B]
+  [M06_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The contact is a serving minister. He shook the broker's hand and walked out through the front door with a diplomatic passport. We cannot touch him. Yet.

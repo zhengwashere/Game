@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 01: DEAD DROP
+Location: Kostov Steelworks, Ukraine
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: The informant went silent six days ago. His last transmission said the ledger was in the old rolling mill. The works shut down in 2019 but the lights are still on. Someone is paying the bills. Get in, find the ledger, get out. Do not be seen - if they know we came, the ledger becomes worthless and the informant becomes a liability.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "You are two hundred metres out. The fence has a gatehouse and a camera on the north corner. The camera is on a five-second sweep."
+  [2] Leon: "I am seeing heat in the rolling mill. One signature, stationary. That is probably your informant's cache, not a person."
+  [3] Zara: "Ledger secured? Good. The rail manifest is on the loading dock if you want the extra credit. Then get to the extraction point."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "You hear that? Sounded like it came from the mill."
+  GUARD: "It is the pipes. They have been banging since the shutdown."
+  GUARD: "Still. Radio it in, let the shift lead decide."
+  GUARD: "If I have to walk that corridor again I am filing for night differential."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M01_INTEL_A]
+  [M01_INTEL_B]
+  [M01_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The ledger checks out. The routing numbers lead to three accounts, all opened in the same week, all signed by the same ministry stamp. We have a thread. Do not pull it yet.

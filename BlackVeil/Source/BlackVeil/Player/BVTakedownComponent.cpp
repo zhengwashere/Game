@@ -3,7 +3,7 @@
 #include "BVPlayerCharacter.h"
 #include "AI/BVGuardCharacter.h"
 #include "World/BVHidingSpot.h"
-#include "Core/BVGameInstance.h"
+#include "Core/BlackVeilGameInstance.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Engine/World.h"

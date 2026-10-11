@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
 #include "Core/BVTypes.h"
+#include "Core/BlackVeilGameInstance.h"
 #include "BVHUDBase.generated.h"
 
 class UBVStealthHUDWidget;
@@ -29,7 +30,7 @@ public:
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|HUD") void ShowGameplayHUD(bool bShow);
-	UFUNCTION(BlueprintCallable, Category = "BlackVeil|HUD") void ShowMissionCompleteScreen(const struct FMissionScore& Score);
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|HUD") void ShowMissionCompleteScreen(const FMissionScore& Score);
 
 	/** Flashes the detection warning on the stealth widget. */
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|HUD") void NotifyPlayerDetected();

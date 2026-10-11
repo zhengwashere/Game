@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 10: BROKEN ARROW
+Location: Site 14 Research Complex, Kazakhstan
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Leon: Site 14 is a Soviet-era bunker with a modern coat of paint and a very modern security contract. Elite guards, motion sensors, and a research program called BROKEN ARROW that should not exist. Two prototypes were built. One is still here. Get the data, sabotage the prototype, and find out who signed the order.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Leon: "BROKEN ARROW is real. Two prototypes, one here, one shipped three weeks ago. Find out where the second one went."
+  [2] Zara: "The prototype is in a cage in the east lab. Three-stage shutdown: coolant, capacitor, core. Do them in order or it will cook you."
+  [3] Leon: "Security is converging on the lab. Whatever you are doing in there, finish it."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Test nineteen was impressive. Ninety-four percent."
+  GUARD: "Impressive is one word for it."
+  GUARD: "You do not like the program."
+  GUARD: "I do not like that we are testing it on ships we used to sail on."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M10_INTEL_A]
+  [M10_INTEL_B]
+  [M10_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The second prototype is at the estate. He is not going to sell it, Marcus. He is going to use it. We have days, not weeks.

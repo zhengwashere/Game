@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 12: BLACK VEIL
+Location: Sorn Estate, Black Sea Coast
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: This is the last one. Sorn is at the estate, the ledger is in the vault under the boathouse, and in eleven hours he transmits the first batch of names to fourteen governments. After that, the blackmail becomes permanent. You can go in through the cliffs, the marina, or the front gate. You can bring the ledger home, or you can burn it. Whatever you choose, choose it as yourself.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "Three ways in: the cliffs, the marina, the front gate. The cliffs are hardest and safest. The gate is easiest and fatal."
+  [2] Leon: "Vault is under the boathouse. Keycard and biometric. The keycard is on Sorn's head of security. The biometric is Sorn."
+  [3] Zara: "Whatever you decide about him, decide it as yourself. I will be on this channel either way."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "The director has not left the house in two days."
+  GUARD: "He is transmitting tonight. Fourteen governments."
+  GUARD: "Then tonight is the last quiet night this place will ever have."
+  GUARD: "Good. I have not slept properly in a year."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M12_INTEL_A]
+  [M12_INTEL_B]
+  [M12_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: It is over. Two hundred and fourteen names are going to see daylight, and every government that bought silence is going to have to explain itself. You did that. Come home.

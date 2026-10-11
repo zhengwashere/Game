@@ -1,0 +1,25 @@
+BLACK VEIL - MISSION 05: PAPER TRAIL
+Location: Directorate Archive, Vienna
+========================================================================
+
+--- PRE-MISSION BRIEFING (radio) ---
+Zara: The archive is where the Directorate keeps what it cannot destroy. Originals only, no digital copies. Elite guards, biometric doors, and a records clerk who goes home at 2300. The file we need is from 1998 and it names everyone who built the Directorate's black budget. Get it and the whole structure becomes visible.
+
+--- IN-MISSION RADIO CHECK-INS ---
+  [1] Zara: "The archive closes at 2300. After that it is you, the elite detail, and a very large filing system."
+  [2] Leon: "Vault door is biometric. You cannot pick it. You need an archivist's hand or the enrolment terminal on the second floor."
+  [3] Zara: "The 1998 file is in cold storage. It has not been requested in eleven years. That tells you everything."
+
+--- GUARD AMBIENT CONVERSATIONS (patrol pairs) ---
+  GUARD: "Cold storage again? Nobody has signed it out since I transferred in."
+  GUARD: "That is the point of cold storage. It is not for reading."
+  GUARD: "Then why do they inspect it every quarter?"
+  GUARD: "Because someone is afraid of it. Keep walking."
+
+--- ENVIRONMENTAL AUDIO LOGS / DOCUMENTS ---
+  [M05_INTEL_A]
+  [M05_INTEL_B]
+  [M05_INTEL_C]
+
+--- MISSION DEBRIEF ---
+Zara: The black budget file names eleven people. Four are dead. Three are in prison. Two are in government. Two are unaccounted for. One of the two is Aldric Sorn.
