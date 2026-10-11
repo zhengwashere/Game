@@ -100,14 +100,13 @@
   ],
   "StartingGadgets": [
     "NoiseMaker",
-    "Lockpick",
-    "SuppressedPistol"
+    "Lockpick"
   ],
   "StartingWeapons": [
     "SuppressedPistol"
   ],
   "RewardGadgets": [
-    "NonLethalProjector"
+    "HackDevice"
   ],
   "EnemyComposition": [
     {

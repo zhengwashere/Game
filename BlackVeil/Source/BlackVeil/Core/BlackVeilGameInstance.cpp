@@ -9,7 +9,6 @@ UBlackVeilGameInstance::UBlackVeilGameInstance()
 {
 	// Default equipment available from mission 1
 	CampaignData.UnlockedEquipment.UnlockedGadgets = {
-		TEXT("SuppressedPistol"),
 		TEXT("Lockpick"),
 		TEXT("NoiseMaker")
 	};
@@ -50,7 +49,6 @@ bool UBlackVeilGameInstance::LoadCampaign()
 	// Initialize fresh save with starting equipment
 	CampaignData.HighestMissionUnlocked = 1;
 	CampaignData.UnlockedEquipment.UnlockedGadgets = {
-		TEXT("SuppressedPistol"),
 		TEXT("Lockpick"),
 		TEXT("NoiseMaker")
 	};
@@ -62,7 +60,6 @@ void UBlackVeilGameInstance::ResetCampaign()
 	UGameplayStatics::DeleteGameInSlot(SaveSlotName, SaveUserIndex);
 	CampaignData = FCampaignSaveData();
 	CampaignData.UnlockedEquipment.UnlockedGadgets = {
-		TEXT("SuppressedPistol"),
 		TEXT("Lockpick"),
 		TEXT("NoiseMaker")
 	};

@@ -131,8 +131,8 @@
     }
   ],
   "StartingGadgets": [
-    "HackingDevice",
-    "EMPDevice",
+    "HackDevice",
+    "EMP",
     "FiberOpticCamera"
   ],
   "StartingWeapons": [

@@ -145,8 +145,8 @@
     }
   ],
   "StartingGadgets": [
-    "HackingDevice",
-    "EMPDevice",
+    "HackDevice",
+    "EMP",
     "StickyCamera",
     "SmokeGrenade"
   ],
@@ -156,7 +156,7 @@
     "NonLethalProjector"
   ],
   "RewardGadgets": [
-    "EMPDevice"
+    "EMP"
   ],
   "EnemyComposition": [
     {

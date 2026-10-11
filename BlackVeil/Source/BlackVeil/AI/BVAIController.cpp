@@ -121,8 +121,9 @@ float ABVAIController::GetEffectiveSightRange() const
 
 	// Lighting and posture shrink how far the guard can actually pick the player
 	// out, which is what makes shadows protective.
-	if (const ABVPlayerCharacter* Player = Cast<ABVPlayerCharacter>(
-		GetWorld() ? GetWorld()->GetFirstPlayerController()->GetPawn() : nullptr))
+	UWorld* World = GetWorld();
+	APlayerController* PC = World ? World->GetFirstPlayerController() : nullptr;
+	if (const ABVPlayerCharacter* Player = PC ? Cast<ABVPlayerCharacter>(PC->GetPawn()) : nullptr)
 	{
 		if (const UBVStealthComponent* Stealth = Player->GetStealthComponent())
 		{
@@ -332,15 +333,16 @@ void ABVAIController::Tick(float DeltaSeconds)
 
 	SyncBlackboard();
 
+	UWorld* World = GetWorld();
 	ABVGuardCharacter* Guard = GetGuard();
-	if (!Guard || Guard->IsIncapacitated()) { return; }
+	if (!World || !Guard || Guard->IsIncapacitated()) { return; }
 
 	// Periodically check for nearby bodies the guard can see. Uses the same
 	// lighting-aware line of sight as live target detection.
 	static const float BodyCheckInterval = 1.5f;
-	if (FMath::Fmod(GetWorld()->GetTimeSeconds(), BodyCheckInterval) < DeltaSeconds)
+	if (FMath::Fmod(World->GetTimeSeconds(), BodyCheckInterval) < DeltaSeconds)
 	{
-		for (TActorIterator<ABVGuardCharacter> It(GetWorld()); It; ++It)
+		for (TActorIterator<ABVGuardCharacter> It(World); It; ++It)
 		{
 			ABVGuardCharacter* Other = *It;
 			if (Other == Guard || !Other->IsIncapacitated() || Other->IsConcealed()) { continue; }

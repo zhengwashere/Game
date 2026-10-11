@@ -148,7 +148,7 @@
   ],
   "StartingGadgets": [
     "StickyCamera",
-    "HackingDevice",
+    "HackDevice",
     "Flashbang"
   ],
   "StartingWeapons": [
@@ -156,7 +156,7 @@
     "SuppressedRifle"
   ],
   "RewardGadgets": [
-    "EMPDevice"
+    "EMP"
   ],
   "EnemyComposition": [
     {

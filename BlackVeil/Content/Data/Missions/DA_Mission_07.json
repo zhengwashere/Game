@@ -132,8 +132,8 @@
     }
   ],
   "StartingGadgets": [
-    "HackingDevice",
-    "EMPDevice",
+    "HackDevice",
+    "EMP",
     "NoiseMaker"
   ],
   "StartingWeapons": [

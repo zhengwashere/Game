@@ -96,7 +96,22 @@ void UBVMissionManager::ApplyPlayerLoadout()
 	APlayerController* PC = World->GetFirstPlayerController();
 	ABVPlayerCharacter* Player = PC ? Cast<ABVPlayerCharacter>(PC->GetPawn()) : nullptr;
 	UBVEquipmentInventory* Inventory = Player ? Player->GetEquipmentInventory() : nullptr;
-	if (!Inventory) { return; }
+
+	// The game mode may start before the player pawn is possessed; retry briefly
+	// so the operative never begins a mission with an empty kit.
+	if (!Inventory)
+	{
+		static const int32 MaxRetries = 10;
+		if (LoadoutRetryCount < MaxRetries)
+		{
+			++LoadoutRetryCount;
+			World->GetTimerManager().SetTimer(LoadoutRetryHandle, this,
+				&UBVMissionManager::ApplyPlayerLoadout, 0.2f, false);
+		}
+		return;
+	}
+
+	LoadoutRetryCount = 0;
 
 	Inventory->SetupLoadout(CurrentMission->StartingGadgets, CurrentMission->StartingWeapons);
 

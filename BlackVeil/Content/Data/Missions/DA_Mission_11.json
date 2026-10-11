@@ -131,8 +131,8 @@
     }
   ],
   "StartingGadgets": [
-    "HackingDevice",
-    "EMPDevice",
+    "HackDevice",
+    "EMP",
     "StickyCamera",
     "SmokeGrenade"
   ],
@@ -141,7 +141,7 @@
     "SuppressedRifle"
   ],
   "RewardGadgets": [
-    "EMPDevice"
+    "EMP"
   ],
   "EnemyComposition": [
     {

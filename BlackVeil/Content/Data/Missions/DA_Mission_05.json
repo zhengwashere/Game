@@ -115,7 +115,7 @@
     }
   ],
   "StartingGadgets": [
-    "HackingDevice",
+    "HackDevice",
     "Lockpick",
     "SurveillanceDetector"
   ],
@@ -124,7 +124,7 @@
     "SuppressedRifle"
   ],
   "RewardGadgets": [
-    "EMPDevice"
+    "EMP"
   ],
   "EnemyComposition": [
     {

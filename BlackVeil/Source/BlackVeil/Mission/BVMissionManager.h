@@ -100,6 +100,10 @@ protected:
 	UPROPERTY() TObjectPtr<ABVCheckpoint> LastCheckpoint;
 
 private:
+	/** Loadout application retries while the player pawn is still spawning. */
+	int32 LoadoutRetryCount = 0;
+	FTimerHandle LoadoutRetryHandle;
+
 	void RefreshAllObjectives();
 	void EvaluateMissionCompletion();
 	void UnlockRewards(const FMissionScore& Score);

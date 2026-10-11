@@ -19,8 +19,7 @@ import sys
 
 KNOWN_GADGETS = {
     "NoiseMaker", "Flashbang", "SmokeGrenade", "EMP", "StickyCamera", "Lockpick",
-    "HackingDevice", "SurveillanceDetector", "FiberOpticCamera", "TearGasGrenade",
-    "SuppressedPistol",
+    "HackDevice", "SurveillanceDetector", "FiberOpticCamera",
 }
 KNOWN_WEAPONS = {"SuppressedPistol", "SuppressedRifle", "NonLethalProjector"}
 
