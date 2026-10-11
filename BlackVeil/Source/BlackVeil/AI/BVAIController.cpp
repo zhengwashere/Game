@@ -11,6 +11,8 @@
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
 #include "Perception/AISenseConfig_Hearing.h"
+#include "Perception/AISense_Sight.h"
+#include "Perception/AISense_Hearing.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -138,6 +140,9 @@ float ABVAIController::GetEffectiveSightRange() const
 		case EBVGuardType::Tech:         Range *= 0.8f;  break;
 		default: break;
 		}
+
+		// Status effects (flashbang blind, stun) directly cut sight distance.
+		Range *= Guard->GetSightMultiplier();
 	}
 
 	return Range;

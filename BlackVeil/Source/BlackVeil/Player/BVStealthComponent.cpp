@@ -1,6 +1,7 @@
 // Copyright (c) 2024 Black Veil Studios. All Rights Reserved.
 #include "BVStealthComponent.h"
 #include "Engine/World.h"
+#include "EngineUtils.h"
 #include "Engine/Level.h"
 #include "Components/LightComponent.h"
 #include "Components/PointLightComponent.h"

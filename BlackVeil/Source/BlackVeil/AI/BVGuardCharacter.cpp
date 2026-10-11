@@ -176,6 +176,36 @@ void ABVGuardCharacter::OnDiscoveredBy(ABVGuardCharacter* Discoverer)
 	AlertStateComponent->ReportSighting(GetActorLocation(), 0.6f);
 }
 
+void ABVGuardCharacter::ApplyStatusEffect(EBVStatusEffect Effect, float Duration)
+{
+	if (Effect == EBVStatusEffect::None) { return; }
+	const float Expiry = GetWorld() ? GetWorld()->GetTimeSeconds() + Duration : Duration;
+	StatusEffectEndTimes.Add(Effect, Expiry);
+}
+
+bool ABVGuardCharacter::HasStatusEffect(EBVStatusEffect Effect) const
+{
+	if (const float* Expiry = StatusEffectEndTimes.Find(Effect))
+	{
+		return GetWorld() && GetWorld()->GetTimeSeconds() < *Expiry;
+	}
+	return false;
+}
+
+float ABVGuardCharacter::GetSightMultiplier() const
+{
+	float Mult = 1.f;
+	if (HasStatusEffect(EBVStatusEffect::Blinded)) { Mult *= 0.08f; }
+	if (HasStatusEffect(EBVStatusEffect::Stunned)) { Mult *= 0.35f; }
+	if (HasStatusEffect(EBVStatusEffect::Disrupted)) { Mult *= 0.6f; }
+	return Mult;
+}
+
+float ABVGuardCharacter::GetHearingMultiplier() const
+{
+	return HasStatusEffect(EBVStatusEffect::Deafened) ? 0.15f : 1.f;
+}
+
 void ABVGuardCharacter::SetFlashlightEnabled(bool bEnabled)
 {
 	if (Flashlight)

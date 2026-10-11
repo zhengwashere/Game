@@ -23,7 +23,7 @@ void UBTService_UpdatePerception::TickNode(UBehaviorTreeComponent& OwnerComp, ui
 	if (!AIC || !BB) { return; }
 
 	// Refresh perception-derived keys.
-	AIC->SyncBlackboard_ForService();
+	AIC->SyncBlackboard();
 
 	// Keep the patrol target current so the patrol task always has a destination.
 	if (const ABVGuardCharacter* Guard = AIC->GetGuard())

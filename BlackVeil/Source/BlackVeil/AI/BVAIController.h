@@ -58,6 +58,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|AI") void EnterCombat(AActor* Threat);
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|AI") void ReportBodyFound(AActor* Body);
 
+	/** Writes current perception/alert values into the blackboard. */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|AI") void SyncBlackboard();
+
 	UPROPERTY(BlueprintAssignable, Category = "BlackVeil|AI") FBVOnAISpottedPlayer OnSpottedPlayer;
 
 protected:
@@ -84,7 +87,6 @@ protected:
 
 private:
 	void ConfigurePerception();
-	void SyncBlackboard();
 
 	/** Time of last successful sighting, used for reaction delay gating. */
 	float LastSightTime = -100.f;

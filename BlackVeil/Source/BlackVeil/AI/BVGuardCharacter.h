@@ -81,6 +81,17 @@ public:
 	/** Toggle the flashlight (surveillance guards keep theirs on in dark zones). */
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Guard") void SetFlashlightEnabled(bool bEnabled);
 
+	/** Apply a temporary status effect (blind, stun, deafen...). */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Guard") void ApplyStatusEffect(EBVStatusEffect Effect, float Duration);
+
+	UFUNCTION(BlueprintPure, Category = "BlackVeil|Guard") bool HasStatusEffect(EBVStatusEffect Effect) const;
+
+	/** Sight multiplier from active status effects (blinded guards see almost nothing). */
+	UFUNCTION(BlueprintPure, Category = "BlackVeil|Guard") float GetSightMultiplier() const;
+
+	/** Hearing multiplier from active status effects. */
+	UFUNCTION(BlueprintPure, Category = "BlackVeil|Guard") float GetHearingMultiplier() const;
+
 	// ---- Combat / weapons ----
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Guard") void FireAtTarget(AActor* Target);
 	UFUNCTION(BlueprintPure, Category = "BlackVeil|Guard") bool CanFire() const;
@@ -106,6 +117,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "BlackVeil|Guard") TWeakObjectPtr<ABVHidingSpot> ConcealmentSpot;
 
 	float LastFireTime = -100.f;
+
+	/** Effect -> world time at which it expires. */
+	UPROPERTY() TMap<EBVStatusEffect, float> StatusEffectEndTimes;
 
 	/** Disables collision, movement and AI, and plays the appropriate pose. */
 	void EnterIncapacitatedState(EBVLethality Lethality);
