@@ -4,6 +4,10 @@
 #include "BVObjectiveVolume.h"
 #include "Core/BlackVeilGameInstance.h"
 #include "Core/BVGameMode.h"
+#include "AI/BVGuardCharacter.h"
+#include "AI/BVPatrolComponent.h"
+#include "AI/BVPatrolRoute.h"
+#include "Gadgets/BVEquipmentInventory.h"
 #include "Player/BVPlayerCharacter.h"
 #include "Engine/World.h"
 #include "EngineUtils.h"
@@ -76,7 +80,74 @@ void UBVMissionManager::StartMission()
 		}
 	}
 
+	// Build the level's enemy force and hand the player their kit.
+	SpawnMissionEnemies();
+	ApplyPlayerLoadout();
+
 	RefreshAllObjectives();
+}
+
+void UBVMissionManager::ApplyPlayerLoadout()
+{
+	UWorld* World = GetWorld();
+	if (!World || !CurrentMission) { return; }
+
+	APlayerController* PC = World->GetFirstPlayerController();
+	ABVPlayerCharacter* Player = PC ? Cast<ABVPlayerCharacter>(PC->GetPawn()) : nullptr;
+	UBVEquipmentInventory* Inventory = Player ? Player->GetEquipmentInventory() : nullptr;
+	if (!Inventory) { return; }
+
+	Inventory->SetupLoadout(CurrentMission->StartingGadgets, CurrentMission->StartingWeapons);
+
+	UE_LOG(LogBlackVeil, Log, TEXT("Loadout applied: %d gadgets, %d weapons"),
+		CurrentMission->StartingGadgets.Num(), CurrentMission->StartingWeapons.Num());
+}
+
+void UBVMissionManager::SpawnMissionEnemies()
+{
+	UWorld* World = GetWorld();
+	if (!World || !CurrentMission) { return; }
+
+	// Difficulty scales how many of the authored guards actually spawn.
+	const float CountMult = CurrentMission->Difficulty.EnemyCountMultiplier;
+	const int32 Total = CurrentMission->EnemyComposition.Num();
+	const int32 ToSpawn = FMath::Clamp(FMath::RoundToInt(Total * CountMult), 1, Total);
+
+	FActorSpawnParameters Params;
+	Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+	int32 Spawned = 0;
+	for (int32 i = 0; i < ToSpawn; ++i)
+	{
+		const FBVEnemySpawnConfig& Config = CurrentMission->EnemyComposition[i];
+
+		ABVGuardCharacter* Guard = World->SpawnActor<ABVGuardCharacter>(
+			ABVGuardCharacter::StaticClass(), Config.Location, Config.Rotation, Params);
+		if (!Guard) { continue; }
+
+		Guard->GuardType = static_cast<EBVGuardType>(Config.GuardTypeOrdinal);
+		Guard->Personality = Config.Personality;
+		Guard->SquadID = Config.SquadID.IsNone() ? FName(TEXT("Squad_A")) : Config.SquadID;
+		Guard->PatrolRouteID = Config.PatrolRouteID;
+
+		// Wire the authored route onto the guard's patrol component.
+		if (!Config.PatrolRouteID.IsNone())
+		{
+			for (TActorIterator<ABVPatrolRoute> It(World); It; ++It)
+			{
+				ABVPatrolRoute* Route = *It;
+				if (Route && Route->RouteID == Config.PatrolRouteID)
+				{
+					Route->ApplyToPatrolComponent(Guard->GetPatrolComponent());
+					break;
+				}
+			}
+		}
+
+		++Spawned;
+	}
+
+	UE_LOG(LogBlackVeil, Log, TEXT("Spawned %d/%d guards for mission %d"), Spawned, Total, GetMissionIndex());
 }
 
 void UBVMissionManager::ActivateObjective(FName ObjectiveID)
@@ -277,6 +348,11 @@ void UBVMissionManager::UnlockRewards(const FMissionScore& Score)
 		const FName SRankReward(*FString::Printf(TEXT("SRank_Mission%d"), CurrentMission->MissionIndex));
 		GI->UnlockGadget(SRankReward);
 	}
+}
+
+void UBVMissionManager::TickMission(float DeltaSeconds)
+{
+	if (bMissionActive) { ElapsedTime += DeltaSeconds; }
 }
 
 void UBVMissionManager::CompleteMission()

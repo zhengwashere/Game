@@ -37,6 +37,12 @@ public:
 	// ---- Lifecycle ----
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void LoadMission(int32 MissionIndex);
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void StartMission();
+
+	/** Spawns the mission's guards from the data asset and wires up their routes. */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void SpawnMissionEnemies();
+
+	/** Applies the mission's starting equipment to the player's inventory. */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void ApplyPlayerLoadout();
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void CompleteMission();
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void FailMission(FText Reason);
 
@@ -44,6 +50,9 @@ public:
 	UFUNCTION(BlueprintPure, Category = "BlackVeil|Mission") int32 GetMissionIndex() const { return CurrentMission ? CurrentMission->MissionIndex : 0; }
 	UFUNCTION(BlueprintPure, Category = "BlackVeil|Mission") bool IsMissionActive() const { return bMissionActive; }
 	UFUNCTION(BlueprintPure, Category = "BlackVeil|Mission") float GetElapsedTime() const { return ElapsedTime; }
+
+	/** Advanced by the game mode each frame to keep the mission clock. */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void TickMission(float DeltaSeconds);
 
 	// ---- Objectives ----
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Mission") void ActivateObjective(FName ObjectiveID);
