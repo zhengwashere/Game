@@ -1,6 +1,7 @@
 // Copyright (c) 2024 Black Veil Studios. All Rights Reserved.
 #include "BVStealthComponent.h"
 #include "Engine/World.h"
+#include "GameFramework/Actor.h"
 #include "EngineUtils.h"
 #include "Engine/Level.h"
 #include "Components/LightComponent.h"
@@ -11,6 +12,7 @@
 #include "GameFramework/Character.h"
 #include "CollisionQueryParams.h"
 #include "World/BVNoiseSubsystem.h"
+#include "Perception/AISense_Hearing.h"
 #include "BlackVeil.h"
 
 UBVStealthComponent::UBVStealthComponent()
@@ -28,6 +30,7 @@ void UBVStealthComponent::BeginPlay()
 void UBVStealthComponent::SetPlayerPosture(EBVPosture NewPosture) { Posture = NewPosture; }
 void UBVStealthComponent::SetMovementSpeed(EBVMovementSpeed NewSpeed) { Speed = NewSpeed; }
 void UBVStealthComponent::SetLeaning(bool bNewLeaning) { bLeaning = bNewLeaning; }
+void UBVStealthComponent::SetCurrentSurface(EBVSurfaceType NewSurface) { CurrentSurface = NewSurface; }
 
 void UBVStealthComponent::RefreshLightCache()
 {
@@ -147,6 +150,10 @@ void UBVStealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 	if (TimeSinceSample < SampleInterval) { return; }
 	TimeSinceSample = 0.f;
 
+	AActor* Owner = GetOwner();
+	UWorld* World = GetWorld();
+	if (!Owner || !World) { return; }
+
 	SampleLighting();
 
 	const float Prev = VisibilityLevel;
@@ -160,9 +167,31 @@ void UBVStealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 
 	VisibilityLevel = FMath::Clamp(Target, 0.f, 1.f);
 
-	// Noise from the current speed tier and surface.
-	const EBVSurfaceType Surface = EBVSurfaceType::Concrete;
-	CurrentNoise = UBVNoiseSubsystem::GetNoiseLevelForSpeed(Speed, Surface);
+	// Noise from the current speed tier and the surface actually underfoot.
+	CurrentNoise = UBVNoiseSubsystem::GetNoiseLevelForSpeed(Speed, CurrentSurface);
+
+	// Emit discrete footstep noise events on a cadence that scales with speed, so
+	// guards can hear an operative walking, jogging or sprinting nearby.
+	if (CurrentNoise != EBVNoiseLevel::Silent && Owner->GetVelocity().SizeSquared2D() > 100.f)
+	{
+		FootstepAccumulator += DeltaTime;
+
+		const float StepInterval = FMath::Lerp(0.85f, 0.32f,
+			static_cast<float>(static_cast<uint8>(Speed)) / static_cast<float>(static_cast<uint8>(EBVMovementSpeed::Sprint)));
+
+		if (FootstepAccumulator >= StepInterval)
+		{
+			FootstepAccumulator = 0.f;
+			if (UBVNoiseSubsystem* Noise = World->GetSubsystem<UBVNoiseSubsystem>())
+			{
+				Noise->ReportNoise(Owner->GetActorLocation(), CurrentNoise, Owner, false, TEXT("Footstep"));
+			}
+		}
+	}
+	else
+	{
+		FootstepAccumulator = 0.f;
+	}
 
 	if (!FMath::IsNearlyEqual(Prev, VisibilityLevel, 0.01f))
 	{

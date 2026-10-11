@@ -473,6 +473,7 @@ void ABVPlayerCharacter::UpdateStealthInputs()
 		StealthComponent->SetPlayerPosture(CurrentPosture);
 		StealthComponent->SetMovementSpeed(bSilentMove ? EBVMovementSpeed::Silent : CurrentSpeed);
 		StealthComponent->SetLeaning(bLeaning);
+		StealthComponent->SetCurrentSurface(CurrentSurface);
 	}
 }
 

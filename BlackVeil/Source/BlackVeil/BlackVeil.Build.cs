@@ -31,8 +31,7 @@ public class BlackVeil : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
 			"NetCore",
-			"PhysicsCore",
-			"ChaosVehicles"
+			"PhysicsCore"
 		});
 
 		// Allow Blueprint access to all public headers

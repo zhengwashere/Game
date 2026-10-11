@@ -2,6 +2,7 @@
 #include "BVNoiseSubsystem.h"
 #include "Engine/World.h"
 #include "CollisionQueryParams.h"
+#include "Perception/AISense_Hearing.h"
 #include "BlackVeil.h"
 
 void UBVNoiseSubsystem::Initialize(FSubsystemCollectionBase& Collection)
@@ -96,6 +97,20 @@ void UBVNoiseSubsystem::ReportNoise(const FVector& Location, EBVNoiseLevel Level
 	}
 
 	OnNoiseReported.Broadcast(Event);
+
+	// Funnel the event into AI hearing so every audible action in the game -
+	// footsteps, doors, gadgets, gunshots - reaches the guards through the same
+	// path. Nothing else reports noise to the AI, which keeps this honest.
+	if (UWorld* World = GetWorld())
+	{
+		UAISense_Hearing::ReportNoiseEvent(
+			World,
+			Location,
+			/*Loudness*/ FMath::Clamp(Event.Radius / 5000.f, 0.2f, 1.5f),
+			Instigator,
+			/*MaxRange*/ Event.Radius,
+			Tag);
+	}
 }
 
 bool UBVNoiseSubsystem::CanHearEvent(const FBVNoiseEvent& Event, const FVector& ListenerLocation,

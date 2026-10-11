@@ -38,6 +38,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Stealth") void SetMovementSpeed(EBVMovementSpeed NewSpeed);
 	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Stealth") void SetLeaning(bool bNewLeaning);
 
+	/** Set by the owning character each tick from its ground physical material. */
+	UFUNCTION(BlueprintCallable, Category = "BlackVeil|Stealth") void SetCurrentSurface(EBVSurfaceType NewSurface);
+
 	// ---- Outputs consumed by AI + HUD ----
 	/** 0 = invisible in deep shadow, 1 = fully lit and obvious. */
 	UFUNCTION(BlueprintPure, Category = "BlackVeil|Stealth") float GetVisibilityLevel() const { return VisibilityLevel; }
@@ -76,7 +79,10 @@ private:
 	float PostureMultiplier() const;
 	float MovementMultiplier() const;
 
+	UPROPERTY(BlueprintReadOnly, Category = "BlackVeil|Stealth") EBVSurfaceType CurrentSurface = EBVSurfaceType::Concrete;
+
 	float TimeSinceSample = 0.f;
+	float FootstepAccumulator = 0.f;
 	TArray<TWeakObjectPtr<AActor>> CachedLights;
 	float LightCacheAge = 0.f;
 	void RefreshLightCache();
