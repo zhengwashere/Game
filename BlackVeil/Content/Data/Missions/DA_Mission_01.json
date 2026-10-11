@@ -1,0 +1,558 @@
+{
+  "MissionIndex": 1,
+  "MissionName": "Dead Drop",
+  "LocationName": "Kostov Steelworks, Ukraine",
+  "MapAsset": "/Game/Maps/M01",
+  "ParTimeSeconds": 900,
+  "BriefingText": "Zara: The informant went silent six days ago. His last transmission said the ledger was in the old rolling mill. The works shut down in 2019 but the lights are still on. Someone is paying the bills. Get in, find the ledger, get out. Do not be seen - if they know we came, the ledger becomes worthless and the informant becomes a liability.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_01_INFILTRATE",
+      "Description": "Infiltrate the steelworks",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_01_LEDGER",
+      "Description": "Recover the informant's ledger",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_01_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_01_EXFIL",
+      "Description": "Reach the extraction point",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_01_LEDGER"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_01_CONTAINER",
+      "Description": "Photograph the unlisted rail manifest",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_01_NOALARM",
+      "Description": "Complete without raising the alarm",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M01_INTEL_A",
+      "Title": "Burn Notice Memo",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M01_INTEL_B",
+      "Title": "Container Manifest",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M01_INTEL_C",
+      "Title": "Handler Note",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "NoiseMaker",
+    "Lockpick",
+    "SuppressedPistol"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol"
+  ],
+  "RewardGadgets": [
+    "NonLethalProjector"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -4200,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_GATE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.35,
+        "Bravery": 0.4,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -1800,
+        900,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_YARD",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        600,
+        1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_MILL",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        2400,
+        -600,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_LOADING",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.4,
+        "Bravery": 0.45,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        0,
+        -1500,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_WEST",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.55,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 2,
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_OFFICE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.3,
+        "Bravery": 0.3,
+        "Teamwork": 0.5,
+        "ReactionDelay": 1.0,
+        "MemoryDuration": 20,
+        "SearchPatience": 0.5
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_GATE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -4200,
+            0,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3400,
+            400,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3600,
+            -400,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_YARD",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1800,
+            900,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_YARD_A",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -1000,
+            1500,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2200,
+            1600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_MILL",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            600,
+            1200,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 270,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_MILL",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1400,
+            900,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            400,
+            300,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_LOADING",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            2400,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            3000,
+            200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_LOAD",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2200,
+            600,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_WEST",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            0,
+            -1500,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -800,
+            -1200,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            800,
+            -1300,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 315,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_OFFICE",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            1500,
+            0,
+            0
+          ],
+          "WaitDuration": 8,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1600,
+            400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_01_GATE",
+      "Location": [
+        -4500,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_01_YARD",
+      "Location": [
+        -1500,
+        700,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_01_MILL",
+      "Location": [
+        900,
+        1000,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Overcast dusk, low directional light",
+    "Zones": [
+      "Perimeter floodlights (bright, destructible)",
+      "Yard shadows between containers (dark)",
+      "Rolling mill interior (sparse sodium lights, flickering)",
+      "Office block (lit, blinds)"
+    ],
+    "UniqueMechanic": "Shoot out the two perimeter floodlights to open a dark corridor along the north fence."
+  },
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.0,
+    "AlarmEscalationSpeed": 1.0,
+    "bNoCheckpoints": false
+  },
+  "UniqueMechanic": "See level design document."
+}

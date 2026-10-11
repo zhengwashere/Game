@@ -1,0 +1,11 @@
+Name,DisplayName,Description,MaxCharges,SoundRadius,IsThrowable,IsPersistent,UnlockMission
+NoiseMaker,Noise Maker,"Thrown device that rattles loudly, luring guards to investigate the sound.",4,1200,true,false,1
+Lockpick,Lockpick Set,"Quietly defeats mechanical locks. Higher-security locks take longer to pick.",1,120,false,true,1
+HackingDevice,Wireless Hack Device,"Breaks into networked systems: cameras, terminals and electronic locks.",5,60,false,true,2
+Flashbang,Flashbang,"Blinds and deafens guards facing the burst. Very loud, use with care.",2,2000,true,false,3
+SmokeGrenade,Smoke Grenade,"Deploys a concealing cloud that breaks enemy sight lines for several seconds.",2,900,true,false,3
+StickyCamera,Sticky Camera,"Adheres to any surface and streams a remote feed. Can emit noise to distract.",3,0,true,true,4
+EMPDevice,EMP Device,"Disables cameras, terminals, alarms and lights in a wide radius for 30 seconds.",1,800,true,false,5
+FiberOpticCamera,Fiber-Optic Camera,"Slides under doors to reveal what waits on the other side.",1,40,false,true,6
+SurveillanceDetector,Surveillance Detector,"Highlights nearby cameras and sensors, including their coverage cones.",1,0,false,true,7
+TearGasGrenade,Tear Gas Grenade,"Area denial: forces guards out of a room and disrupts their aim.",2,1100,true,false,9

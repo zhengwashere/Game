@@ -1,0 +1,575 @@
+{
+  "MissionIndex": 4,
+  "MissionName": "Cold Harbor",
+  "LocationName": "Port of Kalamis, Cyprus",
+  "MapAsset": "/Game/Maps/M04",
+  "ParTimeSeconds": 1080,
+  "BriefingText": "Leon: Twelve containers came through customs with a stamp from an officer who retired eight months ago. Tonight they load onto a freighter that is not on any schedule. The port is a maze of containers and gantry cranes - vertical, exposed, and full of places to be seen. Move with the shifts, not against them.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_04_INFILTRATE",
+      "Description": "Enter the port facility",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_04_MANIFEST",
+      "Description": "Identify the twelve unlisted containers",
+      "Type": "Interact",
+      "bIsOptional": false,
+      "RequiredCount": 12,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_04_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_04_OFFICE",
+      "Description": "Access the dockmaster's office",
+      "Type": "Hack",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_04_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_04_EXFIL",
+      "Description": "Extract the cargo data",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_04_OFFICE"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_04_CRANE",
+      "Description": "Sabotage the loading crane",
+      "Type": "Sabotage",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_04_CREW",
+      "Description": "Eavesdrop on the dock crew",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M04_INTEL_A",
+      "Title": "Bill of Lading",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M04_INTEL_B",
+      "Title": "Crew Contract",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M04_INTEL_C",
+      "Title": "Vasic Order",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "NoiseMaker",
+    "Lockpick",
+    "StickyCamera"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "NonLethalProjector"
+  ],
+  "RewardGadgets": [
+    "SmokeGrenade"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -3600,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_ENTRANCE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.4,
+        "Bravery": 0.5,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -1600,
+        1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_BAY1",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        600,
+        -1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_BAY2",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.65,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        2400,
+        800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_GANTRY",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3400,
+        -600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_OFFICE",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1200,
+        2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_BAY2",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.55,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 2,
+      "Location": [
+        -800,
+        -2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_MAINT",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.35,
+        "Bravery": 0.3,
+        "Teamwork": 0.5,
+        "ReactionDelay": 1.0,
+        "MemoryDuration": 20,
+        "SearchPatience": 0.5
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_ENTRANCE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3600,
+            0,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2800,
+            700,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3200,
+            -700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_BAY1",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1600,
+            1400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_BAY",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -400,
+            1800,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2200,
+            2200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_BAY2",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            600,
+            -1200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1600,
+            -800,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_GANTRY",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2400,
+            800,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2800,
+            1200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            3200,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_OFFICE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3400,
+            -600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            3800,
+            -200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_MAINT",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -800,
+            -2000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            0,
+            -1600,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_04_GATE",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_04_BAY1",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_04_GANTRY",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night, sodium floodlights, sea haze",
+    "Zones": [
+      "Container yard (patchy light between stacks)",
+      "Gantry walkways (exposed, well lit)",
+      "Dockmaster office (interior light, blinds)",
+      "Maintenance tunnels (unlit)",
+      "Waterline (reflective, dark)"
+    ]
+  },
+  "UniqueMechanic": "Gantry crane set piece: the player can ride a moving container to bypass the yard, but the crane is lit and audible - timing matters.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.05,
+    "AlarmEscalationSpeed": 1.1,
+    "bNoCheckpoints": false
+  }
+}

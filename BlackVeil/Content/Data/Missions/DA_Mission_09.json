@@ -1,0 +1,619 @@
+{
+  "MissionIndex": 9,
+  "MissionName": "The Exchange",
+  "LocationName": "Marchetti Compound, Sicily",
+  "MapAsset": "/Game/Maps/M09",
+  "ParTimeSeconds": 1200,
+  "BriefingText": "Zara: Marchetti is selling something to someone tonight, and we do not know what or to whom. The compound is a villa on a hill with one road in, forty private guards, and a wine cellar that is not a wine cellar. Identify the buyer, gather evidence, and then decide how to break up the party. Your call - but I need to know which one you made.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_09_INFILTRATE",
+      "Description": "Infiltrate the Marchetti compound",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_09_VAULT",
+      "Description": "Reach the underground vault",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_09_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_09_IDENTIFY",
+      "Description": "Identify the buyer",
+      "Type": "Custom",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_09_VAULT"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_09_EVIDENCE",
+      "Description": "Gather the exchange evidence",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_09_VAULT"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_09_DISRUPT",
+      "Description": "Disrupt the exchange",
+      "Type": "Custom",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_09_IDENTIFY"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_09_EXFIL",
+      "Description": "Escape the compound",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_09_DISRUPT"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_09_LEDGER",
+      "Description": "Photograph Marchetti's ledger",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_09_CARS",
+      "Description": "Plant trackers on the buyer's convoy",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 3,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M09_INTEL_A",
+      "Title": "Exchange Terms",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M09_INTEL_B",
+      "Title": "Marchetti Ledger",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M09_INTEL_C",
+      "Title": "Broker Recording",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "StickyCamera",
+    "HackingDevice",
+    "Flashbang"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle"
+  ],
+  "RewardGadgets": [
+    "EMPDevice"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -3400,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_ROAD",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -1400,
+        1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_TERRACE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.55,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        600,
+        -1000,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_CELLAR",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.55,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        2200,
+        700,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_HOUSE",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.75,
+        "Bravery": 0.8,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        3800,
+        -500,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_VAULT",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1200,
+        2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_TERRACE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        2800,
+        -1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -2000,
+        -1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_ROAD",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_ROAD",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3400,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2600,
+            700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2000,
+            -1600,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3000,
+            -700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_TERRACE",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1400,
+            1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_TERRACE",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1200,
+            2000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CELLAR",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            600,
+            -1000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            800,
+            -1400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_HOUSE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            2200,
+            700,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2800,
+            1100,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2400,
+            300,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_VAULT",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3800,
+            -500,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            4200,
+            -100,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2800,
+            -1600,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_09_ROAD",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_09_TERRACE",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_09_CELLAR",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night, warm villa lighting, sea fog",
+    "Zones": [
+      "Approach road (security floodlights)",
+      "Terrace (string lights, dark garden)",
+      "Cellar (bare bulbs, damp)",
+      "House interior (chandeliers, lit)",
+      "Vault (fluorescent, no shadow)"
+    ]
+  },
+  "UniqueMechanic": "Branching outcome: the player can sabotage the exchange (destroy the goods), expose it (photograph and leave), or ambush it (eliminate the buyer). Each choice changes the debriefing and later mission context.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.15,
+    "PerceptionMultiplier": 1.15,
+    "AlarmEscalationSpeed": 1.25,
+    "bNoCheckpoints": false
+  }
+}

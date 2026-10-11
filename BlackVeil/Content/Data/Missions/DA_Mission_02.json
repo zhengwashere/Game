@@ -1,0 +1,630 @@
+{
+  "MissionIndex": 2,
+  "MissionName": "Blackout",
+  "LocationName": "Vasiliev Power Station, Georgia",
+  "MapAsset": "/Game/Maps/M02",
+  "ParTimeSeconds": 960,
+  "BriefingText": "Leon: The station is running extra night shifts and nobody filed the paperwork. We think they are moving cargo through the northern corridor while the grid is down. Storm hits in ninety minutes - when the alert sounds, every non-essential system shuts off for ninety seconds. That is your window. Kill the surveillance before it comes back up, or you will be walking into a lit room.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_02_INFILTRATE",
+      "Description": "Enter the power station",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_02_CONTROL",
+      "Description": "Reach the control room",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_02_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_02_DISABLE",
+      "Description": "Disable the surveillance grid",
+      "Type": "Hack",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_02_CONTROL"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_02_EXFIL",
+      "Description": "Extract with the grid data",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_02_DISABLE"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_02_BREAKER",
+      "Description": "Sabotage the northern breaker yard",
+      "Type": "Sabotage",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_02_ROSTER",
+      "Description": "Recover the falsified shift roster",
+      "Type": "Retrieve",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M02_INTEL_A",
+      "Title": "Grid Sabotage Log",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M02_INTEL_B",
+      "Title": "Shift Roster",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M02_INTEL_C",
+      "Title": "Storm Protocol",
+      "Category": "Document"
+    }
+  ],
+  "StartingGadgets": [
+    "NoiseMaker",
+    "Lockpick",
+    "HackingDevice"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "NonLethalProjector"
+  ],
+  "RewardGadgets": [
+    "Flashbang"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -3000,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_PERIMETER",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.4,
+        "Bravery": 0.5,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -1200,
+        800,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_TURBINE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 2,
+      "Location": [
+        400,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CONTROL",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.35,
+        "Bravery": 0.3,
+        "Teamwork": 0.6,
+        "ReactionDelay": 1.0,
+        "MemoryDuration": 20,
+        "SearchPatience": 0.45
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1600,
+        -900,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_NORTH",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.55,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        2400,
+        600,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_YARD",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.55,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        800,
+        -1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.4,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -2200,
+        -1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_PERIMETER",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.4,
+        "Bravery": 0.45,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_PERIMETER",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3000,
+            0,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2000,
+            -800,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2600,
+            -1400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3400,
+            -700,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_TURBINE",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1200,
+            800,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_TURBINE",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -300,
+            1200,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -900,
+            1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CONTROL",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            400,
+            0,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            900,
+            400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            700,
+            -400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_NORTH",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            1600,
+            -900,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2600,
+            -500,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2800,
+            300,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_NORTH",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_YARD",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            2400,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1800,
+            1000,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2200,
+            1400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            800,
+            -1600,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_PERIMETER",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -2200,
+            -1400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1400,
+            -1800,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2600,
+            -1900,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_02_GATE",
+      "Location": [
+        -3200,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_02_TURBINE",
+      "Location": [
+        -1000,
+        600,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_02_CONTROL",
+      "Location": [
+        300,
+        -200,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Storm night, heavy rain, lightning flashes",
+    "Zones": [
+      "Exterior yard (floodlit, high contrast)",
+      "Turbine hall (harsh mercury vapour, strobing under load)",
+      "Control room (lit, glass partitions)",
+      "Cable tunnels (near total darkness)",
+      "Emergency red lighting activates during brownouts"
+    ],
+    "UniqueMechanic": "The storm's brownout windows switch off the surveillance grid for 90 seconds. Player must plan movement around them, and can extend them by sabotaging the northern breaker yard."
+  },
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.05,
+    "AlarmEscalationSpeed": 1.1,
+    "bNoCheckpoints": false
+  },
+  "UniqueMechanic": "See level design document."
+}

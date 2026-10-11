@@ -1,0 +1,616 @@
+{
+  "MissionIndex": 10,
+  "MissionName": "Broken Arrow",
+  "LocationName": "Site 14 Research Complex, Kazakhstan",
+  "MapAsset": "/Game/Maps/M10",
+  "ParTimeSeconds": 1320,
+  "BriefingText": "Leon: Site 14 is a Soviet-era bunker with a modern coat of paint and a very modern security contract. Elite guards, motion sensors, and a research program called BROKEN ARROW that should not exist. Two prototypes were built. One is still here. Get the data, sabotage the prototype, and find out who signed the order.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_10_INFILTRATE",
+      "Description": "Breach Site 14",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_10_LAB",
+      "Description": "Reach the research laboratory",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_10_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_10_DATA",
+      "Description": "Recover the BROKEN ARROW project data",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_10_LAB"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_10_SABOTAGE",
+      "Description": "Sabotage the directed-energy prototype",
+      "Type": "Sabotage",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_10_LAB"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_10_EXFIL",
+      "Description": "Escape the complex",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_10_DATA",
+        "OBJ_10_SABOTAGE"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_10_SORN",
+      "Description": "Find Sorn's personal log",
+      "Type": "Retrieve",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_10_PRISONER",
+      "Description": "Free the detained technician",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M10_INTEL_A",
+      "Title": "Site 14 Program",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M10_INTEL_B",
+      "Title": "Test Log",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M10_INTEL_C",
+      "Title": "Sorn Personal Log",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "EMPDevice",
+    "HackingDevice",
+    "Flashbang"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle"
+  ],
+  "RewardGadgets": [
+    "SmokeGrenade"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -3800,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_PERIMETER",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        -1600,
+        1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_HANGAR",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.6,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        600,
+        -1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_CORRIDOR",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.85,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2400,
+        800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_LAB",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        3800,
+        -600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.8,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        1200,
+        2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_HANGAR",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.6,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3000,
+        -1800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.75,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -800,
+        -2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_PERIMETER",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G9",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1600,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CORRIDOR",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.9,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_PERIMETER",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3800,
+            0,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -3000,
+            800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -800,
+            -2200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2600,
+            -900,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_HANGAR",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1600,
+            1400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_HANGAR",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1200,
+            2200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CORRIDOR",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            600,
+            -1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1600,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1000,
+            -800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_LAB",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2400,
+            800,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2800,
+            1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3800,
+            -600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            4200,
+            -200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3000,
+            -1800,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_10_PERIMETER",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_10_HANGAR",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_10_LAB",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Bunker interior plus surface yard, harsh industrial",
+    "Zones": [
+      "Surface yard (floodlit, guard towers)",
+      "Vehicle hangar (work lights)",
+      "Bunker corridors (strip lights, long sightlines)",
+      "Laboratory (bright, clinical)",
+      "Prototype chamber (caged, spotlights)"
+    ]
+  },
+  "UniqueMechanic": "Prototype sabotage: the directed-energy prototype must be disabled via a three-stage process (coolant, capacitor, control core) under a hardening security response - the longer the player takes, the more guards converge.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.2,
+    "PerceptionMultiplier": 1.2,
+    "AlarmEscalationSpeed": 1.3,
+    "bNoCheckpoints": false
+  }
+}

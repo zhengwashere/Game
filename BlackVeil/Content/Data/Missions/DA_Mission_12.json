@@ -1,0 +1,746 @@
+{
+  "MissionIndex": 12,
+  "MissionName": "Black Veil",
+  "LocationName": "Sorn Estate, Black Sea Coast",
+  "MapAsset": "/Game/Maps/M12",
+  "ParTimeSeconds": 1500,
+  "BriefingText": "Zara: This is the last one. Sorn is at the estate, the ledger is in the vault under the boathouse, and in eleven hours he transmits the first batch of names to fourteen governments. After that, the blackmail becomes permanent. You can go in through the cliffs, the marina, or the front gate. You can bring the ledger home, or you can burn it. Whatever you choose, choose it as yourself.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_12_INFILTRATE",
+      "Description": "Breach the Sorn estate",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_12_VAULT",
+      "Description": "Reach the boathouse vault",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_12_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_12_LEDGER",
+      "Description": "Secure the ledger",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_12_VAULT"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_12_SORN",
+      "Description": "Confront Aldric Sorn",
+      "Type": "Custom",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_12_LEDGER"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_12_EXFIL",
+      "Description": "Extract from the estate",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_12_SORN"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_12_KESTREL",
+      "Description": "Extract Yuki Tanaka alive",
+      "Type": "Escort",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_12_SERVERS",
+      "Description": "Destroy the UMBRA transmission array",
+      "Type": "Sabotage",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_12_GHOST",
+      "Description": "Complete the operation without a single detection",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M12_INTEL_A",
+      "Title": "Sorn Estate Plans",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M12_INTEL_B",
+      "Title": "The Ledger",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M12_INTEL_C",
+      "Title": "Zara Final Transmission",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "EMPDevice",
+    "StickyCamera",
+    "SmokeGrenade"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle",
+    "NonLethalProjector"
+  ],
+  "RewardGadgets": [
+    "EMPDevice"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -4600,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_CLIFF",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -2400,
+        1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_GARDEN",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.18
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        -400,
+        -1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_MARINA",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.65,
+        "Bravery": 0.75,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1600,
+        900,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_HOUSE",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        3400,
+        -700,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1000,
+        2600,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_GARDEN",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.18
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3000,
+        -2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.45,
+        "Teamwork": 0.95,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -1400,
+        -2600,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_CLIFF",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G9",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2400,
+        100,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_HOUSE",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G10",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        500,
+        -2400,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_MARINA",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G11",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        3800,
+        -1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_BOATHOUSE",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.95,
+        "Bravery": 0.9,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.22,
+        "MemoryDuration": 45,
+        "SearchPatience": 0.12
+      }
+    },
+    {
+      "SpawnID": "G12",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -3200,
+        -1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        135,
+        0
+      ],
+      "PatrolRouteID": "R_CLIFF",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_CLIFF",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -4600,
+            0,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -3200,
+            -1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 135,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1400,
+            -2600,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3800,
+            -1600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_GARDEN",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -2400,
+            1600,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_ESTATE_A",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1000,
+            2600,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_MARINA",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -400,
+            -1400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            500,
+            -2400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            200,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_HOUSE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            1600,
+            900,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2400,
+            100,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1800,
+            1700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3400,
+            -700,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            500,
+            -2400,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3000,
+            -2000,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_BOATHOUSE",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3800,
+            -1400,
+            0
+          ],
+          "WaitDuration": 12,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            4200,
+            -1000,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_12_CLIFF",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_12_GARDEN",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_12_HOUSE",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night, coastal storm, mixed architectural lighting",
+    "Zones": [
+      "Cliff path (moonlight, wind, deep shadow)",
+      "Gardens (landscape uplighting, hedges)",
+      "Marina (dock lights, reflective water)",
+      "Main house (warm interior, large windows)",
+      "Command suite (lit, glass)",
+      "Boathouse vault (floodlit, no shadow, layered sensors)"
+    ]
+  },
+  "UniqueMechanic": "Layered finale: the vault requires a keycard and a biometric match, the estate reacts to the alarm with a full lockdown, and the confrontation with Sorn can end in elimination, capture, or exposure - each producing a different ending epilogue.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.3,
+    "PerceptionMultiplier": 1.3,
+    "AlarmEscalationSpeed": 1.5,
+    "bNoCheckpoints": false
+  }
+}

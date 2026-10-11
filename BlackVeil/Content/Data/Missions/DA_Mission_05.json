@@ -1,0 +1,575 @@
+{
+  "MissionIndex": 5,
+  "MissionName": "Paper Trail",
+  "LocationName": "Directorate Archive, Vienna",
+  "MapAsset": "/Game/Maps/M05",
+  "ParTimeSeconds": 1140,
+  "BriefingText": "Zara: The archive is where the Directorate keeps what it cannot destroy. Originals only, no digital copies. Elite guards, biometric doors, and a records clerk who goes home at 2300. The file we need is from 1998 and it names everyone who built the Directorate's black budget. Get it and the whole structure becomes visible.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_05_INFILTRATE",
+      "Description": "Enter the archive",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_05_ARCHIVE",
+      "Description": "Reach the 1998 records vault",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_05_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_05_FILE",
+      "Description": "Recover the black budget file",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_05_ARCHIVE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_05_EXFIL",
+      "Description": "Exit through the loading bay",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_05_FILE"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_05_KESTREL",
+      "Description": "Find the KESTREL station file",
+      "Type": "Retrieve",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_05_BIOMETRIC",
+      "Description": "Obtain a biometric bypass",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M05_INTEL_A",
+      "Title": "Directorate Memo",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M05_INTEL_B",
+      "Title": "Vienna Station File",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M05_INTEL_C",
+      "Title": "Analyst Note",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "Lockpick",
+    "SurveillanceDetector"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle"
+  ],
+  "RewardGadgets": [
+    "EMPDevice"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -2800,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_ENTRY",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -1000,
+        1000,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_READING",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.8,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1000,
+        -800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_STACKS",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2600,
+        600,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_VAULT",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3600,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.75,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1800,
+        1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_STACKS",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        -2000,
+        -1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.8,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        400,
+        2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_READING",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_ENTRY",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -2800,
+            0,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -2000,
+            500,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2400,
+            -500,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_READING",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1000,
+            1000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_READ",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            400,
+            2200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -600,
+            1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_STACKS",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            1000,
+            -800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1800,
+            1600,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2600,
+            400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_VAULT",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2600,
+            600,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            3000,
+            200,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3600,
+            0,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -2000,
+            -1600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -1200,
+            -2000,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_05_ENTRY",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_05_READING",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_05_STACKS",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night, interior climate-controlled",
+    "Zones": [
+      "Reading room (warm task lighting)",
+      "Stacks (motion-triggered, long sightlines)",
+      "Vault corridor (harsh white, no shadows)",
+      "Loading bay (unlit, roller doors)",
+      "Server room (blue LED wash)"
+    ]
+  },
+  "UniqueMechanic": "Biometric vault door: cannot be picked or hacked. The player must acquire a matching biometric from a senior archivist - either by following one to the door or by finding the enrolment terminal.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.1,
+    "PerceptionMultiplier": 1.15,
+    "AlarmEscalationSpeed": 1.25,
+    "bNoCheckpoints": false
+  }
+}

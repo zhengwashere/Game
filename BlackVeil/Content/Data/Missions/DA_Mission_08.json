@@ -1,0 +1,621 @@
+{
+  "MissionIndex": 8,
+  "MissionName": "Silent Depths",
+  "LocationName": "Anvil Deep Research Station, Arctic",
+  "MapAsset": "/Game/Maps/M08",
+  "ParTimeSeconds": 1260,
+  "BriefingText": "Zara: Anvil Deep is four pressure zones stacked under the ice. Zones three and four flooded in March and nobody filed an incident report. The central shaft connects everything, but it is sealed by two blast doors and the water is rising. Whatever they were doing down there, they did not want it found. Find it anyway.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_08_INFILTRATE",
+      "Description": "Enter the research station",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_08_ZONE2",
+      "Description": "Reach the second pressure zone",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_08_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_08_LAB",
+      "Description": "Access the flooded laboratory",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_08_ZONE2"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_08_SAMPLES",
+      "Description": "Recover the specimen data",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_08_LAB"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_08_EXFIL",
+      "Description": "Reach the escape submersible",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_08_SAMPLES"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_08_SURVIVOR",
+      "Description": "Locate the surviving researcher",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_08_PUMPS",
+      "Description": "Restart the drainage pumps",
+      "Type": "Sabotage",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M08_INTEL_A",
+      "Title": "Facility Schematic",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M08_INTEL_B",
+      "Title": "Incident Report",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M08_INTEL_C",
+      "Title": "Sorn Directive",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "EMPDevice",
+    "FiberOpticCamera"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "NonLethalProjector"
+  ],
+  "RewardGadgets": [
+    "SmokeGrenade"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -3200,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_AIRLOCK",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        -1200,
+        1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_ZONE1",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.55,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 2,
+      "Location": [
+        800,
+        -1000,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_PUMPS",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.35,
+        "Bravery": 0.35,
+        "Teamwork": 0.5,
+        "ReactionDelay": 1.0,
+        "MemoryDuration": 20,
+        "SearchPatience": 0.5
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        2400,
+        700,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_ZONE2",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3600,
+        -500,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_OBSERVATION",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1400,
+        2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_ZONE3",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -800,
+        -2000,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_ZONE1",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        3000,
+        -1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.8,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.25
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_AIRLOCK",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3200,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_AIRLOCK",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -2400,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2800,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_ZONE1",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1200,
+            1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -800,
+            -2000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -400,
+            0,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_PUMPS",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            800,
+            -1000,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1400,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_ZONE2",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            2400,
+            700,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            3000,
+            1100,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2600,
+            300,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_OBSERVATION",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3600,
+            -500,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_ZONE3",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            1400,
+            2000,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            1800,
+            1600,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3000,
+            -1600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            3400,
+            -1200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_08_AIRLOCK",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_08_ZONE1",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_08_ZONE2",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Sub-aqua interior, emergency lighting only in flooded zones",
+    "Zones": [
+      "Airlock (white, wet reflections)",
+      "Zone 1 (fluorescent, powered)",
+      "Zone 2 (intermittent, half-lit)",
+      "Zones 3-4 (red emergency, flooded, reflective)",
+      "Central shaft (vertical, dark)"
+    ]
+  },
+  "UniqueMechanic": "Flooded passages: water reduces movement speed and generates noise, and some routes require disabling the pumps to drain a compartment and open a shortcut.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.05,
+    "AlarmEscalationSpeed": 1.2,
+    "bNoCheckpoints": false
+  }
+}

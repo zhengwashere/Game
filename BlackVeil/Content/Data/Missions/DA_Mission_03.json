@@ -1,0 +1,550 @@
+{
+  "MissionIndex": 3,
+  "MissionName": "Ghost Protocol",
+  "LocationName": "Halcyon Tower, Singapore",
+  "MapAsset": "/Game/Maps/M03",
+  "ParTimeSeconds": 1020,
+  "BriefingText": "Zara: Halcyon Tower after hours. Fourteen floors of glass and three of them do not appear on the building plans. The documents we need are on the sub-level, encrypted, and the whole floor is watched by a camera grid we cannot see. You have two ways in: the service lift or the facade rig. I would take the rig. Nobody looks up.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_03_INFILTRATE",
+      "Description": "Enter Halcyon Tower",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_03_SECURITY",
+      "Description": "Reach the security sub-level",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_03_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_03_DOCS",
+      "Description": "Steal the encrypted documents",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_03_SECURITY"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_03_EXFIL",
+      "Description": "Exit without triggering the alarm",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_03_DOCS"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_03_CAMERAS",
+      "Description": "Disable all cameras on floors 12-14",
+      "Type": "Hack",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_03_SAFE",
+      "Description": "Crack the executive safe",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M03_INTEL_A",
+      "Title": "Project Halcyon",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M03_INTEL_B",
+      "Title": "Board Meeting Minutes",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M03_INTEL_C",
+      "Title": "Zara Intercept",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "NoiseMaker",
+    "StickyCamera"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol"
+  ],
+  "RewardGadgets": [
+    "FiberOpticCamera"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        -2000,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_LOBBY",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.4,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -600,
+        1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_ATRIUM",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        800,
+        -900,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CORRIDOR",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        2200,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_SUBLEVEL",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.75,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        3000,
+        1000,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_EXEC",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1400,
+        1600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_SERVICE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.4,
+        "Bravery": 0.5,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_LOBBY",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -2000,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_LOBBY",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -1200,
+            600,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1600,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_ATRIUM",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -600,
+            1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            400,
+            1600,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1200,
+            1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CORRIDOR",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            800,
+            -900,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1600,
+            -500,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            -1500,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_SUBLEVEL",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2200,
+            0,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2600,
+            -400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_EXEC",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3000,
+            1000,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_EXEC",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            3600,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            3200,
+            200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_SERVICE",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            1400,
+            1600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1800,
+            1200,
+            0
+          ],
+          "WaitDuration": 3,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_03_SERVICE",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_03_ATRIUM",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_03_SUBLEVEL",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night city glow through glass",
+    "Zones": [
+      "Lobby (lit, reflective marble)",
+      "Corridors (motion-triggered strip lights)",
+      "Sub-level (server blue, cold)",
+      "Executive floor (warm lamps, blinds)",
+      "Stairwells (emergency lighting only)"
+    ]
+  },
+  "UniqueMechanic": "Motion-triggered corridor lights turn on ahead of the player, revealing them - the player must either wait for them to cycle or shoot out the sensors.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.1,
+    "AlarmEscalationSpeed": 1.2,
+    "bNoCheckpoints": false
+  }
+}

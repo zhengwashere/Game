@@ -10,6 +10,7 @@
 #include "Gadgets/BVEquipmentInventory.h"
 #include "Player/BVPlayerCharacter.h"
 #include "Engine/World.h"
+#include "GameFramework/PlayerController.h"
 #include "EngineUtils.h"
 #include "Kismet/GameplayStatics.h"
 #include "BlackVeil.h"

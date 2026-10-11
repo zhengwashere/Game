@@ -1,0 +1,653 @@
+{
+  "MissionIndex": 11,
+  "MissionName": "No Witnesses",
+  "LocationName": "UMBRA Operations Center, Prague",
+  "MapAsset": "/Game/Maps/M11",
+  "ParTimeSeconds": 1440,
+  "BriefingText": "Zara: This is the building where it all comes together. Nine countries, one operations floor, and a burn protocol that wipes everything in forty minutes if they think they are compromised. There is no clean way in. There are four dirty ways. Pick one, and remember that the guards here are the best they have - they will coordinate, they will flank, and they will not walk into the same trap twice.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_11_INFILTRATE",
+      "Description": "Breach the operations center",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_11_OPS",
+      "Description": "Reach the operations floor",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_11_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_11_PROTOCOL",
+      "Description": "Disable the burn protocol",
+      "Type": "Hack",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_11_OPS"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_11_DIRECTORY",
+      "Description": "Recover the operations directory",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_11_PROTOCOL"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_11_EXFIL",
+      "Description": "Escape before the building locks down",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_11_DIRECTORY"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_11_KESTREL",
+      "Description": "Locate Yuki Tanaka",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_11_ARCHIVE",
+      "Description": "Wipe the UMBRA archive server",
+      "Type": "Sabotage",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M11_INTEL_A",
+      "Title": "Operations Directory",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M11_INTEL_B",
+      "Title": "Burn Protocol",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M11_INTEL_C",
+      "Title": "Yuki Confession",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "EMPDevice",
+    "StickyCamera",
+    "SmokeGrenade"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle"
+  ],
+  "RewardGadgets": [
+    "EMPDevice"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -4200,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_ENTRY",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.18
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -2200,
+        1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_ATRIUM",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        -200,
+        -1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_GALLERY",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.65,
+        "Bravery": 0.75,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1800,
+        800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_OPS",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        3600,
+        -600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        1200,
+        2400,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_GALLERY",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.18
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3200,
+        -1800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_CCTV",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.45,
+        "Teamwork": 0.95,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -1200,
+        -2400,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_ENTRY",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.85,
+        "ReactionDelay": 0.28,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.18
+      }
+    },
+    {
+      "SpawnID": "G9",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2600,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_OPS",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.9,
+        "Bravery": 0.9,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.25,
+        "MemoryDuration": 40,
+        "SearchPatience": 0.15
+      }
+    },
+    {
+      "SpawnID": "G10",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        600,
+        -2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_ENTRY",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -4200,
+            0,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -3400,
+            800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1200,
+            -2400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3000,
+            -900,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_ATRIUM",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -2200,
+            1400,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_OPS_A",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -600,
+            2000,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_GALLERY",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -200,
+            -1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            2400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            800,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_OPS",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            1800,
+            800,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2600,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            2000,
+            1600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3600,
+            -600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            600,
+            -2200,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_CCTV",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3200,
+            -1800,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_11_ENTRY",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_11_ATRIUM",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_11_GALLERY",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Night, brutalist concrete interior, mixed fluorescent",
+    "Zones": [
+      "Loading entry (service lighting)",
+      "Atrium (high windows, city glow)",
+      "Gallery (spotlit exhibits, deep shadow between)",
+      "Operations floor (bright, open-plan, no cover)",
+      "Command suite (lit, glass walls)",
+      "Server hall (cold blue)"
+    ]
+  },
+  "UniqueMechanic": "Coordinated response: UMBRA guards share contacts aggressively, assign distinct search sectors, and use flanking. Combat escalation is faster here than anywhere else in the campaign.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.25,
+    "PerceptionMultiplier": 1.25,
+    "AlarmEscalationSpeed": 1.4,
+    "bNoCheckpoints": false
+  }
+}

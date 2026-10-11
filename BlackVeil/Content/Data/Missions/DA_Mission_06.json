@@ -1,0 +1,530 @@
+{
+  "MissionIndex": 6,
+  "MissionName": "Deep Cover",
+  "LocationName": "Verdant Gala, Monaco",
+  "MapAsset": "/Game/Maps/M06",
+  "ParTimeSeconds": 900,
+  "BriefingText": "Zara: This one is different. You are going in as a guest, not a ghost. Diplomatic cover, tailored suit, and a face that has been in the guest list database for three weeks. Blend, do not hide. The restricted wing is behind the ballroom. Smile, and nobody will ask what you are doing there.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_06_INFILTRATE",
+      "Description": "Gain entry to the gala",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_06_BALLROOM",
+      "Description": "Reach the ballroom undetected as suspicious",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_06_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_06_WING",
+      "Description": "Enter the restricted east wing",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_06_BALLROOM"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_06_TARGET",
+      "Description": "Identify the broker's contact",
+      "Type": "Custom",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_06_WING"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_06_EXFIL",
+      "Description": "Extract with the guest list",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_06_TARGET"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_06_LISTEN",
+      "Description": "Eavesdrop on three conversations",
+      "Type": "Custom",
+      "bIsOptional": true,
+      "RequiredCount": 3,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_06_DRESSING",
+      "Description": "Plant a listening device in the study",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M06_INTEL_A",
+      "Title": "Guest List",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M06_INTEL_B",
+      "Title": "Ballroom Seating",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M06_INTEL_C",
+      "Title": "Sorn Speech Draft",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "StickyCamera",
+    "FiberOpticCamera",
+    "NoiseMaker"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol"
+  ],
+  "RewardGadgets": [
+    "TearGasGrenade"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        -3000,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_ENTRANCE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.6,
+        "Bravery": 0.7,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        -1400,
+        1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_BALLROOM",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.8,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        600,
+        -800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_WESTWING",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.65,
+        "Bravery": 0.7,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2000,
+        600,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_EASTWING",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.85,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.35,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        3200,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_STUDY",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.7,
+        "Bravery": 0.4,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        -2000,
+        -1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_TERRACE",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.6,
+        "Bravery": 0.65,
+        "Teamwork": 0.95,
+        "ReactionDelay": 0.5,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.3
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_ENTRANCE",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -3000,
+            0,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 90,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_GALA_A",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -2200,
+            600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -2600,
+            -600,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_BALLROOM",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1400,
+            1200,
+            0
+          ],
+          "WaitDuration": 8,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_GALA_B",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -200,
+            1800,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_WESTWING",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            600,
+            -800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1200,
+            -400,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            800,
+            -1200,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_EASTWING",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2000,
+            600,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2600,
+            200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_STUDY",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            3200,
+            0,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_TERRACE",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -2000,
+            -1400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -1000,
+            -1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_06_ENTRANCE",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_06_BALLROOM",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_06_EASTWING",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "Evening, warm interior, sea terrace",
+    "Zones": [
+      "Foyer (bright, chandeliers)",
+      "Ballroom (warm, crowded, noisy)",
+      "Corridors (dim, sconces)",
+      "Restricted wing (white, clinical)",
+      "Terrace (moonlit, open)"
+    ]
+  },
+  "UniqueMechanic": "Social stealth: guards do not attack on sight. Suspicion rises if the player runs, crouches in public, or enters staff-only areas. The player must behave like a guest.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 0.85,
+    "PerceptionMultiplier": 1.0,
+    "AlarmEscalationSpeed": 1.15,
+    "bNoCheckpoints": false
+  }
+}

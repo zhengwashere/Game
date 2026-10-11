@@ -1,0 +1,611 @@
+{
+  "MissionIndex": 7,
+  "MissionName": "Dead Signal",
+  "LocationName": "Kestrel Relay Station, Caucasus",
+  "MapAsset": "/Game/Maps/M07",
+  "ParTimeSeconds": 1200,
+  "BriefingText": "Leon: The station sits on a ridge above the valley. On alarm, two helicopter teams launch from the staging ground within twelve minutes - and the launch order goes out by radio, not by data. Killing the uplink buys you time, but not safety. You need to disable the uplink and the radio mast, and you need to do it before they notice you are there.",
+  "Objectives": [
+    {
+      "ObjectiveID": "OBJ_07_INFILTRATE",
+      "Description": "Reach the relay station",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OBJ_07_UPLINK",
+      "Description": "Disable the communications uplink",
+      "Type": "Sabotage",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_07_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_07_RADIO",
+      "Description": "Destroy the reinforcement radio mast",
+      "Type": "Sabotage",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_07_INFILTRATE"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_07_DATA",
+      "Description": "Extract the relay traffic logs",
+      "Type": "Retrieve",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_07_UPLINK"
+      ]
+    },
+    {
+      "ObjectiveID": "OBJ_07_EXFIL",
+      "Description": "Escape before the helicopters arrive",
+      "Type": "ReachLocation",
+      "bIsOptional": false,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": [
+        "OBJ_07_RADIO",
+        "OBJ_07_DATA"
+      ]
+    },
+    {
+      "ObjectiveID": "OPT_07_TRUCK",
+      "Description": "Steal the valley transport truck",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    },
+    {
+      "ObjectiveID": "OPT_07_ANTENNA",
+      "Description": "Realign the dish for a clean intercept",
+      "Type": "Interact",
+      "bIsOptional": true,
+      "RequiredCount": 1,
+      "bHasLocationMarker": true,
+      "WorldLocation": [
+        0,
+        0,
+        0
+      ],
+      "Prerequisites": []
+    }
+  ],
+  "IntelItems": [
+    {
+      "IntelID": "M07_INTEL_A",
+      "Title": "Relay Manifest",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M07_INTEL_B",
+      "Title": "Reinforcement Order",
+      "Category": "Document"
+    },
+    {
+      "IntelID": "M07_INTEL_C",
+      "Title": "Yuki Message",
+      "Category": "AudioLog"
+    }
+  ],
+  "StartingGadgets": [
+    "HackingDevice",
+    "EMPDevice",
+    "NoiseMaker"
+  ],
+  "StartingWeapons": [
+    "SuppressedPistol",
+    "SuppressedRifle"
+  ],
+  "RewardGadgets": [
+    "Flashbang"
+  ],
+  "EnemyComposition": [
+    {
+      "SpawnID": "G1",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -4000,
+        0,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_APPROACH",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G2",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        -1800,
+        1400,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_RIDGE",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.5,
+        "Bravery": 0.55,
+        "Teamwork": 0.7,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G3",
+      "GuardTypeOrdinal": 1,
+      "Location": [
+        400,
+        -1200,
+        0
+      ],
+      "Rotation": [
+        0,
+        270,
+        0
+      ],
+      "PatrolRouteID": "R_PAD",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.55,
+        "Bravery": 0.7,
+        "Teamwork": 0.6,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G4",
+      "GuardTypeOrdinal": 3,
+      "Location": [
+        2200,
+        800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_DISH",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.75,
+        "Bravery": 0.45,
+        "Teamwork": 0.9,
+        "ReactionDelay": 0.45,
+        "MemoryDuration": 30,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G5",
+      "GuardTypeOrdinal": 4,
+      "Location": [
+        3800,
+        -600,
+        0
+      ],
+      "Rotation": [
+        0,
+        90,
+        0
+      ],
+      "PatrolRouteID": "R_COMMAND",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.8,
+        "Bravery": 0.8,
+        "Teamwork": 1.0,
+        "ReactionDelay": 0.4,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.25
+      }
+    },
+    {
+      "SpawnID": "G6",
+      "GuardTypeOrdinal": 0,
+      "Location": [
+        1000,
+        2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        180,
+        0
+      ],
+      "PatrolRouteID": "R_PAD",
+      "SquadID": "Squad_B",
+      "Personality": {
+        "Vigilance": 0.45,
+        "Bravery": 0.5,
+        "Teamwork": 0.65,
+        "ReactionDelay": 0.6,
+        "MemoryDuration": 25.0,
+        "SearchPatience": 0.35
+      }
+    },
+    {
+      "SpawnID": "G7",
+      "GuardTypeOrdinal": 5,
+      "Location": [
+        2800,
+        -1800,
+        0
+      ],
+      "Rotation": [
+        0,
+        0,
+        0
+      ],
+      "PatrolRouteID": "R_MAST",
+      "SquadID": "Squad_C",
+      "Personality": {
+        "Vigilance": 0.85,
+        "Bravery": 0.85,
+        "Teamwork": 0.8,
+        "ReactionDelay": 0.3,
+        "MemoryDuration": 35,
+        "SearchPatience": 0.2
+      }
+    },
+    {
+      "SpawnID": "G8",
+      "GuardTypeOrdinal": 2,
+      "Location": [
+        -600,
+        -2200,
+        0
+      ],
+      "Rotation": [
+        0,
+        45,
+        0
+      ],
+      "PatrolRouteID": "R_GENERATOR",
+      "SquadID": "Squad_A",
+      "Personality": {
+        "Vigilance": 0.35,
+        "Bravery": 0.35,
+        "Teamwork": 0.5,
+        "ReactionDelay": 1.0,
+        "MemoryDuration": 20,
+        "SearchPatience": 0.5
+      }
+    }
+  ],
+  "PatrolRoutes": [
+    {
+      "RouteID": "R_APPROACH",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            -4000,
+            0,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3200,
+            700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            -3600,
+            -700,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_RIDGE",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -1800,
+            1400,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": true,
+          "ConversationID": "CONV_RIDGE",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            -600,
+            1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_PAD",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            400,
+            -1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 270,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1000,
+            2200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            1600,
+            0,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_DISH",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2200,
+            800,
+            0
+          ],
+          "WaitDuration": 10,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            2600,
+            1200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_COMMAND",
+      "PatrolMode": "Loop",
+      "Waypoints": [
+        {
+          "Location": [
+            3800,
+            -600,
+            0
+          ],
+          "WaitDuration": 7,
+          "LookYawOffset": 90,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        },
+        {
+          "Location": [
+            4200,
+            -200,
+            0
+          ],
+          "WaitDuration": 5,
+          "LookYawOffset": 180,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    },
+    {
+      "RouteID": "R_MAST",
+      "PatrolMode": "OneShot",
+      "Waypoints": [
+        {
+          "Location": [
+            2800,
+            -1800,
+            0
+          ],
+          "WaitDuration": 9,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": true
+        }
+      ]
+    },
+    {
+      "RouteID": "R_GENERATOR",
+      "PatrolMode": "PingPong",
+      "Waypoints": [
+        {
+          "Location": [
+            -600,
+            -2200,
+            0
+          ],
+          "WaitDuration": 6,
+          "LookYawOffset": 45,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        },
+        {
+          "Location": [
+            200,
+            -1800,
+            0
+          ],
+          "WaitDuration": 4,
+          "LookYawOffset": 0,
+          "bTriggerConversation": false,
+          "ConversationID": "",
+          "bScanWhileWaiting": false
+        }
+      ]
+    }
+  ],
+  "Checkpoints": [
+    {
+      "CheckpointID": "CP_07_APPROACH",
+      "Location": [
+        0,
+        0,
+        0
+      ],
+      "Order": 0
+    },
+    {
+      "CheckpointID": "CP_07_RIDGE",
+      "Location": [
+        1500,
+        0,
+        0
+      ],
+      "Order": 1
+    },
+    {
+      "CheckpointID": "CP_07_PAD",
+      "Location": [
+        3000,
+        0,
+        0
+      ],
+      "Order": 2
+    }
+  ],
+  "LightingSetup": {
+    "Ambient": "High altitude night, wind, snow haze",
+    "Zones": [
+      "Approach road (headlights, exposed)",
+      "Ridge path (moonlit, deep shadows)",
+      "Helipad (floodlit, high contrast)",
+      "Dish platform (work lights, exposed)",
+      "Command bunker (interior, lit)",
+      "Generator shed (unlit)"
+    ]
+  },
+  "UniqueMechanic": "Reinforcement timer: the moment the alarm sounds, a 12-minute countdown begins. The player can extend it by destroying the radio mast and can eliminate it entirely by also disabling the uplink.",
+  "Difficulty": {
+    "EnemyCountMultiplier": 1.0,
+    "PerceptionMultiplier": 1.1,
+    "AlarmEscalationSpeed": 1.3,
+    "bNoCheckpoints": false
+  }
+}

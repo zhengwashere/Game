@@ -7,6 +7,10 @@
 #include "UI/BVHUDBase.h"
 #include "Kismet/GameplayStatics.h"
 #include "Engine/World.h"
+#include "AI/BVGuardCharacter.h"
+#include "AI/BVAlertStateComponent.h"
+#include "AI/BVSquadManager.h"
+#include "EngineUtils.h"
 #include "BlackVeil.h"
 
 ABVGameMode::ABVGameMode()
@@ -46,6 +50,48 @@ void ABVGameMode::BeginPlay()
 void ABVGameMode::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+
+	UWorld* World = GetWorld();
+	if (!World) { return; }
+
+	// Keep the mission clock running and mirror squad alert state onto the
+	// game mode so the HUD and audio can react to it.
+	if (UBVMissionManager* MissionManager = World->GetSubsystem<UBVMissionManager>())
+	{
+		MissionManager->TickMission(DeltaSeconds);
+	}
+
+	if (UBVSquadManager* Squad = World->GetSubsystem<UBVSquadManager>())
+	{
+		// Sample the worst alert state across all registered guards by asking the
+		// player's combat contact; here we simply promote to Combat when any guard
+		is in the combat state.
+		EBVGlobalAlertLevel Worst = EBVGlobalAlertLevel::Normal;
+		for (TActorIterator<ABVGuardCharacter> It(World); It; ++It)
+		{
+			ABVGuardCharacter* Guard = *It;
+			if (!Guard || Guard->IsIncapacitated()) { continue; }
+			const UBVAlertStateComponent* Alert = Guard->GetAlertStateComponent();
+			if (!Alert) { continue; }
+
+			switch (Alert->GetAlertState())
+			{
+			case EBVAlertState::Combat:        Worst = EBVGlobalAlertLevel::Combat; break;
+			case EBVAlertState::Alerted:
+				if (Worst < EBVGlobalAlertLevel::Alarmed) { Worst = EBVGlobalAlertLevel::Alarmed; }
+				break;
+			case EBVAlertState::Searching:
+			case EBVAlertState::Investigating:
+				if (Worst < EBVGlobalAlertLevel::Searching) { Worst = EBVGlobalAlertLevel::Searching; }
+				break;
+			case EBVAlertState::Suspicious:
+				if (Worst < EBVGlobalAlertLevel::Suspicious) { Worst = EBVGlobalAlertLevel::Suspicious; }
+				break;
+			default: break;
+			}
+		}
+		SetGlobalAlertLevel(Worst);
+	}
 }
 
 void ABVGameMode::OnMissionSucceeded()

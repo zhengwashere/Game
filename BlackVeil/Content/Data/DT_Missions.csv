@@ -1,0 +1,13 @@
+Name,MissionIndex,DisplayName,LocationName,MapAsset,ParTimeSeconds,UnlockRequirement
+M01,1,Dead Drop,"Kostov Steelworks, Ukraine",/Game/Maps/M01,900,None
+M02,2,Blackout,"Vasiliev Power Station, Georgia",/Game/Maps/M02,960,Mission 1
+M03,3,Ghost Protocol,"Halcyon Tower, Singapore",/Game/Maps/M03,1020,Mission 2
+M04,4,Cold Harbor,"Port of Kalamis, Cyprus",/Game/Maps/M04,1080,Mission 3
+M05,5,Paper Trail,"Directorate Archive, Vienna",/Game/Maps/M05,1140,Mission 4
+M06,6,Deep Cover,"Verdant Gala, Monaco",/Game/Maps/M06,900,Mission 5
+M07,7,Dead Signal,"Kestrel Relay Station, Caucasus",/Game/Maps/M07,1200,Mission 6
+M08,8,Silent Depths,"Anvil Deep Research Station, Arctic",/Game/Maps/M08,1260,Mission 7
+M09,9,The Exchange,"Marchetti Compound, Sicily",/Game/Maps/M09,1200,Mission 8
+M10,10,Broken Arrow,"Site 14 Research Complex, Kazakhstan",/Game/Maps/M10,1320,Mission 9
+M11,11,No Witnesses,"UMBRA Operations Center, Prague",/Game/Maps/M11,1440,Mission 10
+M12,12,Black Veil,"Sorn Estate, Black Sea Coast",/Game/Maps/M12,1500,Mission 11
