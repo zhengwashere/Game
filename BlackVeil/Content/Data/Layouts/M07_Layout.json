@@ -1,0 +1,366 @@
+{
+  "MissionIndex": 7,
+  "Name": "Dead Signal",
+  "Rooms": [
+    {
+      "ID": "ApproachRoad",
+      "X": -4300,
+      "Y": 0,
+      "W": 2400,
+      "D": 1800,
+      "H": 800,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "RidgePath",
+      "X": -2100,
+      "Y": 1700,
+      "W": 2800,
+      "D": 1400,
+      "H": 800,
+      "FloorZ": 300,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Helipad",
+      "X": 500,
+      "Y": -1300,
+      "W": 2600,
+      "D": 2200,
+      "H": 800,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "DishPlatform",
+      "X": 2500,
+      "Y": 1000,
+      "W": 2200,
+      "D": 1600,
+      "H": 500,
+      "FloorZ": 700,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CommandBunker",
+      "X": 4200,
+      "Y": -600,
+      "W": 2000,
+      "D": 1600,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "GeneratorShed",
+      "X": -700,
+      "Y": -2400,
+      "W": 1600,
+      "D": 1200,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Barrier",
+      "X": -3600,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Barrier",
+      "X": -3600,
+      "Y": -800,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Rock",
+      "X": -2100,
+      "Y": 2300,
+      "Z": 0.0,
+      "W": 600,
+      "D": 500,
+      "H": 400
+    },
+    {
+      "Type": "Rock",
+      "X": -1200,
+      "Y": 1500,
+      "Z": 0.0,
+      "W": 500,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Crate",
+      "X": 200,
+      "Y": -1900,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": 900,
+      "Y": -1900,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Dish",
+      "X": 2500,
+      "Y": 1000,
+      "Z": 700,
+      "W": 800,
+      "D": 800,
+      "H": 120
+    },
+    {
+      "Type": "Console",
+      "X": 4000,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": 4400,
+      "Y": -200,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Machine",
+      "X": -700,
+      "Y": -2400,
+      "Z": 0.0,
+      "W": 500,
+      "D": 300,
+      "H": 260
+    },
+    {
+      "Type": "Crate",
+      "X": 4200,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -4300,
+      "Y": 600,
+      "Z": 760,
+      "Intensity": 4000,
+      "Radius": 1800,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -2100,
+      "Y": 1700,
+      "Z": 1060,
+      "Intensity": 3500,
+      "Radius": 1600,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 500,
+      "Y": -1300,
+      "Z": 760,
+      "Intensity": 6000,
+      "Radius": 2600,
+      "Group": "Group_B",
+      "ConeAngle": 50,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 500,
+      "Y": 700,
+      "Z": 760,
+      "Intensity": 6000,
+      "Radius": 2600,
+      "Group": "Group_B",
+      "ConeAngle": 50,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2500,
+      "Y": 1000,
+      "Z": 1160,
+      "Intensity": 4000,
+      "Radius": 1800,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 4200,
+      "Y": -600,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1400,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -700,
+      "Y": -2400,
+      "Z": 340,
+      "Intensity": 2200,
+      "Radius": 1200,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": -300,
+      "Y": -400,
+      "Z": 300,
+      "Steps": 16,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 300
+    },
+    {
+      "X": 1400,
+      "Y": 400,
+      "Z": 0,
+      "Steps": 28,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 320
+    }
+  ],
+  "Platforms": [],
+  "PlayerStart": [
+    -5000,
+    0,
+    100
+  ]
+}

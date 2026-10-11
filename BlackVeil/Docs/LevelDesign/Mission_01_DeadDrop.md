@@ -3,6 +3,8 @@
 **Location:** Kostov Steelworks, Ukraine  
 **Map asset:** `/Game/Maps/M01`  
 **Par time:** 900 seconds  
+**Blockout layout:** `Content/Data/Layouts/M01_Layout.json` (6 rooms)
+
 **Unique mechanic:** See level design document.
 
 ## Narrative context
@@ -19,41 +21,44 @@ Zara: The informant went silent six days ago. His last transmission said the led
 | `OPT_01_CONTAINER` | Photograph the unlisted rail manifest | Interact | Yes | 1 | - |
 | `OPT_01_NOALARM` | Complete without raising the alarm | Custom | Yes | 1 | - |
 
-## Routes and verticality
+## Blockout spaces
 
-Primary route: main approach, through the front security line. Fastest, most watched.
-Alternate route A: service/maintenance passage bypassing the first checkpoint.
-Alternate route B: elevated route (roof, gantry, catwalk, cliff) with better sightlines but less cover.
-Alternate route C (where applicable): sub-level, tunnel or water route requiring a gadget or an interaction to open.
+These are the actual built rooms. Coordinates are world-space cm.
+
+| Room | Centre (X, Y) | Size W x D | Wall height | Floor Z | Ceiling |
+|------|---------------|------------|-------------|---------|---------|
+| Gatehouse | (-4600, 0) | 1200 x 1200 | 380 | 0 | yes |
+| PerimeterYard | (-2450, 300) | 3300 x 2800 | 500 | 0 | open |
+| RollingMill | (900, 900) | 3200 x 2200 | 900 | 0 | yes |
+| LoadingDock | (3000, -500) | 2000 x 1800 | 500 | 0 | yes |
+| OfficeBlock | (1100, -1550) | 2200 x 1200 | 350 | 0 | yes |
+| ServiceTunnel | (-300, -1750) | 2600 x 420 | 260 | 0 | yes |
+
+**Cover props: 19** (containers, machines, shelving, hedges and desks placed to break sightlines).
+
+**Light actors: 8** across groups: Dock, Mill, Office, Perimeter
 
 ## Guard deployment
 
 | Spawn | Type | Position | Squad | Patrol route | Vigilance |
 |-------|------|----------|-------|--------------|-----------|
-| G1 | Standard | [-4200, 0, 0] | Squad_A | `R_GATE` | 0.35 |
-| G2 | Standard | [-1800, 900, 0] | Squad_A | `R_YARD` | 0.45 |
-| G3 | Standard | [600, 1200, 0] | Squad_A | `R_MILL` | 0.50 |
-| G4 | Standard | [2400, -600, 0] | Squad_B | `R_LOADING` | 0.40 |
-| G5 | Standard | [0, -1500, 0] | Squad_B | `R_WEST` | 0.55 |
-| G6 | Technician | [1500, 0, 0] | Squad_A | `R_OFFICE` | 0.30 |
+| G1 | Standard | (-4200, 0) | Squad_A | `R_GATE` | 0.35 |
+| G2 | Standard | (-1800, 900) | Squad_A | `R_YARD` | 0.45 |
+| G3 | Standard | (600, 1200) | Squad_A | `R_MILL` | 0.50 |
+| G4 | Standard | (2400, -600) | Squad_B | `R_LOADING` | 0.40 |
+| G5 | Standard | (200, -1500) | Squad_B | `R_WEST` | 0.55 |
+| G6 | Technician | (1500, 0) | Squad_A | `R_OFFICE` | 0.30 |
 
 ## Patrol routes
 
-**`R_GATE`** (Loop mode)
-**`R_YARD`** (PingPong mode)
-**`R_MILL`** (Loop mode)
-**`R_LOADING`** (Loop mode)
-**`R_WEST`** (PingPong mode)
-**`R_OFFICE`** (OneShot mode)
-
-| Route | Waypoints | Wait times | Scans while waiting | Conversation triggers |
-|-------|-----------|------------|---------------------|-----------------------|
-| `R_GATE` | (-4200, 0) -> (-3400, 400) -> (-3600, -400) | 4s, 3s, 3s | no | none |
-| `R_YARD` | (-1800, 900) -> (-1000, 1500) -> (-2200, 1600) | 5s, 3s, 4s | yes | CONV_YARD_A |
-| `R_MILL` | (600, 1200) -> (1400, 900) -> (1200, 200) -> (400, 300) | 6s, 3s, 4s, 3s | yes | CONV_MILL |
-| `R_LOADING` | (2400, -600) -> (3000, 200) -> (2200, 600) | 4s, 5s, 3s | yes | CONV_LOAD |
-| `R_WEST` | (0, -1500) -> (-800, -1200) -> (800, -1300) | 4s, 3s, 3s | no | none |
-| `R_OFFICE` | (1500, 0) -> (1600, 400) | 8s, 5s | yes | none |
+| Route | Mode | Waypoints | Wait times | Scans | Conversations |
+|-------|------|-----------|------------|-------|---------------|
+| `R_GATE` | Loop | (-4200, 0) -> (-3400, 400) -> (-3600, -400) | 4s, 3s, 3s | no | none |
+| `R_YARD` | PingPong | (-1800, 900) -> (-1000, 1500) -> (-2200, 1500) | 5s, 3s, 4s | yes | CONV_YARD_A |
+| `R_MILL` | Loop | (600, 1200) -> (1400, 900) -> (1200, 200) -> (400, 300) | 6s, 3s, 4s, 3s | yes | CONV_MILL |
+| `R_LOADING` | Loop | (2400, -600) -> (3000, 200) -> (2200, 600) | 4s, 5s, 3s | yes | CONV_LOAD |
+| `R_WEST` | PingPong | (200, -1500) -> (-1000, -900) -> (800, -1300) | 4s, 3s, 3s | no | none |
+| `R_OFFICE` | OneShot | (1500, 0) -> (1600, 400) | 8s, 5s | yes | none |
 
 ## Lighting design
 
@@ -64,7 +69,8 @@ Alternate route C (where applicable): sub-level, tunnel or water route requiring
 - Rolling mill interior (sparse sodium lights, flickering)
 - Office block (lit, blinds)
 
-Lighting is gameplay, not decoration: every zone above changes how far guards can see the player.
+Every light is a real actor, and `UBVStealthComponent` samples them,
+so each placement changes how detectable the operative is in that space.
 
 ## Intelligence
 
@@ -74,17 +80,23 @@ Lighting is gameplay, not decoration: every zone above changes how far guards ca
 
 ## Checkpoints
 
-- `CP_01_GATE` at [-4500, 0, 0] (order 0)
-- `CP_01_YARD` at [-1500, 700, 0] (order 1)
-- `CP_01_MILL` at [900, 1000, 0] (order 2)
+- `CP_01_GATE` at (-4500, 0, 0)
+- `CP_01_YARD` at (-1500, 700, 0)
+- `CP_01_MILL` at (900, 1000, 0)
 
 ## Recommended approaches
 
-**Ghost:** avoid every guard interaction, use the alternate elevated/sub-level route, kill the lights and cameras before committing to a corridor. Requires the surveillance detector and patience with patrol timing.
+**Ghost:** avoid every guard interaction, use the elevated or service
+route, kill lights and cameras before committing to a corridor. Needs the
+surveillance detector and patience with patrol timing.
 
-**Panther:** neutralise the two guards on the highest-traffic route first, conceal both bodies, then move through the vacated space. Non-lethal takedowns keep the score clean.
+**Panther:** neutralise the two guards on the highest-traffic route first,
+conceal both bodies, then move through the vacated space. Non-lethal
+takedowns keep the score clean.
 
-**Assault (fallback):** if detected, break contact toward the nearest hard cover, use smoke or a flashbang to reset the engagement, and withdraw along a route the squad has not yet searched.
+**Assault (fallback):** if detected, break contact toward the nearest hard
+cover, use smoke or a flashbang to reset the engagement, and withdraw along
+a route the squad has not yet searched.
 
 ## Set piece
 

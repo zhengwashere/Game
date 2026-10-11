@@ -3,6 +3,8 @@
 **Location:** Site 14 Research Complex, Kazakhstan  
 **Map asset:** `/Game/Maps/M10`  
 **Par time:** 1320 seconds  
+**Blockout layout:** `Content/Data/Layouts/M10_Layout.json` (6 rooms)
+
 **Unique mechanic:** Prototype sabotage: the directed-energy prototype must be disabled via a three-stage process (coolant, capacitor, control core) under a hardening security response - the longer the player takes, the more guards converge.
 
 ## Narrative context
@@ -21,44 +23,47 @@ Leon: Site 14 is a Soviet-era bunker with a modern coat of paint and a very mode
 | `OPT_10_SORN` | Find Sorn's personal log | Retrieve | Yes | 1 | - |
 | `OPT_10_PRISONER` | Free the detained technician | Interact | Yes | 1 | - |
 
-## Routes and verticality
+## Blockout spaces
 
-Primary route: main approach, through the front security line. Fastest, most watched.
-Alternate route A: service/maintenance passage bypassing the first checkpoint.
-Alternate route B: elevated route (roof, gantry, catwalk, cliff) with better sightlines but less cover.
-Alternate route C (where applicable): sub-level, tunnel or water route requiring a gadget or an interaction to open.
+These are the actual built rooms. Coordinates are world-space cm.
+
+| Room | Centre (X, Y) | Size W x D | Wall height | Floor Z | Ceiling |
+|------|---------------|------------|-------------|---------|---------|
+| PerimeterYard | (-4000, 0) | 2400 x 1800 | 900 | 0 | open |
+| VehicleHangar | (-1800, 1500) | 3200 x 2400 | 1200 | 0 | yes |
+| BunkerCorridor | (700, -1200) | 3400 x 700 | 400 | 0 | yes |
+| Laboratory | (2500, 900) | 3000 x 2200 | 500 | 0 | yes |
+| CommandSuite | (4100, -600) | 2200 x 1800 | 420 | 0 | yes |
+| PrototypeChamber | (1600, 100) | 2000 x 1800 | 800 | 0 | yes |
+
+**Cover props: 16** (containers, machines, shelving, hedges and desks placed to break sightlines).
+
+**Light actors: 9** across groups: Group_A, Group_B, Group_C
 
 ## Guard deployment
 
 | Spawn | Type | Position | Squad | Patrol route | Vigilance |
 |-------|------|----------|-------|--------------|-----------|
-| G1 | Elite | [-3800, 0, 0] | Squad_A | `R_PERIMETER` | 0.85 |
-| G2 | Armored | [-1600, 1400, 0] | Squad_A | `R_HANGAR` | 0.60 |
-| G3 | Elite | [600, -1200, 0] | Squad_B | `R_CORRIDOR` | 0.80 |
-| G4 | Elite | [2400, 800, 0] | Squad_B | `R_LAB` | 0.90 |
-| G5 | Commander | [3800, -600, 0] | Squad_C | `R_COMMAND` | 0.80 |
-| G6 | Armored | [1200, 2200, 0] | Squad_A | `R_HANGAR` | 0.60 |
-| G7 | Surveillance | [3000, -1800, 0] | Squad_C | `R_CCTV` | 0.75 |
-| G8 | Elite | [-800, -2200, 0] | Squad_A | `R_PERIMETER` | 0.85 |
-| G9 | Elite | [1600, 0, 0] | Squad_B | `R_CORRIDOR` | 0.85 |
+| G1 | Elite | (-3800, 0) | Squad_A | `R_PERIMETER` | 0.85 |
+| G2 | Armored | (-1600, 1400) | Squad_A | `R_HANGAR` | 0.60 |
+| G3 | Elite | (600, -1200) | Squad_B | `R_CORRIDOR` | 0.80 |
+| G4 | Elite | (2400, 800) | Squad_B | `R_LAB` | 0.90 |
+| G5 | Commander | (3800, -600) | Squad_C | `R_COMMAND` | 0.80 |
+| G6 | Armored | (1200, 1800) | Squad_A | `R_HANGAR` | 0.60 |
+| G7 | Surveillance | (3200, -1300) | Squad_C | `R_CCTV` | 0.75 |
+| G8 | Elite | (-800, -1350) | Squad_A | `R_PERIMETER` | 0.85 |
+| G9 | Elite | (1600, 0) | Squad_B | `R_CORRIDOR` | 0.85 |
 
 ## Patrol routes
 
-**`R_PERIMETER`** (Loop mode)
-**`R_HANGAR`** (PingPong mode)
-**`R_CORRIDOR`** (Loop mode)
-**`R_LAB`** (OneShot mode)
-**`R_COMMAND`** (Loop mode)
-**`R_CCTV`** (OneShot mode)
-
-| Route | Waypoints | Wait times | Scans while waiting | Conversation triggers |
-|-------|-----------|------------|---------------------|-----------------------|
-| `R_PERIMETER` | (-3800, 0) -> (-3000, 800) -> (-800, -2200) -> (-2600, -900) | 6s, 4s, 5s, 4s | yes | none |
-| `R_HANGAR` | (-1600, 1400) -> (1200, 2200) | 5s, 5s | yes | CONV_HANGAR |
-| `R_CORRIDOR` | (600, -1200) -> (1600, 0) -> (1000, -800) | 5s, 5s, 4s | no | none |
-| `R_LAB` | (2400, 800) -> (2800, 1200) | 10s, 5s | yes | none |
-| `R_COMMAND` | (3800, -600) -> (4200, -200) | 7s, 5s | yes | none |
-| `R_CCTV` | (3000, -1800) | 9s | yes | none |
+| Route | Mode | Waypoints | Wait times | Scans | Conversations |
+|-------|------|-----------|------------|-------|---------------|
+| `R_PERIMETER` | Loop | (-3800, 0) -> (-3000, 700) -> (-800, -1350) -> (-3000, -700) | 6s, 4s, 5s, 4s | yes | none |
+| `R_HANGAR` | PingPong | (-1600, 1400) -> (1200, 1800) | 5s, 5s | yes | CONV_HANGAR |
+| `R_CORRIDOR` | Loop | (600, -1200) -> (1600, 0) -> (1000, -600) | 5s, 5s, 4s | no | none |
+| `R_LAB` | OneShot | (2400, 800) -> (2800, 1200) | 10s, 5s | yes | none |
+| `R_COMMAND` | Loop | (3800, -600) -> (4200, -200) | 7s, 5s | yes | none |
+| `R_CCTV` | OneShot | (3200, -1300) | 9s | yes | none |
 
 ## Lighting design
 
@@ -70,7 +75,8 @@ Alternate route C (where applicable): sub-level, tunnel or water route requiring
 - Laboratory (bright, clinical)
 - Prototype chamber (caged, spotlights)
 
-Lighting is gameplay, not decoration: every zone above changes how far guards can see the player.
+Every light is a real actor, and `UBVStealthComponent` samples them,
+so each placement changes how detectable the operative is in that space.
 
 ## Intelligence
 
@@ -80,17 +86,23 @@ Lighting is gameplay, not decoration: every zone above changes how far guards ca
 
 ## Checkpoints
 
-- `CP_10_PERIMETER` at [0, 0, 0] (order 0)
-- `CP_10_HANGAR` at [1500, 0, 0] (order 1)
-- `CP_10_LAB` at [3000, 0, 0] (order 2)
+- `CP_10_PERIMETER` at (-400, 500, 0)
+- `CP_10_HANGAR` at (1500, 0, 0)
+- `CP_10_LAB` at (3000, 0, 0)
 
 ## Recommended approaches
 
-**Ghost:** avoid every guard interaction, use the alternate elevated/sub-level route, kill the lights and cameras before committing to a corridor. Requires the surveillance detector and patience with patrol timing.
+**Ghost:** avoid every guard interaction, use the elevated or service
+route, kill lights and cameras before committing to a corridor. Needs the
+surveillance detector and patience with patrol timing.
 
-**Panther:** neutralise the two guards on the highest-traffic route first, conceal both bodies, then move through the vacated space. Non-lethal takedowns keep the score clean.
+**Panther:** neutralise the two guards on the highest-traffic route first,
+conceal both bodies, then move through the vacated space. Non-lethal
+takedowns keep the score clean.
 
-**Assault (fallback):** if detected, break contact toward the nearest hard cover, use smoke or a flashbang to reset the engagement, and withdraw along a route the squad has not yet searched.
+**Assault (fallback):** if detected, break contact toward the nearest hard
+cover, use smoke or a flashbang to reset the engagement, and withdraw along
+a route the squad has not yet searched.
 
 ## Set piece
 

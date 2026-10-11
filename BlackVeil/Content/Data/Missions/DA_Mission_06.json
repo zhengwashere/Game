@@ -146,9 +146,9 @@
       "SpawnID": "G1",
       "GuardTypeOrdinal": 4,
       "Location": [
-        -3000,
-        0,
-        0
+        -3000.0,
+        0.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -170,9 +170,9 @@
       "SpawnID": "G2",
       "GuardTypeOrdinal": 5,
       "Location": [
-        -1400,
-        1200,
-        0
+        -1400.0,
+        1200.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -194,9 +194,9 @@
       "SpawnID": "G3",
       "GuardTypeOrdinal": 4,
       "Location": [
-        600,
-        -800,
-        0
+        600.0,
+        -850.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -218,9 +218,9 @@
       "SpawnID": "G4",
       "GuardTypeOrdinal": 5,
       "Location": [
-        2000,
-        600,
-        0
+        2000.0,
+        600.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -242,9 +242,9 @@
       "SpawnID": "G5",
       "GuardTypeOrdinal": 3,
       "Location": [
-        3200,
-        0,
-        0
+        3200.0,
+        0.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -266,9 +266,9 @@
       "SpawnID": "G6",
       "GuardTypeOrdinal": 4,
       "Location": [
-        -2000,
-        -1400,
-        0
+        -2000.0,
+        -1400.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -294,9 +294,9 @@
       "Waypoints": [
         {
           "Location": [
-            -3000,
-            0,
-            0
+            -3000.0,
+            0.0,
+            0.0
           ],
           "WaitDuration": 6,
           "LookYawOffset": 90,
@@ -306,9 +306,9 @@
         },
         {
           "Location": [
-            -2200,
-            600,
-            0
+            -2200.0,
+            600.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -318,9 +318,9 @@
         },
         {
           "Location": [
-            -2600,
-            -600,
-            0
+            -2600.0,
+            -600.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -336,9 +336,9 @@
       "Waypoints": [
         {
           "Location": [
-            -1400,
-            1200,
-            0
+            -1400.0,
+            1200.0,
+            0.0
           ],
           "WaitDuration": 8,
           "LookYawOffset": 180,
@@ -348,9 +348,9 @@
         },
         {
           "Location": [
-            -200,
-            1800,
-            0
+            -200.0,
+            1800.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 90,
@@ -366,9 +366,9 @@
       "Waypoints": [
         {
           "Location": [
-            600,
-            -800,
-            0
+            600.0,
+            -850.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -378,9 +378,9 @@
         },
         {
           "Location": [
-            1200,
-            -400,
-            0
+            1500.0,
+            -200.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 90,
@@ -390,9 +390,9 @@
         },
         {
           "Location": [
-            800,
-            -1200,
-            0
+            800.0,
+            -950.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -408,9 +408,9 @@
       "Waypoints": [
         {
           "Location": [
-            2000,
-            600,
-            0
+            2000.0,
+            600.0,
+            0.0
           ],
           "WaitDuration": 9,
           "LookYawOffset": 270,
@@ -420,9 +420,9 @@
         },
         {
           "Location": [
-            2600,
-            200,
-            0
+            2600.0,
+            200.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 180,
@@ -438,9 +438,9 @@
       "Waypoints": [
         {
           "Location": [
-            3200,
-            0,
-            0
+            3200.0,
+            0.0,
+            0.0
           ],
           "WaitDuration": 10,
           "LookYawOffset": 90,
@@ -456,9 +456,9 @@
       "Waypoints": [
         {
           "Location": [
-            -2000,
-            -1400,
-            0
+            -2000.0,
+            -1400.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 45,
@@ -468,9 +468,9 @@
         },
         {
           "Location": [
-            -1000,
-            -1800,
-            0
+            -1000.0,
+            -1800.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -485,27 +485,27 @@
     {
       "CheckpointID": "CP_06_ENTRANCE",
       "Location": [
-        0,
-        0,
-        0
+        0.0,
+        300.0,
+        0.0
       ],
       "Order": 0
     },
     {
       "CheckpointID": "CP_06_BALLROOM",
       "Location": [
-        1500,
-        0,
-        0
+        1500.0,
+        0.0,
+        0.0
       ],
       "Order": 1
     },
     {
       "CheckpointID": "CP_06_EASTWING",
       "Location": [
-        3000,
-        0,
-        0
+        3000.0,
+        0.0,
+        0.0
       ],
       "Order": 2
     }

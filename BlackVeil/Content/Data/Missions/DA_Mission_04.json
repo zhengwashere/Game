@@ -131,9 +131,9 @@
       "SpawnID": "G1",
       "GuardTypeOrdinal": 0,
       "Location": [
-        -3600,
-        0,
-        0
+        -3600.0,
+        0.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -155,9 +155,9 @@
       "SpawnID": "G2",
       "GuardTypeOrdinal": 0,
       "Location": [
-        -1600,
-        1400,
-        0
+        -1600.0,
+        1400.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -179,9 +179,9 @@
       "SpawnID": "G3",
       "GuardTypeOrdinal": 1,
       "Location": [
-        600,
-        -1200,
-        0
+        600.0,
+        -1200.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -203,9 +203,9 @@
       "SpawnID": "G4",
       "GuardTypeOrdinal": 0,
       "Location": [
-        2400,
-        800,
-        0
+        2400.0,
+        900.0,
+        900.0
       ],
       "Rotation": [
         0,
@@ -227,9 +227,9 @@
       "SpawnID": "G5",
       "GuardTypeOrdinal": 3,
       "Location": [
-        3400,
-        -600,
-        0
+        3400.0,
+        -600.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -251,9 +251,9 @@
       "SpawnID": "G6",
       "GuardTypeOrdinal": 0,
       "Location": [
-        1200,
-        2000,
-        0
+        200.0,
+        2000.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -275,9 +275,9 @@
       "SpawnID": "G7",
       "GuardTypeOrdinal": 2,
       "Location": [
-        -800,
-        -2000,
-        0
+        -800.0,
+        -2190.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -303,9 +303,9 @@
       "Waypoints": [
         {
           "Location": [
-            -3600,
-            0,
-            0
+            -3600.0,
+            0.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 90,
@@ -315,9 +315,9 @@
         },
         {
           "Location": [
-            -2800,
-            700,
-            0
+            -2800.0,
+            600.0,
+            0.0
           ],
           "WaitDuration": 3,
           "LookYawOffset": 180,
@@ -327,9 +327,9 @@
         },
         {
           "Location": [
-            -3200,
-            -700,
-            0
+            -3200.0,
+            -600.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -345,9 +345,9 @@
       "Waypoints": [
         {
           "Location": [
-            -1600,
-            1400,
-            0
+            -1600.0,
+            1400.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 180,
@@ -357,9 +357,9 @@
         },
         {
           "Location": [
-            -400,
-            1800,
-            0
+            -400.0,
+            1800.0,
+            0.0
           ],
           "WaitDuration": 3,
           "LookYawOffset": 90,
@@ -369,9 +369,9 @@
         },
         {
           "Location": [
-            -2200,
-            2200,
-            0
+            -2200.0,
+            2200.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 270,
@@ -387,9 +387,9 @@
       "Waypoints": [
         {
           "Location": [
-            600,
-            -1200,
-            0
+            600.0,
+            -1200.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 270,
@@ -399,9 +399,9 @@
         },
         {
           "Location": [
-            1600,
-            -800,
-            0
+            1600.0,
+            -800.0,
+            0.0
           ],
           "WaitDuration": 3,
           "LookYawOffset": 0,
@@ -411,9 +411,9 @@
         },
         {
           "Location": [
-            1200,
-            1800,
-            0
+            1400.0,
+            900.0,
+            900.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -429,9 +429,9 @@
       "Waypoints": [
         {
           "Location": [
-            2400,
-            800,
-            0
+            2400.0,
+            900.0,
+            900.0
           ],
           "WaitDuration": 6,
           "LookYawOffset": 0,
@@ -441,9 +441,9 @@
         },
         {
           "Location": [
-            2800,
-            1200,
-            0
+            2800.0,
+            900.0,
+            900.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 90,
@@ -453,9 +453,9 @@
         },
         {
           "Location": [
-            3200,
-            600,
-            0
+            3200.0,
+            900.0,
+            900.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -471,9 +471,9 @@
       "Waypoints": [
         {
           "Location": [
-            3400,
-            -600,
-            0
+            3400.0,
+            -600.0,
+            0.0
           ],
           "WaitDuration": 7,
           "LookYawOffset": 90,
@@ -483,9 +483,9 @@
         },
         {
           "Location": [
-            3800,
-            -200,
-            0
+            3800.0,
+            -200.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -501,9 +501,9 @@
       "Waypoints": [
         {
           "Location": [
-            -800,
-            -2000,
-            0
+            -800.0,
+            -2190.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 0,
@@ -513,9 +513,9 @@
         },
         {
           "Location": [
-            0,
-            -1600,
-            0
+            0.0,
+            -1600.0,
+            0.0
           ],
           "WaitDuration": 3,
           "LookYawOffset": 45,
@@ -530,27 +530,27 @@
     {
       "CheckpointID": "CP_04_GATE",
       "Location": [
-        0,
-        0,
-        0
+        0.0,
+        200.0,
+        0.0
       ],
       "Order": 0
     },
     {
       "CheckpointID": "CP_04_BAY1",
       "Location": [
-        1500,
-        0,
-        0
+        1500.0,
+        0.0,
+        0.0
       ],
       "Order": 1
     },
     {
       "CheckpointID": "CP_04_GANTRY",
       "Location": [
-        3000,
-        0,
-        0
+        2800.0,
+        0.0,
+        0.0
       ],
       "Order": 2
     }

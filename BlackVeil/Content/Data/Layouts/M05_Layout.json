@@ -1,0 +1,451 @@
+{
+  "MissionIndex": 5,
+  "Name": "Paper Trail",
+  "Rooms": [
+    {
+      "ID": "EntryHall",
+      "X": -3000,
+      "Y": 0,
+      "W": 2000,
+      "D": 1800,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "ReadingRoom",
+      "X": -800,
+      "Y": 1200,
+      "W": 3000,
+      "D": 2000,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 400,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "StacksA",
+      "X": 1700,
+      "Y": -900,
+      "W": 3400,
+      "D": 900,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 300,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "StacksB",
+      "X": 1700,
+      "Y": 700,
+      "W": 3400,
+      "D": 900,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "VaultCorridor",
+      "X": 3900,
+      "Y": 0,
+      "W": 1800,
+      "D": 700,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "LoadingBay",
+      "X": 1700,
+      "Y": 2500,
+      "W": 2600,
+      "D": 1600,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Shelf",
+      "X": 400,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 400,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 1200,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 1200,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2000,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2000,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2800,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2800,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 400,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 400,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 1200,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 1200,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2000,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2000,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2800,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Shelf",
+      "X": 2800,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 300,
+      "D": 90,
+      "H": 240
+    },
+    {
+      "Type": "Table",
+      "X": -1400,
+      "Y": 900,
+      "Z": 0.0,
+      "W": 900,
+      "D": 200,
+      "H": 80
+    },
+    {
+      "Type": "Table",
+      "X": -1400,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 900,
+      "D": 200,
+      "H": 80
+    },
+    {
+      "Type": "Table",
+      "X": -200,
+      "Y": 900,
+      "Z": 0.0,
+      "W": 900,
+      "D": 200,
+      "H": 80
+    },
+    {
+      "Type": "Desk",
+      "X": -3400,
+      "Y": 500,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Crate",
+      "X": 1200,
+      "Y": 2400,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": 2200,
+      "Y": 2600,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3000,
+      "Y": 0,
+      "Z": 380,
+      "Intensity": 3000,
+      "Radius": 1400,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1400,
+      "Y": 1200,
+      "Z": 380,
+      "Intensity": 3200,
+      "Radius": 1500,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -200,
+      "Y": 1600,
+      "Z": 380,
+      "Intensity": 3200,
+      "Radius": 1500,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Rect",
+      "X": 1200,
+      "Y": -900,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Rect",
+      "X": 2400,
+      "Y": -900,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Rect",
+      "X": 1200,
+      "Y": 700,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 3900,
+      "Y": 0,
+      "Z": 340,
+      "Intensity": 3000,
+      "Radius": 1400,
+      "Group": "Group_C",
+      "ConeAngle": 40,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [],
+  "Platforms": [],
+  "PlayerStart": [
+    -3600,
+    0,
+    100
+  ]
+}

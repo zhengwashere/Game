@@ -1,0 +1,403 @@
+{
+  "MissionIndex": 2,
+  "Name": "Blackout",
+  "Rooms": [
+    {
+      "ID": "PerimeterYard",
+      "X": -3300,
+      "Y": 0,
+      "W": 2600,
+      "D": 2600,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "TurbineHall",
+      "X": -1200,
+      "Y": 800,
+      "W": 3400,
+      "D": 2400,
+      "H": 1200,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 400,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "ControlMezzanine",
+      "X": 500,
+      "Y": 0,
+      "W": 2000,
+      "D": 1600,
+      "H": 400,
+      "FloorZ": 500,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CableTunnel",
+      "X": 0,
+      "Y": -1750,
+      "W": 3800,
+      "D": 500,
+      "H": 240,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": -1400,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "BreakerYard",
+      "X": 2500,
+      "Y": 600,
+      "W": 2400,
+      "D": 2000,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "NorthCorridor",
+      "X": 1800,
+      "Y": -900,
+      "W": 2400,
+      "D": 420,
+      "H": 320,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 900,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Machine",
+      "X": -2200,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Machine",
+      "X": -2200,
+      "Y": 200,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Machine",
+      "X": -200,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Machine",
+      "X": -200,
+      "Y": 200,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Barrier",
+      "X": 900,
+      "Y": 1500,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Barrier",
+      "X": 900,
+      "Y": 100,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Console",
+      "X": 500,
+      "Y": 400,
+      "Z": 500,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": 500,
+      "Y": -400,
+      "Z": 500,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": -200,
+      "Y": 0,
+      "Z": 500,
+      "W": 300,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Crate",
+      "X": -3200,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Crate",
+      "X": -3000,
+      "Y": 900,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Crate",
+      "X": 2400,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Transformer",
+      "X": 3000,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 500,
+      "D": 400,
+      "H": 350
+    },
+    {
+      "Type": "Transformer",
+      "X": 3000,
+      "Y": 200,
+      "Z": 0.0,
+      "W": 500,
+      "D": 400,
+      "H": 350
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3800,
+      "Y": 900,
+      "Z": 580,
+      "Intensity": 5000,
+      "Radius": 1700,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -2800,
+      "Y": -900,
+      "Z": 580,
+      "Intensity": 5000,
+      "Radius": 1700,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1800,
+      "Y": 800,
+      "Z": 1150,
+      "Intensity": 6000,
+      "Radius": 2200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 200,
+      "Y": 800,
+      "Z": 1150,
+      "Intensity": 5000,
+      "Radius": 2000,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 500,
+      "Y": 0,
+      "Z": 880,
+      "Intensity": 3000,
+      "Radius": 1500,
+      "Group": "Group_C",
+      "ConeAngle": 45,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2000,
+      "Y": -1750,
+      "Z": 220,
+      "Intensity": 1800,
+      "Radius": 900,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3000,
+      "Y": 600,
+      "Z": 580,
+      "Intensity": 4000,
+      "Radius": 1600,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": 1600,
+      "Y": -400,
+      "Z": 0,
+      "Steps": 20,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 350
+    },
+    {
+      "X": -200,
+      "Y": -1300,
+      "Z": 0,
+      "Steps": 8,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 300
+    }
+  ],
+  "Platforms": [],
+  "PlayerStart": [
+    -4400,
+    0,
+    100
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "MissionIndex": 4,
+  "Name": "Cold Harbor",
+  "Rooms": [
+    {
+      "ID": "EntryGate",
+      "X": -3600,
+      "Y": 0,
+      "W": 2000,
+      "D": 1600,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "Bay1",
+      "X": -1400,
+      "Y": 1200,
+      "W": 3600,
+      "D": 2400,
+      "H": 800,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 600,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Bay2",
+      "X": 1200,
+      "Y": -600,
+      "W": 3600,
+      "D": 2600,
+      "H": 800,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "GantryWalkway",
+      "X": 2600,
+      "Y": 900,
+      "W": 2800,
+      "D": 400,
+      "H": 320,
+      "FloorZ": 900,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "DockmasterOffice",
+      "X": 3700,
+      "Y": -500,
+      "W": 1600,
+      "D": 1400,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "MaintenanceTunnel",
+      "X": -800,
+      "Y": -2200,
+      "W": 2600,
+      "D": 420,
+      "H": 250,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Container",
+      "X": -2600,
+      "Y": 1400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -2600,
+      "Y": 1100,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -1800,
+      "Y": 1900,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -1800,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -900,
+      "Y": 1300,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -900,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -300,
+      "Y": 1900,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -300,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -2600,
+      "Y": 1400,
+      "Z": 260,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 300,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 300,
+      "Y": -900,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 1200,
+      "Y": -1500,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 1200,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 2100,
+      "Y": -700,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 2100,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": 2600,
+      "Y": -1400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Barrier",
+      "X": -3000,
+      "Y": 300,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Crate",
+      "X": -2000,
+      "Y": -1000,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Crate",
+      "X": 3600,
+      "Y": -900,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Desk",
+      "X": 3400,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 80
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3600,
+      "Y": 600,
+      "Z": 560,
+      "Intensity": 5000,
+      "Radius": 1800,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": -2400,
+      "Y": 1800,
+      "Z": 780,
+      "Intensity": 4000,
+      "Radius": 2000,
+      "Group": "Group_A",
+      "ConeAngle": 45,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": -400,
+      "Y": 800,
+      "Z": 780,
+      "Intensity": 4000,
+      "Radius": 2000,
+      "Group": "Group_A",
+      "ConeAngle": 45,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 600,
+      "Y": -1200,
+      "Z": 780,
+      "Intensity": 4500,
+      "Radius": 1900,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2200,
+      "Y": -1000,
+      "Z": 780,
+      "Intensity": 4500,
+      "Radius": 1900,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2600,
+      "Y": 900,
+      "Z": 1180,
+      "Intensity": 3500,
+      "Radius": 1500,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3700,
+      "Y": -500,
+      "Z": 340,
+      "Intensity": 2500,
+      "Radius": 1200,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": 3400,
+      "Y": 400,
+      "Z": 0,
+      "Steps": 36,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 300
+    },
+    {
+      "X": -1800,
+      "Y": -1700,
+      "Z": 0,
+      "Steps": 8,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 280
+    }
+  ],
+  "Platforms": [],
+  "PlayerStart": [
+    -4200,
+    0,
+    100
+  ]
+}

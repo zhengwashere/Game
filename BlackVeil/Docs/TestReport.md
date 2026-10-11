@@ -42,6 +42,40 @@ claims a runtime result that was not actually produced.
 | No duplicate header basenames (include ambiguity risk) | Basename index | Pass - 0 duplicates |
 | Every `.generated.h` include matches its own header filename | Filename cross-check | Pass - 57/57 |
 | Non-reflected headers correctly omit `.generated.h` | Scan | Pass - exactly 3 (`BlackVeil.h` module header, `BVBlackboardKeys.h`, `BVGameplayTags.h`), all plain namespaces with no reflected types |
+| Layout/mission placement cross-check | `python3 Tools/ValidateLayouts.py` | **0 placement problems** (after reconciliation, see 2.2) |
+| Layout structural sanity (12 layouts parse, rooms well-formed, floors/ceilings/stairs present) | Layout loader + placement validator | Pass - 12/12 layouts load and validate |
+
+### 2.2 A real defect found and fixed: level geometry did not match gameplay data
+
+The mission data assets (guard spawns, patrol routes, checkpoints, objectives) and
+the blockout layouts were authored independently. Cross-checking them found
+**117 placement errors**: guards and patrol waypoints that sat outside every built
+room, or on the wrong floor level.
+
+This is the single most important finding in this report, because those guards
+would have spawned inside walls or fallen through the world.
+
+| Step | Result |
+|------|--------|
+| `ValidateLayouts.py` on the first pass | 117 problems across all 12 missions |
+| `ReconcileLayouts.py` | 143 positions needed moving |
+| `ReconcileLayouts.py --apply` | 143 positions rewritten |
+| `ValidateLayouts.py` re-run | **0 problems across all 12 missions** |
+
+Two classes of error were present, and the fix direction is deliberate:
+
+1. **Outside every room footprint.** The layout did not cover the authored
+   coordinates. Fixed by moving the *position* into the nearest room, not by
+   growing the level - the blockout is the physical reality, and moving the guard
+   is what a designer would do on finding one in the void.
+2. **On the wrong floor level.** A guard authored at Z=0 who belonged on an
+   elevated mezzanine (or vice versa). Fixed by setting the position's Z to the
+   owning room's floor level.
+
+Some moves were large (up to 11 m), which means those placements were authored
+well outside the playable space. Those are design decisions that mechanical
+snapping papers over - the reconciler prints every move with its distance so they
+can be reviewed, and they should be, before the art pass.
 
 ### 2.1 Validator output
 
@@ -71,7 +105,7 @@ OK    Black Veil
 | C++ compilation | **Not run** | `Build.bat BlackVeilEditor Win64 Development -project=BlackVeil.uproject` |
 | Editor launch | **Not run** | Open `BlackVeil.uproject` |
 | Blueprint creation | **Not run** | Follow README section 3.4 |
-| Level construction | **Not run** | `LevelSetup.build_mission(N)` per map |
+| Level geometry construction | **Not run** - layout specs exist and validate, but no geometry has been built in the editor | `BlockoutBuilder.build(N)` per map, then the three gameplay tools |
 | NavMesh generation | **Not run** | Add `NavMeshBoundsVolume`, press `P` |
 | Automation tests | **Not run** | Session Frontend > Automation > filter `BlackVeil` |
 | Mission 1-12 playthrough | **Not run** | Requires a built project |

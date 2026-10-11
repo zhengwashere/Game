@@ -1,0 +1,405 @@
+{
+  "MissionIndex": 8,
+  "Name": "Silent Depths",
+  "Rooms": [
+    {
+      "ID": "Airlock",
+      "X": -3400,
+      "Y": 0,
+      "W": 1800,
+      "D": 1600,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "Zone1",
+      "X": -1400,
+      "Y": 1200,
+      "W": 3200,
+      "D": 2200,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 400,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Zone2",
+      "X": 1100,
+      "Y": -1000,
+      "W": 3200,
+      "D": 2200,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "PumpRoom",
+      "X": 700,
+      "Y": -1100,
+      "W": 1400,
+      "D": 1200,
+      "H": 320,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "Observation",
+      "X": 3900,
+      "Y": -500,
+      "W": 2000,
+      "D": 1600,
+      "H": 400,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Zone3Flooded",
+      "X": 1500,
+      "Y": 2000,
+      "W": 2800,
+      "D": 1800,
+      "H": 400,
+      "FloorZ": -60,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CentralShaft",
+      "X": -400,
+      "Y": -2200,
+      "W": 1400,
+      "D": 1400,
+      "H": 1600,
+      "FloorZ": -400,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Console",
+      "X": -2000,
+      "Y": 1200,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": -800,
+      "Y": 1800,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Machine",
+      "X": 200,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Machine",
+      "X": 1800,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Rack",
+      "X": 2600,
+      "Y": -1500,
+      "Z": 0.0,
+      "W": 120,
+      "D": 600,
+      "H": 220
+    },
+    {
+      "Type": "Rack",
+      "X": 2900,
+      "Y": -1500,
+      "Z": 0.0,
+      "W": 120,
+      "D": 600,
+      "H": 220
+    },
+    {
+      "Type": "Crate",
+      "X": -2800,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": -2600,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Machine",
+      "X": 700,
+      "Y": -1100,
+      "Z": 0.0,
+      "W": 500,
+      "D": 400,
+      "H": 260
+    },
+    {
+      "Type": "Console",
+      "X": 3800,
+      "Y": -500,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3400,
+      "Y": 0,
+      "Z": 340,
+      "Intensity": 2500,
+      "Radius": 1200,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1800,
+      "Y": 1200,
+      "Z": 380,
+      "Intensity": 3000,
+      "Radius": 1500,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -600,
+      "Y": 1600,
+      "Z": 380,
+      "Intensity": 3000,
+      "Radius": 1500,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 900,
+      "Y": -1000,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1400,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1900,
+      "Y": -1000,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1400,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3900,
+      "Y": -500,
+      "Z": 360,
+      "Intensity": 2400,
+      "Radius": 1300,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1500,
+      "Y": 2000,
+      "Z": 340,
+      "Intensity": 2000,
+      "Radius": 1100,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": -400,
+      "Y": -1400,
+      "Z": -400,
+      "Steps": 16,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 300
+    }
+  ],
+  "Platforms": [
+    {
+      "X": 1500,
+      "Y": 1600,
+      "Z": 60,
+      "W": 2400,
+      "D": 300,
+      "H": 40
+    },
+    {
+      "X": 1500,
+      "Y": 2400,
+      "Z": 60,
+      "W": 2400,
+      "D": 300,
+      "H": 40
+    },
+    {
+      "X": 400,
+      "Y": 2000,
+      "Z": 60,
+      "W": 300,
+      "D": 1600,
+      "H": 40
+    }
+  ],
+  "PlayerStart": [
+    -4200,
+    0,
+    100
+  ]
+}

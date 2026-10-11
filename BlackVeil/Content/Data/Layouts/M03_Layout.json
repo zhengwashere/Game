@@ -1,0 +1,364 @@
+{
+  "MissionIndex": 3,
+  "Name": "Ghost Protocol",
+  "Rooms": [
+    {
+      "ID": "Lobby",
+      "X": 0,
+      "Y": 0,
+      "W": 2600,
+      "D": 2200,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Atrium",
+      "X": 0,
+      "Y": 0,
+      "W": 2600,
+      "D": 2200,
+      "H": 1400,
+      "FloorZ": 600,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": []
+      }
+    },
+    {
+      "ID": "CorridorRing",
+      "X": 0,
+      "Y": 0,
+      "W": 3400,
+      "D": 3000,
+      "H": 420,
+      "FloorZ": 1800,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0,
+            "Width": 280.0
+          },
+          {
+            "Center": 1200,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "ServerSubLevel",
+      "X": 0,
+      "Y": -1900,
+      "W": 2600,
+      "D": 1800,
+      "H": 420,
+      "FloorZ": -700,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": []
+      }
+    },
+    {
+      "ID": "ExecutiveFloor",
+      "X": 1400,
+      "Y": 0,
+      "W": 2600,
+      "D": 2000,
+      "H": 450,
+      "FloorZ": 2400,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Desk",
+      "X": -900,
+      "Y": 0,
+      "Z": 0.0,
+      "W": 500,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Desk",
+      "X": -900,
+      "Y": 700,
+      "Z": 0.0,
+      "W": 500,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Planter",
+      "X": 1000,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 300,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Planter",
+      "X": 1000,
+      "Y": -800,
+      "Z": 0.0,
+      "W": 300,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Console",
+      "X": -1500,
+      "Y": -1200,
+      "Z": -700,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": -600,
+      "Y": -1200,
+      "Z": -700,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Rack",
+      "X": 400,
+      "Y": -1500,
+      "Z": -700,
+      "W": 120,
+      "D": 600,
+      "H": 220
+    },
+    {
+      "Type": "Rack",
+      "X": 700,
+      "Y": -1500,
+      "Z": -700,
+      "W": 120,
+      "D": 600,
+      "H": 220
+    },
+    {
+      "Type": "Sofa",
+      "X": -1000,
+      "Y": 1500,
+      "Z": 600,
+      "W": 600,
+      "D": 200,
+      "H": 90
+    },
+    {
+      "Type": "Desk",
+      "X": 900,
+      "Y": 500,
+      "Z": 2400,
+      "W": 500,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Desk",
+      "X": 1900,
+      "Y": -400,
+      "Z": 2400,
+      "W": 500,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Safe",
+      "X": 2400,
+      "Y": 700,
+      "Z": 2400,
+      "W": 300,
+      "D": 200,
+      "H": 250
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": 0,
+      "Y": 0,
+      "Z": 550,
+      "Intensity": 4000,
+      "Radius": 2000,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 0,
+      "Y": 900,
+      "Z": 1800,
+      "Intensity": 4500,
+      "Radius": 2200,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1200,
+      "Y": 0,
+      "Z": 2150,
+      "Intensity": 3000,
+      "Radius": 1600,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1200,
+      "Y": 0,
+      "Z": 2150,
+      "Intensity": 3000,
+      "Radius": 1600,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 0,
+      "Y": -1900,
+      "Z": -560,
+      "Intensity": 2200,
+      "Radius": 1200,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1400,
+      "Y": 0,
+      "Z": 2800,
+      "Intensity": 3500,
+      "Radius": 1800,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": 900,
+      "Y": -900,
+      "Z": 600,
+      "Steps": 24,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 350
+    },
+    {
+      "X": 900,
+      "Y": -900,
+      "Z": 1800,
+      "Steps": 24,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 350
+    },
+    {
+      "X": -900,
+      "Y": -900,
+      "Z": 0,
+      "Steps": 28,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 300
+    }
+  ],
+  "Platforms": [],
+  "PlayerStart": [
+    -1400,
+    0,
+    100
+  ]
+}

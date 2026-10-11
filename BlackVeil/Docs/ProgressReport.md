@@ -16,10 +16,11 @@ become playable) and **not done**.
 | C++ implementation files | 56 |
 | Total C++ files | 116 |
 | Mission data assets authored | 12 |
+| Blockout layout specs | 12 |
 | Level design documents | 12 |
 | Dialogue scripts | 12 |
 | Data tables (CSV) | 5 |
-| Python tools | 4 |
+| Python tools | 7 |
 | Automation tests authored | 4 |
 | Automation tests executed | 0 |
 | Missions playtested | 0 |
@@ -102,29 +103,34 @@ Legend: **I** = implemented in code. **A** = authored content. **V** = verified 
 | Level design docs | N | Y | N | One per mission |
 | Dialogue scripts | N | Y | N | One per mission |
 | Story bible | N | Y | N | Characters, factions, arc, three endings |
-| Level construction Python tools | Y | Y | N | LevelSetup, SecuritySystemSetup, MissionObjectiveSetup, validator |
+| Blockout geometry builder | Y | Y | N | Builds floors, walls, doorways, stairs, platforms, cover, lights, NavMesh from layout JSON |
+| Blockout layout specs (12) | N | Y | Y | Distinct per mission; validated 0 placement errors |
+| Gameplay placement tools | Y | Y | N | LevelSetup, SecuritySystemSetup, MissionObjectiveSetup |
+| Data validators | Y | Y | Y | ValidateMissionData (12/12), ValidateLayouts (0 problems), ReconcileLayouts (143 fixes applied) |
 
 ---
 
 ## 3. Mission implementation checklist
 
-| # | Mission | Data asset | Objectives | Patrols | Intel | Checkpoints | Lighting plan | Set piece | Level built | Playtested |
+| # | Mission | Data asset | Objectives | Patrols | Intel | Checkpoints | Lighting plan | Set piece | Layout spec | Geometry built | Playtested |
 |---|---------|-----------|------------|---------|-------|-------------|---------------|-----------|-------------|------------|
-| 1 | Dead Drop | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 2 | Blackout | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 3 | Ghost Protocol | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 4 | Cold Harbor | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 5 | Paper Trail | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 6 | Deep Cover | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 7 | Dead Signal | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 8 | Silent Depths | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 9 | The Exchange | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 10 | Broken Arrow | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 11 | No Witnesses | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
-| 12 | Black Veil | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No (needs editor) | No |
+| 1 | Dead Drop | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 2 | Blackout | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 3 | Ghost Protocol | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 4 | Cold Harbor | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 5 | Paper Trail | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 6 | Deep Cover | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 7 | Dead Signal | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 8 | Silent Depths | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 9 | The Exchange | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 10 | Broken Arrow | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 11 | No Witnesses | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
+| 12 | Black Veil | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes (validated) | No (needs editor) | No |
 
-> The final two columns are the honest ones: every mission is fully authored and
-> structurally validated, and none has been constructed in the editor or played.
+> The final two columns are the honest ones. Every mission has a data asset, a
+> validated blockout layout, and a design document. **None has been constructed in
+> the editor and none has been played.** Building geometry is one command per map
+> (`BlockoutBuilder.build(N)`), but that command requires the engine.
 
 ---
 
@@ -134,7 +140,7 @@ Legend: **I** = implemented in code. **A** = authored content. **V** = verified 
 |------|--------------------|--------|
 | Compile the C++ module | No Unreal toolchain in the authoring environment | Hours (mostly iteration on warnings) |
 | Create Blueprint assets | Requires the editor | 1-2 days |
-| Build the 12 maps | Requires the editor; the Python tools generate the scaffolding | 2-4 weeks (art-dependent) |
+| Build the 12 maps | Requires the editor. Layout specs are authored and validated; `BlockoutBuilder.build(N)` turns each into a playable greybox in one command | Days for blockout, then 2-4 weeks for the art pass |
 | Author animation blueprints and meshes | Requires the editor and art | Weeks (art-dependent) |
 | Record dialogue and music | Requires production | Weeks |
 | Run the automation tests | Requires a compiled module | Minutes |

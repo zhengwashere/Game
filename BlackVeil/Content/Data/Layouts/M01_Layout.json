@@ -1,0 +1,446 @@
+{
+  "MissionIndex": 1,
+  "Name": "Dead Drop",
+  "Rooms": [
+    {
+      "ID": "Gatehouse",
+      "X": -4600,
+      "Y": 0,
+      "W": 1200,
+      "D": 1200,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "PerimeterYard",
+      "X": -2450,
+      "Y": 300,
+      "W": 3300,
+      "D": 2800,
+      "H": 500,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": -800,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "RollingMill",
+      "X": 900,
+      "Y": 900,
+      "W": 3200,
+      "D": 2200,
+      "H": 900,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 600,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "LoadingDock",
+      "X": 3000,
+      "Y": -500,
+      "W": 2000,
+      "D": 1800,
+      "H": 500,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "OfficeBlock",
+      "X": 1100,
+      "Y": -1550,
+      "W": 2200,
+      "D": 1200,
+      "H": 350,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 300,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "ServiceTunnel",
+      "X": -300,
+      "Y": -1750,
+      "W": 2600,
+      "D": 420,
+      "H": 260,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": -900,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Container",
+      "X": -3400,
+      "Y": 700,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -3400,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -2700,
+      "Y": 1100,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -2700,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -1900,
+      "Y": 200,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Container",
+      "X": -1900,
+      "Y": -100,
+      "Z": 0.0,
+      "W": 600,
+      "D": 240,
+      "H": 260
+    },
+    {
+      "Type": "Barrier",
+      "X": -1500,
+      "Y": 1300,
+      "Z": 0.0,
+      "W": 400,
+      "D": 60,
+      "H": 120
+    },
+    {
+      "Type": "Crate",
+      "X": -1200,
+      "Y": 500,
+      "Z": 0.0,
+      "W": 120,
+      "D": 120,
+      "H": 120
+    },
+    {
+      "Type": "Machine",
+      "X": 200,
+      "Y": 1500,
+      "Z": 0.0,
+      "W": 800,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Machine",
+      "X": 200,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 800,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Machine",
+      "X": 1400,
+      "Y": 1500,
+      "Z": 0.0,
+      "W": 900,
+      "D": 320,
+      "H": 220
+    },
+    {
+      "Type": "Machine",
+      "X": 1900,
+      "Y": 600,
+      "Z": 0.0,
+      "W": 500,
+      "D": 500,
+      "H": 250
+    },
+    {
+      "Type": "Crate",
+      "X": 700,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Crate",
+      "X": 800,
+      "Y": 1100,
+      "Z": 0.0,
+      "W": 150,
+      "D": 150,
+      "H": 150
+    },
+    {
+      "Type": "Crate",
+      "X": 2600,
+      "Y": -900,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": 2800,
+      "Y": -900,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Desk",
+      "X": 900,
+      "Y": -1700,
+      "Z": 0.0,
+      "W": 260,
+      "D": 90,
+      "H": 80
+    },
+    {
+      "Type": "Desk",
+      "X": 1500,
+      "Y": -1400,
+      "Z": 0.0,
+      "W": 260,
+      "D": 90,
+      "H": 80
+    },
+    {
+      "Type": "Shelf",
+      "X": 1900,
+      "Y": -1900,
+      "Z": 0.0,
+      "W": 100,
+      "D": 400,
+      "H": 260
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -4200,
+      "Y": 900,
+      "Z": 480,
+      "Intensity": 4500,
+      "Radius": 1600,
+      "Group": "Perimeter",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1200,
+      "Y": -600,
+      "Z": 480,
+      "Intensity": 4500,
+      "Radius": 1600,
+      "Group": "Perimeter",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": -2400,
+      "Y": 1300,
+      "Z": 700,
+      "Intensity": 3500,
+      "Radius": 1800,
+      "Group": "Perimeter",
+      "ConeAngle": 40,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 500,
+      "Y": 900,
+      "Z": 850,
+      "Intensity": 5000,
+      "Radius": 1900,
+      "Group": "Mill",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1800,
+      "Y": 1400,
+      "Z": 850,
+      "Intensity": 3500,
+      "Radius": 1600,
+      "Group": "Mill",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3000,
+      "Y": -500,
+      "Z": 460,
+      "Intensity": 3000,
+      "Radius": 1400,
+      "Group": "Dock",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1100,
+      "Y": -1550,
+      "Z": 330,
+      "Intensity": 2800,
+      "Radius": 1200,
+      "Group": "Office",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1500,
+      "Y": 200,
+      "Z": 330,
+      "Intensity": 2800,
+      "Radius": 1200,
+      "Group": "Office",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [],
+  "Platforms": [],
+  "PlayerStart": [
+    -5200,
+    0,
+    100
+  ]
+}

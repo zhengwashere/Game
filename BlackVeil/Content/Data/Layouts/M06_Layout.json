@@ -1,0 +1,349 @@
+{
+  "MissionIndex": 6,
+  "Name": "Deep Cover",
+  "Rooms": [
+    {
+      "ID": "Foyer",
+      "X": -3000,
+      "Y": 0,
+      "W": 2200,
+      "D": 2000,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "Ballroom",
+      "X": -1000,
+      "Y": 1300,
+      "W": 3600,
+      "D": 2400,
+      "H": 900,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": -800,
+            "Width": 280.0
+          },
+          {
+            "Center": 600,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 600,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "WestCorridor",
+      "X": 800,
+      "Y": -900,
+      "W": 2600,
+      "D": 500,
+      "H": 380,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": -800,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "EastWing",
+      "X": 2600,
+      "Y": 600,
+      "W": 2600,
+      "D": 2000,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Study",
+      "X": 3400,
+      "Y": 0,
+      "W": 1600,
+      "D": 1400,
+      "H": 400,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Terrace",
+      "X": -2000,
+      "Y": -1600,
+      "W": 2400,
+      "D": 1400,
+      "H": 600,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Table",
+      "X": -1400,
+      "Y": 1300,
+      "Z": 0.0,
+      "W": 700,
+      "D": 700,
+      "H": 80
+    },
+    {
+      "Type": "Table",
+      "X": -400,
+      "Y": 1900,
+      "Z": 0.0,
+      "W": 700,
+      "D": 700,
+      "H": 80
+    },
+    {
+      "Type": "Table",
+      "X": -1200,
+      "Y": 2200,
+      "Z": 0.0,
+      "W": 700,
+      "D": 700,
+      "H": 80
+    },
+    {
+      "Type": "Table",
+      "X": 200,
+      "Y": 1200,
+      "Z": 0.0,
+      "W": 700,
+      "D": 700,
+      "H": 80
+    },
+    {
+      "Type": "Sofa",
+      "X": -3400,
+      "Y": 700,
+      "Z": 0.0,
+      "W": 600,
+      "D": 200,
+      "H": 90
+    },
+    {
+      "Type": "Sofa",
+      "X": -3400,
+      "Y": -700,
+      "Z": 0.0,
+      "W": 600,
+      "D": 200,
+      "H": 90
+    },
+    {
+      "Type": "Desk",
+      "X": 3200,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 500,
+      "D": 120,
+      "H": 80
+    },
+    {
+      "Type": "Shelf",
+      "X": 3800,
+      "Y": -300,
+      "Z": 0.0,
+      "W": 120,
+      "D": 500,
+      "H": 240
+    },
+    {
+      "Type": "Planter",
+      "X": 1600,
+      "Y": 1400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Planter",
+      "X": -200,
+      "Y": -400,
+      "Z": 0.0,
+      "W": 300,
+      "D": 300,
+      "H": 200
+    },
+    {
+      "Type": "Barrier",
+      "X": -2600,
+      "Y": -1600,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3000,
+      "Y": 0,
+      "Z": 560,
+      "Intensity": 3500,
+      "Radius": 1800,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1000,
+      "Y": 1300,
+      "Z": 850,
+      "Intensity": 5000,
+      "Radius": 2400,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1000,
+      "Y": 2200,
+      "Z": 850,
+      "Intensity": 4000,
+      "Radius": 2000,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 800,
+      "Y": -900,
+      "Z": 340,
+      "Intensity": 2200,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2600,
+      "Y": 600,
+      "Z": 380,
+      "Intensity": 3000,
+      "Radius": 1600,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3400,
+      "Y": 0,
+      "Z": 360,
+      "Intensity": 2500,
+      "Radius": 1300,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [],
+  "Platforms": [],
+  "PlayerStart": [
+    -4000,
+    0,
+    100
+  ]
+}

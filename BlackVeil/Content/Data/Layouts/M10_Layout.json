@@ -1,0 +1,436 @@
+{
+  "MissionIndex": 10,
+  "Name": "Broken Arrow",
+  "Rooms": [
+    {
+      "ID": "PerimeterYard",
+      "X": -4000,
+      "Y": 0,
+      "W": 2400,
+      "D": 1800,
+      "H": 900,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "VehicleHangar",
+      "X": -1800,
+      "Y": 1500,
+      "W": 3200,
+      "D": 2400,
+      "H": 1200,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "BunkerCorridor",
+      "X": 700,
+      "Y": -1200,
+      "W": 3400,
+      "D": 700,
+      "H": 400,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Laboratory",
+      "X": 2500,
+      "Y": 900,
+      "W": 3000,
+      "D": 2200,
+      "H": 500,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": -800,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "CommandSuite",
+      "X": 4100,
+      "Y": -600,
+      "W": 2200,
+      "D": 1800,
+      "H": 420,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "PrototypeChamber",
+      "X": 1600,
+      "Y": 100,
+      "W": 2000,
+      "D": 1800,
+      "H": 800,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "East": [],
+        "West": []
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Barrier",
+      "X": -3400,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Barrier",
+      "X": -3400,
+      "Y": -800,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    },
+    {
+      "Type": "Crate",
+      "X": -4200,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 250,
+      "D": 250,
+      "H": 250
+    },
+    {
+      "Type": "Vehicle",
+      "X": -2400,
+      "Y": 1900,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Vehicle",
+      "X": -1200,
+      "Y": 1900,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Vehicle",
+      "X": -2400,
+      "Y": 1000,
+      "Z": 0.0,
+      "W": 900,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Crate",
+      "X": -600,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 250,
+      "D": 250,
+      "H": 250
+    },
+    {
+      "Type": "Machine",
+      "X": 1900,
+      "Y": 1400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Machine",
+      "X": 3100,
+      "Y": 1400,
+      "Z": 0.0,
+      "W": 600,
+      "D": 400,
+      "H": 300
+    },
+    {
+      "Type": "Console",
+      "X": 2400,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": 2900,
+      "Y": 400,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Rack",
+      "X": 3400,
+      "Y": 200,
+      "Z": 0.0,
+      "W": 120,
+      "D": 600,
+      "H": 220
+    },
+    {
+      "Type": "Console",
+      "X": 4000,
+      "Y": -600,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Console",
+      "X": 4400,
+      "Y": -200,
+      "Z": 0.0,
+      "W": 400,
+      "D": 120,
+      "H": 110
+    },
+    {
+      "Type": "Cage",
+      "X": 1600,
+      "Y": 100,
+      "Z": 0.0,
+      "W": 1400,
+      "D": 1200,
+      "H": 700
+    },
+    {
+      "Type": "Machine",
+      "X": 1000,
+      "Y": -1200,
+      "Z": 0.0,
+      "W": 400,
+      "D": 300,
+      "H": 260
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Spot",
+      "X": -4000,
+      "Y": 600,
+      "Z": 860,
+      "Intensity": 5000,
+      "Radius": 2400,
+      "Group": "Group_A",
+      "ConeAngle": 45,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1800,
+      "Y": 1500,
+      "Z": 1150,
+      "Intensity": 6000,
+      "Radius": 2400,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -1000,
+      "Y": 1500,
+      "Z": 1150,
+      "Intensity": 5000,
+      "Radius": 2200,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 200,
+      "Y": -1200,
+      "Z": 360,
+      "Intensity": 2600,
+      "Radius": 1300,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1400,
+      "Y": -1200,
+      "Z": 360,
+      "Intensity": 2600,
+      "Radius": 1300,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2500,
+      "Y": 900,
+      "Z": 460,
+      "Intensity": 4000,
+      "Radius": 2000,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3100,
+      "Y": 1600,
+      "Z": 460,
+      "Intensity": 3500,
+      "Radius": 1800,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 1600,
+      "Y": 100,
+      "Z": 760,
+      "Intensity": 4500,
+      "Radius": 2000,
+      "Group": "Group_C",
+      "ConeAngle": 45,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 4100,
+      "Y": -600,
+      "Z": 380,
+      "Intensity": 2800,
+      "Radius": 1400,
+      "Group": "Group_C",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [],
+  "Platforms": [],
+  "PlayerStart": [
+    -4800,
+    0,
+    100
+  ]
+}

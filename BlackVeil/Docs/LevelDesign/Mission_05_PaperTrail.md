@@ -3,6 +3,8 @@
 **Location:** Directorate Archive, Vienna  
 **Map asset:** `/Game/Maps/M05`  
 **Par time:** 1140 seconds  
+**Blockout layout:** `Content/Data/Layouts/M05_Layout.json` (6 rooms)
+
 **Unique mechanic:** Biometric vault door: cannot be picked or hacked. The player must acquire a matching biometric from a senior archivist - either by following one to the door or by finding the enrolment terminal.
 
 ## Narrative context
@@ -20,43 +22,46 @@ Zara: The archive is where the Directorate keeps what it cannot destroy. Origina
 | `OPT_05_KESTREL` | Find the KESTREL station file | Retrieve | Yes | 1 | - |
 | `OPT_05_BIOMETRIC` | Obtain a biometric bypass | Custom | Yes | 1 | - |
 
-## Routes and verticality
+## Blockout spaces
 
-Primary route: main approach, through the front security line. Fastest, most watched.
-Alternate route A: service/maintenance passage bypassing the first checkpoint.
-Alternate route B: elevated route (roof, gantry, catwalk, cliff) with better sightlines but less cover.
-Alternate route C (where applicable): sub-level, tunnel or water route requiring a gadget or an interaction to open.
+These are the actual built rooms. Coordinates are world-space cm.
+
+| Room | Centre (X, Y) | Size W x D | Wall height | Floor Z | Ceiling |
+|------|---------------|------------|-------------|---------|---------|
+| EntryHall | (-3000, 0) | 2000 x 1800 | 420 | 0 | yes |
+| ReadingRoom | (-800, 1200) | 3000 x 2000 | 420 | 0 | yes |
+| StacksA | (1700, -900) | 3400 x 900 | 420 | 0 | yes |
+| StacksB | (1700, 700) | 3400 x 900 | 420 | 0 | yes |
+| VaultCorridor | (3900, 0) | 1800 x 700 | 380 | 0 | yes |
+| LoadingBay | (1700, 2500) | 2600 x 1600 | 600 | 0 | yes |
+
+**Cover props: 22** (containers, machines, shelving, hedges and desks placed to break sightlines).
+
+**Light actors: 7** across groups: Group_A, Group_B, Group_C
 
 ## Guard deployment
 
 | Spawn | Type | Position | Squad | Patrol route | Vigilance |
 |-------|------|----------|-------|--------------|-----------|
-| G1 | Elite | [-2800, 0, 0] | Squad_A | `R_ENTRY` | 0.85 |
-| G2 | Elite | [-1000, 1000, 0] | Squad_A | `R_READING` | 0.80 |
-| G3 | Standard | [1000, -800, 0] | Squad_B | `R_STACKS` | 0.50 |
-| G4 | Elite | [2600, 600, 0] | Squad_B | `R_VAULT` | 0.90 |
-| G5 | Surveillance | [3600, 0, 0] | Squad_C | `R_CCTV` | 0.75 |
-| G6 | Standard | [1800, 1600, 0] | Squad_B | `R_STACKS` | 0.50 |
-| G7 | Commander | [-2000, -1600, 0] | Squad_C | `R_COMMAND` | 0.80 |
-| G8 | Elite | [400, 2200, 0] | Squad_A | `R_READING` | 0.85 |
+| G1 | Elite | (-2800, 0) | Squad_A | `R_ENTRY` | 0.85 |
+| G2 | Elite | (-1000, 1000) | Squad_A | `R_READING` | 0.80 |
+| G3 | Standard | (1000, -800) | Squad_B | `R_STACKS` | 0.50 |
+| G4 | Elite | (2600, 600) | Squad_B | `R_VAULT` | 0.90 |
+| G5 | Surveillance | (3600, 0) | Squad_C | `R_CCTV` | 0.75 |
+| G6 | Standard | (1800, 1900) | Squad_B | `R_STACKS` | 0.50 |
+| G7 | Commander | (-2200, -700) | Squad_C | `R_COMMAND` | 0.80 |
+| G8 | Elite | (400, 2000) | Squad_A | `R_READING` | 0.85 |
 
 ## Patrol routes
 
-**`R_ENTRY`** (Loop mode)
-**`R_READING`** (PingPong mode)
-**`R_STACKS`** (Loop mode)
-**`R_VAULT`** (OneShot mode)
-**`R_CCTV`** (OneShot mode)
-**`R_COMMAND`** (Loop mode)
-
-| Route | Waypoints | Wait times | Scans while waiting | Conversation triggers |
-|-------|-----------|------------|---------------------|-----------------------|
-| `R_ENTRY` | (-2800, 0) -> (-2000, 500) -> (-2400, -500) | 6s, 4s, 4s | yes | none |
-| `R_READING` | (-1000, 1000) -> (400, 2200) -> (-600, 1800) | 5s, 5s, 4s | yes | CONV_READ |
-| `R_STACKS` | (1000, -800) -> (1800, 1600) -> (2600, 400) | 4s, 5s, 4s | no | none |
-| `R_VAULT` | (2600, 600) -> (3000, 200) | 10s, 6s | yes | none |
-| `R_CCTV` | (3600, 0) | 10s | yes | none |
-| `R_COMMAND` | (-2000, -1600) -> (-1200, -2000) | 7s, 4s | yes | none |
+| Route | Mode | Waypoints | Wait times | Scans | Conversations |
+|-------|------|-----------|------------|-------|---------------|
+| `R_ENTRY` | Loop | (-2800, 0) -> (-2200, 500) -> (-2400, -500) | 6s, 4s, 4s | yes | none |
+| `R_READING` | PingPong | (-1000, 1000) -> (400, 2000) -> (-600, 1800) | 5s, 5s, 4s | yes | CONV_READ |
+| `R_STACKS` | Loop | (1000, -800) -> (1800, 1900) -> (2600, 450) | 4s, 5s, 4s | no | none |
+| `R_VAULT` | OneShot | (2600, 600) -> (3200, 150) | 10s, 6s | yes | none |
+| `R_CCTV` | OneShot | (3600, 0) | 10s | yes | none |
+| `R_COMMAND` | Loop | (-2200, -700) -> (-2200, -700) | 7s, 4s | yes | none |
 
 ## Lighting design
 
@@ -68,7 +73,8 @@ Alternate route C (where applicable): sub-level, tunnel or water route requiring
 - Loading bay (unlit, roller doors)
 - Server room (blue LED wash)
 
-Lighting is gameplay, not decoration: every zone above changes how far guards can see the player.
+Every light is a real actor, and `UBVStealthComponent` samples them,
+so each placement changes how detectable the operative is in that space.
 
 ## Intelligence
 
@@ -78,17 +84,23 @@ Lighting is gameplay, not decoration: every zone above changes how far guards ca
 
 ## Checkpoints
 
-- `CP_05_ENTRY` at [0, 0, 0] (order 0)
-- `CP_05_READING` at [1500, 0, 0] (order 1)
-- `CP_05_STACKS` at [3000, 0, 0] (order 2)
+- `CP_05_ENTRY` at (0, 400, 0)
+- `CP_05_READING` at (1500, 450, 0)
+- `CP_05_STACKS` at (3200, 0, 0)
 
 ## Recommended approaches
 
-**Ghost:** avoid every guard interaction, use the alternate elevated/sub-level route, kill the lights and cameras before committing to a corridor. Requires the surveillance detector and patience with patrol timing.
+**Ghost:** avoid every guard interaction, use the elevated or service
+route, kill lights and cameras before committing to a corridor. Needs the
+surveillance detector and patience with patrol timing.
 
-**Panther:** neutralise the two guards on the highest-traffic route first, conceal both bodies, then move through the vacated space. Non-lethal takedowns keep the score clean.
+**Panther:** neutralise the two guards on the highest-traffic route first,
+conceal both bodies, then move through the vacated space. Non-lethal
+takedowns keep the score clean.
 
-**Assault (fallback):** if detected, break contact toward the nearest hard cover, use smoke or a flashbang to reset the engagement, and withdraw along a route the squad has not yet searched.
+**Assault (fallback):** if detected, break contact toward the nearest hard
+cover, use smoke or a flashbang to reset the engagement, and withdraw along
+a route the squad has not yet searched.
 
 ## Set piece
 

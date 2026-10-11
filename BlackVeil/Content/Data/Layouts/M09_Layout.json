@@ -1,0 +1,372 @@
+{
+  "MissionIndex": 9,
+  "Name": "The Exchange",
+  "Rooms": [
+    {
+      "ID": "ApproachRoad",
+      "X": -3700,
+      "Y": 0,
+      "W": 2400,
+      "D": 1800,
+      "H": 700,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "GardenTerrace",
+      "X": -1600,
+      "Y": 1400,
+      "W": 3000,
+      "D": 2000,
+      "H": 700,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": false,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": -600,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Cellar",
+      "X": 900,
+      "Y": -1100,
+      "W": 2800,
+      "D": 2200,
+      "H": 380,
+      "FloorZ": -500,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "South": [],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": []
+      }
+    },
+    {
+      "ID": "VillaInterior",
+      "X": 2400,
+      "Y": 700,
+      "W": 3000,
+      "D": 2400,
+      "H": 700,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [
+          {
+            "Center": 600,
+            "Width": 280.0
+          }
+        ],
+        "East": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    },
+    {
+      "ID": "Vault",
+      "X": 4100,
+      "Y": -500,
+      "W": 2000,
+      "D": 1600,
+      "H": 400,
+      "FloorZ": 0.0,
+      "Floor": true,
+      "Ceiling": true,
+      "Walls": {
+        "North": [],
+        "South": [],
+        "East": [],
+        "West": [
+          {
+            "Center": 0.0,
+            "Width": 280.0
+          }
+        ]
+      }
+    }
+  ],
+  "Props": [
+    {
+      "Type": "Hedge",
+      "X": -2400,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 900,
+      "H": 200
+    },
+    {
+      "Type": "Hedge",
+      "X": -1600,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 900,
+      "H": 200
+    },
+    {
+      "Type": "Hedge",
+      "X": -800,
+      "Y": 1600,
+      "Z": 0.0,
+      "W": 300,
+      "D": 900,
+      "H": 200
+    },
+    {
+      "Type": "Hedge",
+      "X": -1600,
+      "Y": 2000,
+      "Z": 0.0,
+      "W": 1600,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": 200,
+      "Y": -1600,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Crate",
+      "X": 400,
+      "Y": -1800,
+      "Z": 0.0,
+      "W": 200,
+      "D": 200,
+      "H": 200
+    },
+    {
+      "Type": "Rack",
+      "X": 1400,
+      "Y": -1400,
+      "Z": -500,
+      "W": 120,
+      "D": 800,
+      "H": 220
+    },
+    {
+      "Type": "Rack",
+      "X": 1700,
+      "Y": -1400,
+      "Z": -500,
+      "W": 120,
+      "D": 800,
+      "H": 220
+    },
+    {
+      "Type": "Table",
+      "X": 1200,
+      "Y": -600,
+      "Z": -500,
+      "W": 900,
+      "D": 200,
+      "H": 80
+    },
+    {
+      "Type": "Sofa",
+      "X": 2000,
+      "Y": 1500,
+      "Z": 0.0,
+      "W": 600,
+      "D": 200,
+      "H": 90
+    },
+    {
+      "Type": "Table",
+      "X": 2800,
+      "Y": 700,
+      "Z": 0.0,
+      "W": 700,
+      "D": 700,
+      "H": 80
+    },
+    {
+      "Type": "Shelf",
+      "X": 3600,
+      "Y": 1100,
+      "Z": 0.0,
+      "W": 100,
+      "D": 600,
+      "H": 240
+    },
+    {
+      "Type": "Safe",
+      "X": 4600,
+      "Y": -200,
+      "Z": 0.0,
+      "W": 300,
+      "D": 200,
+      "H": 250
+    },
+    {
+      "Type": "Barrier",
+      "X": -3200,
+      "Y": 800,
+      "Z": 0.0,
+      "W": 500,
+      "D": 60,
+      "H": 130
+    }
+  ],
+  "Lights": [
+    {
+      "Type": "Point",
+      "X": -3700,
+      "Y": 600,
+      "Z": 660,
+      "Intensity": 4000,
+      "Radius": 1800,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": -2200,
+      "Y": 1400,
+      "Z": 660,
+      "Intensity": 3200,
+      "Radius": 1600,
+      "Group": "Group_A",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 900,
+      "Y": -1100,
+      "Z": -160,
+      "Intensity": 2200,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 1800,
+      "Y": -1100,
+      "Z": -160,
+      "Intensity": 2200,
+      "Radius": 1200,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 2400,
+      "Y": 700,
+      "Z": 660,
+      "Intensity": 3500,
+      "Radius": 1800,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Point",
+      "X": 3100,
+      "Y": 900,
+      "Z": 660,
+      "Intensity": 3000,
+      "Radius": 1500,
+      "Group": "Group_B",
+      "ConeAngle": 35.0,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    },
+    {
+      "Type": "Spot",
+      "X": 4100,
+      "Y": -500,
+      "Z": 360,
+      "Intensity": 3200,
+      "Radius": 1500,
+      "Group": "Group_C",
+      "ConeAngle": 40,
+      "Pitch": -90.0,
+      "Yaw": 0.0
+    }
+  ],
+  "Stairs": [
+    {
+      "X": -1600,
+      "Y": -300,
+      "Z": -500,
+      "Steps": 20,
+      "Rise": 25,
+      "Run": 32,
+      "Width": 320
+    }
+  ],
+  "Platforms": [],
+  "PlayerStart": [
+    -4600,
+    0,
+    100
+  ]
+}

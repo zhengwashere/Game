@@ -18,7 +18,7 @@ This is the **complete game project** - not a design document and not a prototyp
 | Campaign | 12 distinct missions, each with its own data asset, patrol network, objectives, intel, lighting plan and set piece |
 | Configuration | `DefaultEngine.ini`, `DefaultGame.ini`, `DefaultInput.ini`, `DefaultGameplayTags.ini` |
 | Data | 5 data tables (CSV) and 12 mission data assets (JSON, import-ready) |
-| Tooling | 4 Python scripts for level construction, security wiring, objective placement and data validation |
+| Tooling | 7 Python scripts: blockout geometry builder, gameplay placement, security wiring, objective placement, and three validators |
 | Documentation | Setup guide, architecture, story bible, 12 level design docs, 12 dialogue scripts, test report, progress report |
 
 > **Engine availability note.** This project was authored in an environment with **no
@@ -118,34 +118,58 @@ Import the CSVs in `Content/Data/` as Data Tables:
 
 **d) Maps**
 
-Create `MainMenu`, `Briefing`, and `M01` ... `M12` under `/Game/Maps`, then run the
-level tools (below) to populate the mission maps with objectives, routes, guards,
-intel and security networks.
+Create empty levels `MainMenu`, `Briefing`, and `M01` ... `M12` under `/Game/Maps`.
+The level tools build the mission maps for you - see 3.5.
 
-### 3.5 Build a mission level automatically
+### 3.5 Build a mission level
 
-Open a mission map, then in the editor's **Python console**:
+A level is built in two passes. **Pass 1 is the space** (floors, walls, doorways,
+stairs, cover, lights, navigation). **Pass 2 is the gameplay** (objective volumes,
+guard spawns, patrol routes, cameras, terminals, intel).
+
+Open the target mission map, then in the editor's **Python console**:
 
 ```python
 import sys
 sys.path.append(r"<path>/BlackVeil/Tools")
-import LevelSetup, SecuritySystemSetup, MissionObjectiveSetup
+import BlockoutBuilder, LevelSetup, SecuritySystemSetup, MissionObjectiveSetup
 
-LevelSetup.build_mission(1)      # patrol routes, guard spawns, objectives, intel, security
-SecuritySystemSetup.build(1)     # camera/terminal/alarm network
-MissionObjectiveSetup.setup(1)   # objective trigger volumes
+BlockoutBuilder.build(1)        # 1. the space - a walkable greybox
+LevelSetup.build_mission(1)     # 2. objectives, guard spawns, routes, intel, security
+SecuritySystemSetup.build(1)    # 3. camera / terminal / alarm network
+MissionObjectiveSetup.setup(1)  # 4. objective trigger volumes
 ```
 
-Every generated actor is tagged `BV_Generated`, so re-running the scripts replaces
-rather than duplicates.
+Every generated actor is tagged (`BV_Blockout` or `BV_Generated`), so re-running
+replaces rather than duplicates, and the art pass can find every generated actor.
 
-### 3.6 Validate the mission data (no editor required)
+A blockout is a genuinely playable level, not a placeholder - sightlines, shadow,
+cover and patrol timing are all readable in untextured geometry, which is how this
+genre is built in production before the art pass. The layout format is documented
+in `Docs/BlockoutFormat.md`.
+
+> **Check the NavMesh.** `BlockoutBuilder` places a `NavMeshBoundsVolume`, but the
+> Python API for brush sizing varies between engine versions. Look at it once. If
+> it is wrong, select it and set the size in the Details panel. Without navigation
+> data the guards will not move.
+
+### 3.6 Validate the data (no editor required)
 
 ```bash
-python3 Tools/ValidateMissionData.py
+python3 Tools/ValidateMissionData.py    # 12/12 missions valid
+python3 Tools/ValidateLayouts.py        # 0 placement problems
 ```
 
-Expected output: `12/12 missions valid`.
+`ValidateLayouts.py` checks that every guard spawn, patrol waypoint, checkpoint and
+objective sits on a floor inside a built room. If you edit a layout or a mission,
+re-run it. If it reports problems, `ReconcileLayouts.py` will show you the moves
+needed and `--apply` will make them:
+
+```bash
+python3 Tools/ReconcileLayouts.py            # dry run
+python3 Tools/ReconcileLayouts.py --apply    # snap positions into the nearest room
+python3 Tools/GenerateLevelDocs.py           # refresh the level design docs
+```
 
 ---
 
@@ -250,7 +274,9 @@ BlackVeil/
   BlackVeil.uproject
   Config/                     Engine, game, input and gameplay tag configuration
   Content/
-    Data/                     5 CSV data tables + Missions/ (12 mission JSON assets)
+    Data/                     5 CSV data tables
+      Missions/               12 mission data assets (JSON, import-ready)
+      Layouts/                12 blockout layouts (the level geometry)
     Maps/ Blueprints/ UI/ Audio/ VFX/ Materials/
   Source/BlackVeil/
     Core/        Game mode, game state, game instance, shared types, gameplay tags
@@ -262,7 +288,7 @@ BlackVeil/
     World/       Doors, cameras, terminals, alarm panels, lights, hiding spots, noise
     UI/          HUD, widgets, menus, audio manager
     SaveGame/    Persistent campaign save object
-  Tools/        Python level construction, security wiring, validation
+  Tools/        Blockout builder, gameplay placement, security wiring, validators
   Docs/         Setup, architecture, story bible, level design, dialogue, reports
 ```
 

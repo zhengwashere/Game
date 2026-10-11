@@ -148,9 +148,9 @@
       "SpawnID": "G1",
       "GuardTypeOrdinal": 0,
       "Location": [
-        -4000,
-        0,
-        0
+        -4000.0,
+        0.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -172,9 +172,9 @@
       "SpawnID": "G2",
       "GuardTypeOrdinal": 0,
       "Location": [
-        -1800,
-        1400,
-        0
+        -1800.0,
+        1400.0,
+        300.0
       ],
       "Rotation": [
         0,
@@ -196,9 +196,9 @@
       "SpawnID": "G3",
       "GuardTypeOrdinal": 1,
       "Location": [
-        400,
-        -1200,
-        0
+        400.0,
+        -1200.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -220,9 +220,9 @@
       "SpawnID": "G4",
       "GuardTypeOrdinal": 3,
       "Location": [
-        2200,
-        800,
-        0
+        2200.0,
+        800.0,
+        700.0
       ],
       "Rotation": [
         0,
@@ -244,9 +244,9 @@
       "SpawnID": "G5",
       "GuardTypeOrdinal": 4,
       "Location": [
-        3800,
-        -600,
-        0
+        3800.0,
+        -600.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -268,9 +268,9 @@
       "SpawnID": "G6",
       "GuardTypeOrdinal": 0,
       "Location": [
-        1000,
-        2200,
-        0
+        1600.0,
+        1600.0,
+        700.0
       ],
       "Rotation": [
         0,
@@ -292,9 +292,9 @@
       "SpawnID": "G7",
       "GuardTypeOrdinal": 5,
       "Location": [
-        2800,
-        -1800,
-        0
+        3400.0,
+        -1200.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -316,9 +316,9 @@
       "SpawnID": "G8",
       "GuardTypeOrdinal": 2,
       "Location": [
-        -600,
-        -2200,
-        0
+        -600.0,
+        -2200.0,
+        0.0
       ],
       "Rotation": [
         0,
@@ -344,9 +344,9 @@
       "Waypoints": [
         {
           "Location": [
-            -4000,
-            0,
-            0
+            -4000.0,
+            0.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 90,
@@ -356,9 +356,9 @@
         },
         {
           "Location": [
-            -3200,
-            700,
-            0
+            -3300.0,
+            700.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 180,
@@ -368,9 +368,9 @@
         },
         {
           "Location": [
-            -3600,
-            -700,
-            0
+            -3600.0,
+            -700.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -386,9 +386,9 @@
       "Waypoints": [
         {
           "Location": [
-            -1800,
-            1400,
-            0
+            -1800.0,
+            1400.0,
+            300.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 180,
@@ -398,9 +398,9 @@
         },
         {
           "Location": [
-            -600,
-            1800,
-            0
+            -900.0,
+            1800.0,
+            300.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 90,
@@ -416,9 +416,9 @@
       "Waypoints": [
         {
           "Location": [
-            400,
-            -1200,
-            0
+            400.0,
+            -1200.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 270,
@@ -428,9 +428,9 @@
         },
         {
           "Location": [
-            1000,
-            2200,
-            0
+            1600.0,
+            1600.0,
+            700.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 180,
@@ -440,9 +440,9 @@
         },
         {
           "Location": [
-            1600,
-            0,
-            0
+            1600.0,
+            -400.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 90,
@@ -458,9 +458,9 @@
       "Waypoints": [
         {
           "Location": [
-            2200,
-            800,
-            0
+            2200.0,
+            800.0,
+            700.0
           ],
           "WaitDuration": 10,
           "LookYawOffset": 0,
@@ -470,9 +470,9 @@
         },
         {
           "Location": [
-            2600,
-            1200,
-            0
+            2600.0,
+            1200.0,
+            700.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 90,
@@ -488,9 +488,9 @@
       "Waypoints": [
         {
           "Location": [
-            3800,
-            -600,
-            0
+            3800.0,
+            -600.0,
+            0.0
           ],
           "WaitDuration": 7,
           "LookYawOffset": 90,
@@ -500,9 +500,9 @@
         },
         {
           "Location": [
-            4200,
-            -200,
-            0
+            4200.0,
+            -200.0,
+            0.0
           ],
           "WaitDuration": 5,
           "LookYawOffset": 180,
@@ -518,9 +518,9 @@
       "Waypoints": [
         {
           "Location": [
-            2800,
-            -1800,
-            0
+            3400.0,
+            -1200.0,
+            0.0
           ],
           "WaitDuration": 9,
           "LookYawOffset": 0,
@@ -536,9 +536,9 @@
       "Waypoints": [
         {
           "Location": [
-            -600,
-            -2200,
-            0
+            -600.0,
+            -2200.0,
+            0.0
           ],
           "WaitDuration": 6,
           "LookYawOffset": 45,
@@ -548,9 +548,9 @@
         },
         {
           "Location": [
-            200,
-            -1800,
-            0
+            200.0,
+            -1800.0,
+            0.0
           ],
           "WaitDuration": 4,
           "LookYawOffset": 0,
@@ -565,27 +565,27 @@
     {
       "CheckpointID": "CP_07_APPROACH",
       "Location": [
-        0,
-        0,
-        0
+        0.0,
+        -400.0,
+        0.0
       ],
       "Order": 0
     },
     {
       "CheckpointID": "CP_07_RIDGE",
       "Location": [
-        1500,
-        0,
-        0
+        1500.0,
+        -400.0,
+        0.0
       ],
       "Order": 1
     },
     {
       "CheckpointID": "CP_07_PAD",
       "Location": [
-        3000,
-        0,
-        0
+        3400.0,
+        0.0,
+        0.0
       ],
       "Order": 2
     }

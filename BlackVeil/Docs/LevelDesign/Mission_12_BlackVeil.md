@@ -3,6 +3,8 @@
 **Location:** Sorn Estate, Black Sea Coast  
 **Map asset:** `/Game/Maps/M12`  
 **Par time:** 1500 seconds  
+**Blockout layout:** `Content/Data/Layouts/M12_Layout.json` (6 rooms)
+
 **Unique mechanic:** Layered finale: the vault requires a keycard and a biometric match, the estate reacts to the alarm with a full lockdown, and the confrontation with Sorn can end in elimination, capture, or exposure - each producing a different ending epilogue.
 
 ## Narrative context
@@ -22,49 +24,53 @@ Zara: This is the last one. Sorn is at the estate, the ledger is in the vault un
 | `OPT_12_SERVERS` | Destroy the UMBRA transmission array | Sabotage | Yes | 1 | - |
 | `OPT_12_GHOST` | Complete the operation without a single detection | Custom | Yes | 1 | - |
 
-## Routes and verticality
+## Blockout spaces
 
-Primary route: main approach, through the front security line. Fastest, most watched.
-Alternate route A: service/maintenance passage bypassing the first checkpoint.
-Alternate route B: elevated route (roof, gantry, catwalk, cliff) with better sightlines but less cover.
-Alternate route C (where applicable): sub-level, tunnel or water route requiring a gadget or an interaction to open.
+These are the actual built rooms. Coordinates are world-space cm.
+
+| Room | Centre (X, Y) | Size W x D | Wall height | Floor Z | Ceiling |
+|------|---------------|------------|-------------|---------|---------|
+| CliffPath | (-4900, 0) | 2400 x 1600 | 900 | 0 | open |
+| Gardens | (-2500, 1800) | 3200 x 2400 | 800 | 0 | open |
+| Marina | (-400, -1500) | 3200 x 2200 | 700 | 0 | open |
+| MainHouse | (1800, 900) | 3400 x 2600 | 800 | 0 | yes |
+| CommandSuite | (3700, -700) | 2200 x 1800 | 420 | 0 | yes |
+| BoathouseVault | (4100, -1700) | 2400 x 1800 | 500 | 0 | yes |
+
+**Cover props: 16** (containers, machines, shelving, hedges and desks placed to break sightlines).
+
+**Light actors: 8** across groups: Group_A, Group_B, Group_C
+
+**Stairs: 1 runs** providing vertical connectivity.
 
 ## Guard deployment
 
 | Spawn | Type | Position | Squad | Patrol route | Vigilance |
 |-------|------|----------|-------|--------------|-----------|
-| G1 | Elite | [-4600, 0, 0] | Squad_A | `R_CLIFF` | 0.90 |
-| G2 | Elite | [-2400, 1600, 0] | Squad_A | `R_GARDEN` | 0.85 |
-| G3 | Armored | [-400, -1400, 0] | Squad_B | `R_MARINA` | 0.65 |
-| G4 | Elite | [1600, 900, 0] | Squad_B | `R_HOUSE` | 0.90 |
-| G5 | Commander | [3400, -700, 0] | Squad_C | `R_COMMAND` | 0.85 |
-| G6 | Elite | [1000, 2600, 0] | Squad_B | `R_GARDEN` | 0.90 |
-| G7 | Surveillance | [3000, -2000, 0] | Squad_C | `R_CCTV` | 0.80 |
-| G8 | Elite | [-1400, -2600, 0] | Squad_A | `R_CLIFF` | 0.90 |
-| G9 | Elite | [2400, 100, 0] | Squad_B | `R_HOUSE` | 0.90 |
-| G10 | Commander | [500, -2400, 0] | Squad_C | `R_MARINA` | 0.85 |
-| G11 | Elite | [3800, -1400, 0] | Squad_C | `R_BOATHOUSE` | 0.95 |
-| G12 | Elite | [-3200, -1200, 0] | Squad_A | `R_CLIFF` | 0.90 |
+| G1 | Elite | (-4600, 0) | Squad_A | `R_CLIFF` | 0.90 |
+| G2 | Elite | (-2400, 1600) | Squad_A | `R_GARDEN` | 0.85 |
+| G3 | Armored | (-400, -1400) | Squad_B | `R_MARINA` | 0.65 |
+| G4 | Elite | (1600, 900) | Squad_B | `R_HOUSE` | 0.90 |
+| G5 | Commander | (3400, -700) | Squad_C | `R_COMMAND` | 0.85 |
+| G6 | Elite | (1000, 2000) | Squad_B | `R_GARDEN` | 0.90 |
+| G7 | Surveillance | (3100, -2000) | Squad_C | `R_CCTV` | 0.80 |
+| G8 | Elite | (-1400, -2400) | Squad_A | `R_CLIFF` | 0.90 |
+| G9 | Elite | (2400, 100) | Squad_B | `R_HOUSE` | 0.90 |
+| G10 | Commander | (500, -2400) | Squad_C | `R_MARINA` | 0.85 |
+| G11 | Elite | (3800, -1400) | Squad_C | `R_BOATHOUSE` | 0.95 |
+| G12 | Elite | (-3900, -600) | Squad_A | `R_CLIFF` | 0.90 |
 
 ## Patrol routes
 
-**`R_CLIFF`** (Loop mode)
-**`R_GARDEN`** (PingPong mode)
-**`R_MARINA`** (Loop mode)
-**`R_HOUSE`** (Loop mode)
-**`R_COMMAND`** (Loop mode)
-**`R_CCTV`** (OneShot mode)
-**`R_BOATHOUSE`** (OneShot mode)
-
-| Route | Waypoints | Wait times | Scans while waiting | Conversation triggers |
-|-------|-----------|------------|---------------------|-----------------------|
-| `R_CLIFF` | (-4600, 0) -> (-3200, -1200) -> (-1400, -2600) -> (-3800, -1600) | 6s, 5s, 5s, 4s | yes | none |
-| `R_GARDEN` | (-2400, 1600) -> (1000, 2600) | 6s, 5s | yes | CONV_ESTATE_A |
-| `R_MARINA` | (-400, -1400) -> (500, -2400) -> (200, -600) | 5s, 5s, 4s | no | none |
-| `R_HOUSE` | (1600, 900) -> (2400, 100) -> (1800, 1700) | 6s, 5s, 4s | yes | none |
-| `R_COMMAND` | (3400, -700) -> (500, -2400) | 7s, 6s | yes | none |
-| `R_CCTV` | (3000, -2000) | 10s | yes | none |
-| `R_BOATHOUSE` | (3800, -1400) -> (4200, -1000) | 12s, 6s | yes | none |
+| Route | Mode | Waypoints | Wait times | Scans | Conversations |
+|-------|------|-----------|------------|-------|---------------|
+| `R_CLIFF` | Loop | (-4600, 0) -> (-3900, -600) -> (-1400, -2400) -> (-3900, -600) | 6s, 5s, 5s, 4s | yes | none |
+| `R_GARDEN` | PingPong | (-2400, 1600) -> (1000, 2000) | 6s, 5s | yes | CONV_ESTATE_A |
+| `R_MARINA` | Loop | (-400, -1400) -> (500, -2400) -> (200, -600) | 5s, 5s, 4s | no | none |
+| `R_HOUSE` | Loop | (1600, 900) -> (2400, 100) -> (1800, 1700) | 6s, 5s, 4s | yes | none |
+| `R_COMMAND` | Loop | (3400, -700) -> (500, -2400) | 7s, 6s | yes | none |
+| `R_CCTV` | OneShot | (3100, -2000) | 10s | yes | none |
+| `R_BOATHOUSE` | OneShot | (3800, -1400) -> (4200, -1000) | 12s, 6s | yes | none |
 
 ## Lighting design
 
@@ -77,7 +83,8 @@ Alternate route C (where applicable): sub-level, tunnel or water route requiring
 - Command suite (lit, glass)
 - Boathouse vault (floodlit, no shadow, layered sensors)
 
-Lighting is gameplay, not decoration: every zone above changes how far guards can see the player.
+Every light is a real actor, and `UBVStealthComponent` samples them,
+so each placement changes how detectable the operative is in that space.
 
 ## Intelligence
 
@@ -87,17 +94,23 @@ Lighting is gameplay, not decoration: every zone above changes how far guards ca
 
 ## Checkpoints
 
-- `CP_12_CLIFF` at [0, 0, 0] (order 0)
-- `CP_12_GARDEN` at [1500, 0, 0] (order 1)
-- `CP_12_HOUSE` at [3000, 0, 0] (order 2)
+- `CP_12_CLIFF` at (300, 0, 0)
+- `CP_12_GARDEN` at (1500, 0, 0)
+- `CP_12_HOUSE` at (3000, 0, 0)
 
 ## Recommended approaches
 
-**Ghost:** avoid every guard interaction, use the alternate elevated/sub-level route, kill the lights and cameras before committing to a corridor. Requires the surveillance detector and patience with patrol timing.
+**Ghost:** avoid every guard interaction, use the elevated or service
+route, kill lights and cameras before committing to a corridor. Needs the
+surveillance detector and patience with patrol timing.
 
-**Panther:** neutralise the two guards on the highest-traffic route first, conceal both bodies, then move through the vacated space. Non-lethal takedowns keep the score clean.
+**Panther:** neutralise the two guards on the highest-traffic route first,
+conceal both bodies, then move through the vacated space. Non-lethal
+takedowns keep the score clean.
 
-**Assault (fallback):** if detected, break contact toward the nearest hard cover, use smoke or a flashbang to reset the engagement, and withdraw along a route the squad has not yet searched.
+**Assault (fallback):** if detected, break contact toward the nearest hard
+cover, use smoke or a flashbang to reset the engagement, and withdraw along
+a route the squad has not yet searched.
 
 ## Set piece
 
