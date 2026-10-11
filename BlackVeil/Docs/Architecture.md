@@ -117,6 +117,11 @@ effectiveRadius = baseRadius / 2^blockers
 
 This gives believable wall attenuation without a full acoustic simulation.
 
+**Every** noise event is additionally forwarded to `UAISense_Hearing::ReportNoiseEvent`,
+which is the only path by which guards receive sound. Footsteps are generated on a
+speed-scaled cadence by `UBVStealthComponent`, so walking, jogging and sprinting are
+audibly distinct to a listener standing on the other side of a wall.
+
 ### 3.3 AI awareness (`BVAIController` + `UBVAlertStateComponent`)
 
 The controller never asks where the player is. It receives:
