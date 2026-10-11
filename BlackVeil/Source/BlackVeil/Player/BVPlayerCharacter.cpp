@@ -43,7 +43,6 @@ ABVPlayerCharacter::ABVPlayerCharacter()
 	Move->bCanWalkOffLedges = true;
 	Move->bCanWalkOffLedgesWhenCrouching = true;
 	Move->NavAgentProps.bCanCrouch = true;
-	Move->NavAgentProps.bCanProne = true;
 	Move->SetWalkableFloorAngle(50.f);
 	Move->BrakingDecelerationWalking = 2000.f;
 	Move->GroundFriction = 8.f;

@@ -22,10 +22,7 @@ public class BlackVeil : ModuleRules
 			"UMG",
 			"Slate",
 			"SlateCore",
-			"Niagara",
-			"MotionWarping",
-			"AnimGraphRuntime",
-			"GameplayAbilities"
+			"Niagara"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[]

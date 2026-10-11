@@ -18,7 +18,7 @@ This is the **complete game project** - not a design document and not a prototyp
 | Campaign | 12 distinct missions, each with its own data asset, patrol network, objectives, intel, lighting plan and set piece |
 | Configuration | `DefaultEngine.ini`, `DefaultGame.ini`, `DefaultInput.ini`, `DefaultGameplayTags.ini` |
 | Data | 5 data tables (CSV) and 12 mission data assets (JSON, import-ready) |
-| Tooling | 7 Python scripts: blockout geometry builder, gameplay placement, security wiring, objective placement, and three validators |
+| Tooling | 8 Python scripts: one-command map builder, blockout geometry, gameplay placement, security wiring, objective placement, and three validators |
 | Documentation | Setup guide, architecture, story bible, 12 level design docs, 12 dialogue scripts, test report, progress report |
 
 > **Engine availability note.** This project was authored in an environment with **no
@@ -127,18 +127,38 @@ A level is built in two passes. **Pass 1 is the space** (floors, walls, doorways
 stairs, cover, lights, navigation). **Pass 2 is the gameplay** (objective volumes,
 guard spawns, patrol routes, cameras, terminals, intel).
 
-Open the target mission map, then in the editor's **Python console**:
+In the editor's **Python console**:
 
 ```python
 import sys
 sys.path.append(r"<path>/BlackVeil/Tools")
+import BuildAllMaps
+
+BuildAllMaps.build_all()        # creates all 14 maps and builds M01..M12 end to end
+```
+
+That single call creates each map, builds its geometry, places the gameplay, wires
+the security network and saves. To do one mission at a time:
+
+```python
+BuildAllMaps.build_one(3)       # create/rebuild just M03
+BuildAllMaps.build_frontend()   # just MainMenu + Briefing
+```
+
+Or drive the four passes yourself, with the target map already open:
+
+```python
 import BlockoutBuilder, LevelSetup, SecuritySystemSetup, MissionObjectiveSetup
 
-BlockoutBuilder.build(1)        # 1. the space - a walkable greybox
+BlockoutBuilder.build(1)        # 1. the space - a walkable greybox + environment + NavMesh
 LevelSetup.build_mission(1)     # 2. objectives, guard spawns, routes, intel, security
 SecuritySystemSetup.build(1)    # 3. camera / terminal / alarm network
 MissionObjectiveSetup.setup(1)  # 4. objective trigger volumes
 ```
+
+The 14 map names are listed in `Docs/MapManifest.md`. They are not free choices -
+they are referenced by the mission data assets and hard-coded in the C++ that
+opens them.
 
 Every generated actor is tagged (`BV_Blockout` or `BV_Generated`), so re-running
 replaces rather than duplicates, and the art pass can find every generated actor.
@@ -288,7 +308,7 @@ BlackVeil/
     World/       Doors, cameras, terminals, alarm panels, lights, hiding spots, noise
     UI/          HUD, widgets, menus, audio manager
     SaveGame/    Persistent campaign save object
-  Tools/        Blockout builder, gameplay placement, security wiring, validators
+  Tools/        Map builder, blockout builder, gameplay placement, security wiring, validators
   Docs/         Setup, architecture, story bible, level design, dialogue, reports
 ```
 
